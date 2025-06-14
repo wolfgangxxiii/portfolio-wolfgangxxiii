@@ -37,6 +37,7 @@ Menu nawigacji oraz sekcje dostosowują się do małych ekranów (breakpointy: 7
 ## 📂 Struktura plików
 
 /
+
 ├── index.html     # Główna strona portfolio
 
 ├── style.css      # Stylowanie + media queries mobile

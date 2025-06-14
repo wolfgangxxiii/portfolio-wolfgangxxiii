@@ -13,20 +13,20 @@
       font-family: 'Inter', system-ui, sans-serif;
     }
     .glass {
-      background: rgba(34, 40, 67, 0.75);
+      background: rgba(34, 40, 67, 0.8);
       backdrop-filter: blur(16px) saturate(160%);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.22);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
     }
     .avatar-glow {
-      box-shadow: 0 0 0 6px rgba(94,234,212,0.13), 0 4px 24px 0 rgba(59,130,246,0.38);
+      box-shadow: 0 0 0 6px rgba(94,234,212,0.15), 0 4px 24px 0 rgba(59,130,246,0.25);
     }
     .fade-in {
-      animation: fadeInUp 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      animation: fadeInUp 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translate3d(0, 40px, 0);
+        transform: translate3d(0, 32px, 0);
       }
       to {
         opacity: 1;
@@ -39,34 +39,132 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    /* Mobile-friendly fixed bottom nav */
+    .bottom-nav {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+    }
+    @media (min-width: 640px) {
+      .main-card { margin-top: 40px; }
+      .bottom-nav { max-width: 400px; left: 50%; transform: translateX(-50%); }
+    }
   </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen px-4">
-  <div class="w-full max-w-xs mx-auto fade-in">
-    <div class="glass rounded-3xl p-7 flex flex-col items-center shadow-2xl mt-14">
-      <!-- Avatar (zamień na <img ...> jeśli masz zdjęcie) -->
+<body class="flex flex-col items-center min-h-screen px-2 pt-4 pb-24 relative">
+
+  <!-- Main Card -->
+  <div class="w-full max-w-xs main-card fade-in">
+    <!-- Section: O mnie -->
+    <section id="section-home" class="glass rounded-3xl p-7 flex flex-col items-center shadow-2xl">
       <div class="avatar-glow w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 via-cyan-300 to-emerald-400 flex items-center justify-center mb-4 shadow-lg">
         <span class="text-4xl font-extrabold gradient-text">SB</span>
       </div>
       <h1 class="gradient-text text-2xl font-extrabold mb-2 tracking-wide drop-shadow">Szymon Piotr Bławat</h1>
-      <p class="text-base text-gray-200 mb-1">Programista aplikacji mobilnych i baz danych</p>
-      <p class="text-xs text-teal-300 mb-4">Licencjat Informatyka, WSB Merito Gdańsk</p>
+      <p class="text-base text-gray-200 mb-1 text-center">Programista aplikacji mobilnych i baz danych</p>
+      <p class="text-xs text-teal-300 mb-4 text-center">Licencjat Informatyka,<br>WSB Merito Gdańsk</p>
+      <div class="w-full flex flex-col gap-1 mb-3">
+        <span class="text-sm text-gray-400">Email:</span>
+        <a href="mailto:szymon.bawat@gmail.com" class="text-sm text-blue-400 underline">szymon.bawat@gmail.com</a>
+      </div>
+      <div class="w-full flex flex-col gap-1 mb-2">
+        <span class="text-sm text-gray-400">Specjalizacja:</span>
+        <span class="text-sm text-gray-200">Aplikacje mobilne i bazy danych</span>
+      </div>
+      <div class="w-full flex flex-col gap-1">
+        <span class="text-sm text-gray-400">Uczelnia:</span>
+        <span class="text-sm text-gray-200">WSB Merito Gdańsk</span>
+      </div>
+    </section>
+
+    <!-- Section: Projekty -->
+    <section id="section-projects" class="glass rounded-3xl p-6 mt-2 hidden flex-col items-center shadow-2xl">
+      <h2 class="text-xl font-bold gradient-text mb-4 text-center">Projekty</h2>
+      <!-- Projekt 1 -->
+      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
+        <h3 class="text-base font-semibold text-teal-300 mb-1">🎮 Kółko i Krzyżyk – Electron Projekt</h3>
+        <p class="text-xs text-gray-400 mb-1">Gra napisana w Electron.js, interfejs webowy.</p>
+        <div class="flex gap-2 mt-1">
+          <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
+          <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
+        </div>
+      </div>
+      <!-- Projekt 2 -->
+      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
+        <h3 class="text-base font-semibold text-teal-300 mb-1">📝 Quiz do Egzaminu Dyplomowego</h3>
+        <p class="text-xs text-gray-400 mb-1">Quiz przygotowujący do egzaminu z informatyki.</p>
+        <div class="flex gap-2 mt-1">
+          <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
+          <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
+        </div>
+      </div>
+      <!-- Projekt 3 -->
+      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
+        <h3 class="text-base font-semibold text-teal-300 mb-1">📅 TaskMaster – Planer dla firm</h3>
+        <p class="text-xs text-gray-400 mb-1">Koncepcja planera/kalendarza dla małych firm.</p>
+        <div class="flex gap-2 mt-1">
+          <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
+          <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
+        </div>
+      </div>
+      <!-- Inne projekty -->
+      <div class="text-xs text-gray-400">Więcej na <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-blue-400 underline hover:text-blue-500">GitHubie</a></div>
+    </section>
+
+    <!-- Section: Kontakt -->
+    <section id="section-contact" class="glass rounded-3xl p-6 mt-2 hidden flex-col items-center shadow-2xl">
+      <h2 class="text-xl font-bold gradient-text mb-4 text-center">Kontakt</h2>
+      <p class="text-sm text-gray-300 mb-2 text-center">
+        Masz pytania lub propozycje współpracy?<br>Śmiało napisz!
+      </p>
       <a href="mailto:szymon.bawat@gmail.com"
-         class="w-full transition bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold py-2 rounded-xl mb-5 hover:scale-105 hover:shadow-xl focus:ring-2 focus:ring-blue-400 focus:outline-none duration-150">
-        ✉️ Napisz do mnie
+         class="transition bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold py-2 px-6 rounded-xl mb-3 hover:scale-105 hover:shadow-xl focus:ring-2 focus:ring-blue-400 focus:outline-none duration-150 block text-center">
+        ✉️ szymon.bawat@gmail.com
       </a>
-      <div class="flex gap-4 justify-center mb-2">
+      <div class="flex justify-center gap-4 mt-2">
         <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub"
            class="p-2 bg-gray-900/60 rounded-full hover:bg-gradient-to-r hover:from-blue-500 hover:to-teal-400 hover:text-white transition-all shadow-md">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
             <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.9.9 2.7 1 .4-.7.8-1.5.8-2.1-2.6-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C18 7.4 19 7.7 19 7.7c.6 1.7.2 3 .1 3.3.7.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.8.6 1.1 1.6 1.1 3.1v4.5c0 .3.2.7.8.6C20.7 21.3 24 17.1 24 12 24 5.7 18.3.5 12 .5z"/>
           </svg>
         </a>
       </div>
-      <div class="w-full flex justify-center">
-        <span class="text-xs text-gray-500">© 2025 Szymon Piotr Bławat</span>
-      </div>
-    </div>
+    </section>
+    <p class="mt-6 text-xs text-gray-600 text-center">© 2025 Szymon Piotr Bławat</p>
   </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav w-full max-w-xs mx-auto bg-gray-800/80 backdrop-blur rounded-t-3xl px-8 py-3 flex justify-between items-center shadow-xl border-t border-blue-800">
+    <button onclick="showSection('home')" id="nav-home" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
+      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 21V9h6v12"/></svg>
+      <span>O mnie</span>
+    </button>
+    <button onclick="showSection('projects')" id="nav-projects" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
+      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6v6H9z"/></svg>
+      <span>Projekty</span>
+    </button>
+    <button onclick="showSection('contact')" id="nav-contact" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
+      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10.8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4.8c0 5.2 9 10.2 9 10.2s9-5 9-10.2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.27 6.96L12 13l8.73-6.04"/></svg>
+      <span>Kontakt</span>
+    </button>
+  </nav>
+
+  <script>
+    // Proste przełączanie sekcji
+    function showSection(section) {
+      document.getElementById('section-home').style.display = (section === 'home') ? 'flex' : 'none';
+      document.getElementById('section-projects').style.display = (section === 'projects') ? 'flex' : 'none';
+      document.getElementById('section-contact').style.display = (section === 'contact') ? 'flex' : 'none';
+      // Zmiana koloru ikon
+      document.getElementById('nav-home').classList.toggle('text-teal-300', section === 'home');
+      document.getElementById('nav-home').classList.toggle('text-gray-400', section !== 'home');
+      document.getElementById('nav-projects').classList.toggle('text-teal-300', section === 'projects');
+      document.getElementById('nav-projects').classList.toggle('text-gray-400', section !== 'projects');
+      document.getElementById('nav-contact').classList.toggle('text-teal-300', section === 'contact');
+      document.getElementById('nav-contact').classList.toggle('text-gray-400', section !== 'contact');
+    }
+    // Domyślnie O mnie
+    showSection('home');
+  </script>
 </body>
 </html>

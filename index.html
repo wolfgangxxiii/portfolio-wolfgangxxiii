@@ -1,110 +1,122 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Szymon Bławat – Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body { background: #fff; }
-    .nav-link.active {
-      color: #0284c7;
-      border-bottom: 2px solid #0284c7;
-    }
+    .active-nav { color: #2563eb; border-bottom: 2px solid #2563eb; }
   </style>
 </head>
-<body class="font-sans text-slate-900">
+<body class="min-h-screen text-slate-900 bg-white">
 
-  <!-- NAV -->
-  <header class="w-full px-2 py-4 border-b bg-white fixed top-0 left-0 z-30">
-    <nav class="max-w-2xl mx-auto flex justify-between items-center">
-      <span class="font-extrabold text-xl tracking-tight text-sky-600">Szymon Bławat</span>
+  <!-- Top navigation (mobile first, minimalist, sticky) -->
+  <header class="w-full sticky top-0 left-0 bg-white border-b z-40">
+    <nav class="flex justify-between items-center px-4 h-14 max-w-md mx-auto">
+      <span class="text-xl font-extrabold tracking-tight text-blue-600">SB</span>
       <div class="flex gap-6 text-base">
-        <a href="#about" class="nav-link active">O mnie</a>
-        <a href="#projects" class="nav-link">Projekty</a>
-        <a href="#contact" class="nav-link">Kontakt</a>
+        <a href="#about" class="nav-link active-nav flex flex-col items-center">
+          <svg class="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span class="text-xs">O mnie</span>
+        </a>
+        <a href="#projects" class="nav-link flex flex-col items-center">
+          <svg class="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 9h6v6H9z"/></svg>
+          <span class="text-xs">Projekty</span>
+        </a>
+        <a href="#contact" class="nav-link flex flex-col items-center">
+          <svg class="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10.8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4.8c0 5.2 9 10.2 9 10.2s9-5 9-10.2z"/><path d="M3.27 6.96L12 13l8.73-6.04"/></svg>
+          <span class="text-xs">Kontakt</span>
+        </a>
       </div>
     </nav>
   </header>
 
-  <main class="max-w-2xl mx-auto px-2 pt-28 pb-14">
-    <!-- HERO -->
-    <section id="about" class="mb-16 flex flex-col items-center text-center">
-      <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="w-32 h-32 rounded-full object-cover border-4 border-sky-100 mb-4 shadow-sm" />
-      <h1 class="text-3xl md:text-4xl font-extrabold mb-2">Szymon Piotr Bławat</h1>
-      <div class="text-lg text-sky-700 font-semibold mb-2">Programista aplikacji mobilnych i baz danych</div>
-      <div class="text-base text-slate-500 mb-4">Licencjat Informatyka, WSB Merito Gdańsk</div>
-      <div class="text-base text-slate-700 mb-2">
-        <span class="font-medium">Specjalizacja:</span> aplikacje mobilne, bazy danych
+  <!-- Main container -->
+  <main class="max-w-md mx-auto px-4 pt-8 pb-12">
+
+    <!-- Hero section -->
+    <section id="about" class="flex flex-col items-center text-center pt-2 pb-10">
+      <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="w-28 h-28 rounded-full object-cover mb-4 border-4 border-blue-100 shadow-sm" />
+      <h1 class="text-2xl font-extrabold mb-1 tracking-tight">Szymon Piotr Bławat</h1>
+      <div class="text-base text-blue-600 font-semibold mb-2">Programista aplikacji mobilnych i baz danych</div>
+      <div class="text-sm text-slate-500 mb-3">Licencjat Informatyka, WSB Merito Gdańsk</div>
+      <a href="mailto:szymon.bawat@gmail.com"
+         class="inline-block px-6 py-2 mt-1 rounded-lg bg-blue-600 text-white font-medium shadow hover:bg-blue-700 transition">Napisz do mnie</a>
+    </section>
+
+    <!-- Projekty -->
+    <section id="projects" class="pb-10">
+      <h2 class="text-xl font-bold mb-7 text-blue-700 text-center">Projekty</h2>
+      <div class="flex flex-col gap-6">
+        <div class="rounded-2xl border border-slate-200 p-5 hover:border-blue-500 transition flex flex-col gap-2">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl">🎮</span>
+            <span class="font-semibold text-base text-blue-700">Kółko i Krzyżyk</span>
+          </div>
+          <div class="text-xs text-slate-400 mb-1">Electron.js</div>
+          <div class="text-sm text-slate-700 mb-2">Gra z interfejsem webowym stworzona w Electron.js.</div>
+          <div class="flex gap-4">
+            <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
+            <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-blue-700 hover:underline text-sm">Demo</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-5 hover:border-blue-500 transition flex flex-col gap-2">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl">📝</span>
+            <span class="font-semibold text-base text-blue-700">Quiz do Egzaminu</span>
+          </div>
+          <div class="text-xs text-slate-400 mb-1">React</div>
+          <div class="text-sm text-slate-700 mb-2">Quiz do egzaminu dyplomowego z informatyki.</div>
+          <div class="flex gap-4">
+            <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
+            <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-blue-700 hover:underline text-sm">Demo</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-5 hover:border-blue-500 transition flex flex-col gap-2">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xl">📅</span>
+            <span class="font-semibold text-base text-blue-700">TaskMaster</span>
+          </div>
+          <div class="text-xs text-slate-400 mb-1">React</div>
+          <div class="text-sm text-slate-700 mb-2">Planer i kalendarz dla małych firm.</div>
+          <div class="flex gap-4">
+            <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
+            <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-blue-700 hover:underline text-sm">Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-sm mt-7 text-slate-500">
+        Więcej na <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-blue-600 underline">GitHubie</a>
       </div>
     </section>
 
-    <!-- PROJEKTY -->
-    <section id="projects" class="mb-16">
-      <h2 class="text-2xl font-bold mb-6 text-sky-600 text-center">Projekty</h2>
-      <div class="grid gap-6">
-        <div class="rounded-xl border p-5 flex flex-col md:flex-row items-center md:items-start gap-4 hover:border-sky-400 transition">
-          <div class="flex-1">
-            <h3 class="text-lg font-bold mb-1 text-sky-700">🎮 Kółko i Krzyżyk</h3>
-            <p class="text-slate-600 text-sm mb-2">Gra w Electron.js – UI webowy</p>
-            <div class="flex gap-4">
-              <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-sky-500 hover:underline text-sm">Kod</a>
-              <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-sky-700 hover:underline text-sm">Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-xl border p-5 flex flex-col md:flex-row items-center md:items-start gap-4 hover:border-sky-400 transition">
-          <div class="flex-1">
-            <h3 class="text-lg font-bold mb-1 text-sky-700">📝 Quiz do Egzaminu</h3>
-            <p class="text-slate-600 text-sm mb-2">Quiz do egzaminu dyplomowego – React</p>
-            <div class="flex gap-4">
-              <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-sky-500 hover:underline text-sm">Kod</a>
-              <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-sky-700 hover:underline text-sm">Demo</a>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-xl border p-5 flex flex-col md:flex-row items-center md:items-start gap-4 hover:border-sky-400 transition">
-          <div class="flex-1">
-            <h3 class="text-lg font-bold mb-1 text-sky-700">📅 TaskMaster</h3>
-            <p class="text-slate-600 text-sm mb-2">Planer i kalendarz dla firm – React</p>
-            <div class="flex gap-4">
-              <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-sky-500 hover:underline text-sm">Kod</a>
-              <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-sky-700 hover:underline text-sm">Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center text-sm mt-8">
-        Więcej: <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-sky-600 underline hover:text-sky-900">GitHub</a>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="contact" class="mb-2 text-center">
-      <h2 class="text-2xl font-bold mb-4 text-sky-600">Kontakt</h2>
-      <a href="mailto:szymon.bawat@gmail.com" class="inline-block px-8 py-3 rounded-lg bg-sky-600 text-white font-semibold shadow hover:bg-sky-700 transition mb-4">szymon.bawat@gmail.com</a>
-      <div class="flex justify-center gap-4 mt-3">
-        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub" class="text-sky-700 hover:text-sky-900">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+    <!-- Kontakt -->
+    <section id="contact" class="pb-4 text-center">
+      <h2 class="text-xl font-bold mb-5 text-blue-700">Kontakt</h2>
+      <a href="mailto:szymon.bawat@gmail.com"
+         class="inline-block px-7 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition mb-3">szymon.bawat@gmail.com</a>
+      <div class="flex justify-center mt-5">
+        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub" class="text-blue-700 hover:text-blue-900 transition">
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
             <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.9.9 2.7 1 .4-.7.8-1.5.8-2.1-2.6-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C18 7.4 19 7.7 19 7.7c.6 1.7.2 3 .1 3.3.7.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.8.6 1.1 1.6 1.1 3.1v4.5c0 .3.2.7.8.6C20.7 21.3 24 17.1 24 12 24 5.7 18.3.5 12 .5z"/>
           </svg>
         </a>
       </div>
     </section>
-    <footer class="py-10 text-center text-xs text-slate-400">
+    <footer class="py-8 text-center text-xs text-slate-400">
       © 2025 Szymon Piotr Bławat
     </footer>
   </main>
 
   <script>
-    // Nawigacja: podświetlenie aktywnej sekcji
+    // Mobile nav highlight
     const links = document.querySelectorAll('.nav-link');
     function setActive(section) {
-      links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${section}`));
+      links.forEach(link => link.classList.toggle('active-nav', link.getAttribute('href') === `#${section}`));
     }
-    window.addEventListener('hashchange', () => {
-      setActive(location.hash.replace('#', '') || 'about');
-    });
+    window.addEventListener('hashchange', () => setActive(location.hash.replace('#', '') || 'about'));
     setActive(location.hash.replace('#', '') || 'about');
   </script>
 </body>

@@ -7,421 +7,470 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <!-- Dodane Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-  --primary: #35BF5C;
-  --primary-dark: #209344;
-  --bg: #F5F8FA;
-  --bg-dark: #23262F;
-  --text: #23262F;
-  --text-light: #5B5B98;
-  --card: #fff;
-  --card-dark: #282C37;
-}
-body {
-  font-family: 'Inter', Arial, sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  line-height: 1.6;
-}
-header {
-  background: var(--card);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-.nav {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-}
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--primary);
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-}
-nav ul {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-nav a:hover,
-nav a.active {
-  color: var(--primary-dark);
-}
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 60px 16px 32px;
-  background: var(--card);
-}
-.avatar {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--primary);
-  box-shadow: 0 2px 16px 0 rgba(53,191,92,0.07);
-  margin-bottom: 18px;
-}
-.hero h1 {
-  font-size: 2.3rem;
-  margin: 8px 0 6px 0;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: var(--primary-dark);
-}
-.hero .hero-desc {
-  margin: 14px 0 0 0;
-  color: var(--text-light);
-  font-size: 1.1rem;
-}
-.hero .button {
-  margin-top: 18px;
-}
-.hero-contact {
-  margin-top: 18px;
-  font-size: 1.02rem;
-  color: var(--text-light);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-  align-items: center;
-}
-.hero-contact i {
-  vertical-align: middle;
-  margin-right: 5px;
-  color: var(--primary-dark);
-}
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  background: transparent;
-  border: 2px solid var(--primary);
-  border-radius: 24px;
-  color: var(--primary-dark);
-  transition: all 0.2s;
-  cursor: pointer;
-  text-decoration: none;
-}
-.button:hover {
-  background: var(--primary);
-  color: #fff;
-  box-shadow: 0 2px 16px 0 rgba(53,191,92,0.11);
-}
-section {
-  max-width: 880px;
-  margin: 44px auto;
-  background: var(--card);
-  border-radius: 18px;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
-  padding: 40px 20px 30px;
-}
-section h2 {
-  font-size: 1.4rem;
-  color: var(--primary-dark);
-  margin-bottom: 18px;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.4px;
-}
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 36px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.skill {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 1rem;
-  color: var(--text-light);
-  background: #f2f2fa;
-  padding: 7px 15px 7px 11px;
-  border-radius: 11px;
-}
-.skill i {
-  font-size: 1.5em;
-  background: none;
-}
-.langs {
-  display: flex;
-  gap: 28px;
-  justify-content: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-.lang-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 1rem;
-  color: var(--text-light);
-}
-.lang-item i {
-  width: 20px; height: 20px; color: var(--primary-dark);
-}
-.edu-timeline {
-  margin: 30px 0 0 0;
-  padding-left: 0;
-  list-style: none;
-}
-.edu-timeline li {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-.edu-timeline .dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--primary);
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-.edu-timeline .desc {
-  font-size: 1.01rem;
-  color: var(--text-light);
-}
-.timeline {
-  margin: 30px 0 0 0;
-  padding-left: 0;
-  list-style: none;
-}
-.timeline li {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-.timeline .dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--primary-dark);
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-.timeline .desc {
-  font-size: 1.01rem;
-  color: var(--text-light);
-}
-.certs-list { display: flex; flex-direction: column; gap: 13px; margin: 20px 0 0 0;}
-.cert-item {display: flex; align-items: center; gap: 11px; color: var(--text-light); font-size: 1.01rem;}
-.cert-item i { font-size: 1.2em; color: var(--primary-dark);}
-.hobbies-list { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-top: 15px; font-size: 1.05rem; color: var(--primary-dark);}
-.hobby-item { display: flex; align-items: center; gap: 7px; background: #e6fbe7; border-radius: 10px; padding: 7px 16px;}
-.hobby-item i { font-size: 1.25em;}
-.projects-grid { display: grid; grid-template-columns: 1fr; gap: 22px;}
-.project-card {
-  border-radius: 15px;
-  background: #f7faf9;
-  box-shadow: 0 2px 8px 0 rgba(53,191,92,0.07);
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-left: 4px solid var(--primary);
-  transition: transform 0.17s;
-}
-.project-card:hover {
-  transform: translateY(-4px) scale(1.012);
-  box-shadow: 0 8px 26px 0 rgba(53,191,92,0.13);
-}
-.project-card h3 {
-  margin: 0;
-  font-size: 1.13rem;
-  color: var(--primary-dark);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-.project-card .tech {
-  font-size: 0.97rem;
-  color: var(--text-light);
-}
-.project-card .links {
-  display: flex;
-  gap: 16px;
-  margin-top: 7px;
-}
-.project-card .links a {
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.18s, background 0.18s;
-  text-decoration: none !important;
-}
-.contact-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-top: 15px;
-}
-.contact-icons { display: flex; gap: 14px; margin-top: 5px;}
-.contact-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 41px;
-  height: 41px;
-  border-radius: 50%;
-  background: #e9f7ee;
-  color: var(--primary-dark);
-  font-size: 1.6rem;
-  transition: background 0.2s;
-  text-decoration: none;
-}
-.contact-icons a:hover {
-  background: var(--primary);
-  color: #fff;
-}
-.contact-icons i {
-  font-size: 1.3em;
-}
-footer {
-  text-align: center;
-  color: #a0afbd;
-  padding: 26px 0 18px 0;
-  font-size: 0.98rem;
-  margin-top: 40px;
-}
+      --primary: #35BF5C;
+      --primary-dark: #209344;
+      --bg: #F5F8FA;
+      --bg-dark: #23262F;
+      --text: #23262F;
+      --text-light: #5B5B98;
+      --card: #fff;
+      --card-dark: #282C37;
+    }
+    /* Dark Mode variables */
+    body.dark {
+      --primary: #35BF5C;
+      --primary-dark: #57e388;
+      --bg: #181B21;
+      --bg-dark: #181B21;
+      --text: #F5F8FA;
+      --text-light: #A6B6C9;
+      --card: #23262F;
+      --card-dark: #23262F;
+    }
 
-/* PRZYCISKI - POPRAWIONA WIDOCZNOŚĆ */
-.btn-primary {
-  background: var(--primary-dark);
-  color: #fff !important;
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0 2px 10px 0 rgba(53,191,92,0.13);
-  padding: 10px 26px;
-  font-weight: 600;
-  font-size: 1.02rem;
-  transition: background 0.22s, color 0.18s, box-shadow 0.18s;
-  text-decoration: none !important;
-  cursor: pointer;
-  display: inline-block;
-}
-.btn-primary:hover {
-  background: var(--primary);
-  color: #fff !important;
-}
-.btn-demo {
-  background: var(--primary-dark);
-  color: #fff !important;
-  border: none;
-  border-radius: 21px;
-  margin-left: 8px;
-  padding: 10px 26px;
-  font-weight: 600;
-  font-size: 1.02rem;
-  box-shadow: 0 2px 10px 0 rgba(53,191,92,0.13);
-  text-decoration: none !important;
-  transition: background 0.18s, color 0.18s, border 0.18s, transform 0.17s, box-shadow 0.18s;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-}
-.btn-demo i {
-  vertical-align: middle;
-  margin-right: 2px;
-}
-.btn-demo:hover {
-  background: var(--primary);
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 20px 0 rgba(53,191,92,0.18);
-}
-.btn-github {
-  background: #23262F;
-  color: #fff !important;
-  margin-top: 11px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 21px;
-  font-weight: 600;
-  font-size: 1.07rem;
-  box-shadow: 0 2px 12px 0 rgba(53,191,92,0.08);
-  text-decoration: none !important;
-  transition: background 0.2s, color 0.2s;
-  cursor: pointer;
-  display: inline-block;
-}
-.btn-github:hover {
-  background: #333;
-  color: var(--primary) !important;
-}
-.project-card .links {
-  flex-wrap: wrap;
-}
-.project-card .links a:visited {
-  color: #fff !important;
-}
-
-/* RWD dla przycisków i układu */
-@media (max-width: 700px) {
-  .nav { flex-direction: column; gap: 10px; height: auto; padding: 14px 0;}
-  section { margin: 22px 8px; padding: 24px 7px 19px;}
-  .projects-grid { gap: 14px;}
-  .hero { padding: 38px 8px 18px;}
-  .btn-primary, .btn-demo, .btn-github {
-    width: 100%;
-    margin: 7px 0 0 0;
-    font-size: 1rem;
-    padding: 10px 0;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  .project-card .links {
-    flex-direction: column;
-    gap: 7px;
-  }
-}
-@media (max-width: 480px) {
-  .avatar { width: 72px; height: 72px;}
-  .hero h1 { font-size: 1.45rem;}
-  section { padding: 13px 2vw 13px;}
-}
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      transition: background 0.3s;
+    }
+    .nav {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+    /* Dark mode toggle button */
+    .toggle-darkmode {
+      background: none;
+      border: none;
+      color: var(--primary-dark);
+      font-size: 1.6rem;
+      cursor: pointer;
+      margin-left: 18px;
+      transition: color 0.2s, background 0.2s;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggle-darkmode:hover {
+      color: var(--primary);
+      background: #e9f7ee1a;
+    }
+    @media (max-width:700px){
+      .toggle-darkmode{margin-left:0;}
+    }
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-dark);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 16px 32px;
+      background: var(--card);
+      transition: background 0.3s;
+    }
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 2px 16px 0 rgba(53,191,92,0.07);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin: 8px 0 6px 0;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--primary-dark);
+    }
+    .hero .hero-desc {
+      margin: 14px 0 0 0;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+    .hero .button {
+      margin-top: 18px;
+    }
+    .hero-contact {
+      margin-top: 18px;
+      font-size: 1.02rem;
+      color: var(--text-light);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-contact i {
+      vertical-align: middle;
+      margin-right: 5px;
+      color: var(--primary-dark);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: transparent;
+      border: 2px solid var(--primary);
+      border-radius: 24px;
+      color: var(--primary-dark);
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 16px 0 rgba(53,191,92,0.11);
+    }
+    section {
+      max-width: 880px;
+      margin: 44px auto;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+      padding: 40px 20px 30px;
+      transition: background 0.3s;
+    }
+    section h2 {
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.4px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 36px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 1rem;
+      color: var(--text-light);
+      background: #f2f2fa;
+      padding: 7px 15px 7px 11px;
+      border-radius: 11px;
+    }
+    .skill i {
+      font-size: 1.5em;
+      background: none;
+    }
+    .langs {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .lang-item i {
+      width: 20px; height: 20px; color: var(--primary-dark);
+    }
+    .edu-timeline {
+      margin: 30px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .edu-timeline li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .edu-timeline .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .edu-timeline .desc {
+      font-size: 1.01rem;
+      color: var(--text-light);
+    }
+    .timeline {
+      margin: 30px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .timeline li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .timeline .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary-dark);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .timeline .desc {
+      font-size: 1.01rem;
+      color: var(--text-light);
+    }
+    .certs-list { display: flex; flex-direction: column; gap: 13px; margin: 20px 0 0 0;}
+    .cert-item {display: flex; align-items: center; gap: 11px; color: var(--text-light); font-size: 1.01rem;}
+    .cert-item i { font-size: 1.2em; color: var(--primary-dark);}
+    .hobbies-list { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-top: 15px; font-size: 1.05rem; color: var(--primary-dark);}
+    .hobby-item { display: flex; align-items: center; gap: 7px; background: #e6fbe7; border-radius: 10px; padding: 7px 16px;}
+    .hobby-item i { font-size: 1.25em;}
+    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 22px;}
+    .project-card {
+      border-radius: 15px;
+      background: #f7faf9;
+      box-shadow: 0 2px 8px 0 rgba(53,191,92,0.07);
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--primary);
+      transition: transform 0.17s, background 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px) scale(1.012);
+      box-shadow: 0 8px 26px 0 rgba(53,191,92,0.13);
+    }
+    .project-card h3 {
+      margin: 0;
+      font-size: 1.13rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .project-card .tech {
+      font-size: 0.97rem;
+      color: var(--text-light);
+    }
+    .project-card .links {
+      display: flex;
+      gap: 16px;
+      margin-top: 7px;
+      flex-wrap: wrap;
+    }
+    .project-card .links a {
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.18s, background 0.18s;
+      text-decoration: none !important;
+    }
+    .contact-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 15px;
+    }
+    .contact-icons { display: flex; gap: 14px; margin-top: 5px;}
+    .contact-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      background: #e9f7ee;
+      color: var(--primary-dark);
+      font-size: 1.6rem;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .contact-icons a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .contact-icons i {
+      font-size: 1.3em;
+    }
+    footer {
+      text-align: center;
+      color: #a0afbd;
+      padding: 26px 0 18px 0;
+      font-size: 0.98rem;
+      margin-top: 40px;
+    }
+    /* PRZYCISKI */
+    .btn-primary {
+      background: var(--primary-dark);
+      color: #fff !important;
+      border: none;
+      border-radius: 21px;
+      box-shadow: 0 2px 10px 0 rgba(53,191,92,0.13);
+      padding: 10px 26px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      transition: background 0.22s, color 0.18s, box-shadow 0.18s;
+      text-decoration: none !important;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: var(--primary);
+      color: #fff !important;
+    }
+    .btn-demo {
+      background: var(--primary-dark);
+      color: #fff !important;
+      border: none;
+      border-radius: 21px;
+      margin-left: 8px;
+      padding: 10px 26px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      box-shadow: 0 2px 10px 0 rgba(53,191,92,0.13);
+      text-decoration: none !important;
+      transition: background 0.18s, color 0.18s, border 0.18s, transform 0.17s, box-shadow 0.18s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .btn-demo i {
+      vertical-align: middle;
+      margin-right: 2px;
+    }
+    .btn-demo:hover {
+      background: var(--primary);
+      color: #fff !important;
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 20px 0 rgba(53,191,92,0.18);
+    }
+    .btn-github {
+      background: #23262F;
+      color: #fff !important;
+      margin-top: 11px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 21px;
+      font-weight: 600;
+      font-size: 1.07rem;
+      box-shadow: 0 2px 12px 0 rgba(53,191,92,0.08);
+      text-decoration: none !important;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-github:hover {
+      background: #333;
+      color: var(--primary) !important;
+    }
+    /* Lepiej widoczny visited */
+    .project-card .links a:visited {
+      color: #dde !important;
+    }
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.5,.18,.64,1.12), transform 0.7s cubic-bezier(.5,.18,.64,1.12);
+      will-change: opacity, transform;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; gap: 10px; height: auto; padding: 14px 0;}
+      section { margin: 22px 8px; padding: 24px 7px 19px;}
+      .projects-grid { gap: 14px;}
+      .hero { padding: 38px 8px 18px;}
+      .btn-primary, .btn-demo, .btn-github {
+        width: 100%;
+        margin: 7px 0 0 0;
+        font-size: 1rem;
+        padding: 10px 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .project-card .links {
+        flex-direction: column;
+        gap: 7px;
+      }
+    }
+    @media (max-width: 480px) {
+      .avatar { width: 72px; height: 72px;}
+      .hero h1 { font-size: 1.45rem;}
+      section { padding: 13px 2vw 13px;}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
       <span class="logo">Portfolio</span>
+      <!-- DARK MODE TOGGLE BUTTON -->
+      <button class="toggle-darkmode" id="toggle-darkmode" aria-label="Przełącz tryb ciemny">
+        <i class="fa fa-moon"></i>
+      </button>
       <nav>
         <ul>
           <li><a href="#about" class="active">O mnie</a></li>
@@ -435,39 +484,26 @@ footer {
     </div>
   </header>
 
-  <div class="hero" id="about">
-  <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="avatar" />
-  <h1>Szymon Piotr Bławat</h1>
-  <div class="hero-desc">
-    <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
-    <p>Miejscowość: Śliwice | Wiek: <span id="age"></span> lat</p>
+  <div class="hero fade-in" id="about">
+    <img src="avatar.jpg" alt="Zdjęcie profilowe Szymona Piotra Bławata" class="avatar" />
+    <h1>Szymon Piotr Bławat</h1>
+    <div class="hero-desc">
+      <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
+      <p>Miejscowość: Śliwice | Wiek: <span id="age">25</span> lat</p>
+    </div>
+    <div class="hero-contact">
+      <span>
+        <i class="fa fa-envelope"></i>
+        szymon.bawat@gmail.com
+      </span>
+    </div>
   </div>
-  <div class="hero-contact">
-    <span>
-      <i class="fa fa-envelope"></i>
-      szymon.bawat@gmail.com
-    </span>
-  </div>
-</div>
 
-<script>
-  // Automatyczne obliczanie wieku na podstawie daty urodzenia
-  const birthDate = new Date('1999-10-17');
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  document.getElementById('age').textContent = age;
-</script>
-
-
-   <section id="exp">
+  <section id="exp" class="fade-in">
     <h2>Droga kariery i rozwój</h2>
     <p>
-    Obecnie pracuję w sektorze IT na stanowisku Operatora Wprowadzania Danych (szczegóły chętnie omówię podczas rozmowy). 
-    Wcześniej zdobyłem doświadczenie w różnych rolach technicznych i produkcyjnych, co pozwoliło mi rozwinąć umiejętności organizacji pracy, obsługi sprzętu i pracy w zespole.
+      Obecnie pracuję w sektorze IT na stanowisku Operatora Wprowadzania Danych (szczegóły chętnie omówię podczas rozmowy). 
+      Wcześniej zdobyłem doświadczenie w różnych rolach technicznych i produkcyjnych, co pozwoliło mi rozwinąć umiejętności organizacji pracy, obsługi sprzętu i pracy w zespole.
     </p>
     <p>
       Z pasją rozwijam swoje kompetencje w programowaniu i technologii – od projektowania aplikacji mobilnych, przez bazy danych, aż po automatyzację procesów. 
@@ -480,39 +516,39 @@ footer {
     </p>
   </section>
   
-  <section id="skills">
-  <h2>Umiejętności</h2>
-  <div class="skills-list">
-    <span class="skill"><i class="fab fa-js" style="color:#F7DF1E"></i> JavaScript</span>
-    <span class="skill"><i class="fab fa-react" style="color:#61DAFB"></i> React</span>
-    <span class="skill"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</span>
-    <span class="skill"><i class="fas fa-desktop" style="color:#47848F"></i> Electron</span>
-    <span class="skill"><i class="fas fa-database" style="color:#4479A1"></i> MySQL</span>
-    <span class="skill"><i class="fas fa-fire" style="color:#FFCA28"></i> Firebase</span>
-    <span class="skill"><i class="fab fa-php" style="color:#333"></i> PHP</span>
-    <span class="skill"><i class="fa fa-code" style="color:#FF7F50"></i> C++</span>
-    <span class="skill"><i class="fab fa-python" style="color:#007ACC"></i> Python</span>
-    <span class="skill"><i class="fab fa-microsoft" style="color:#2196F3"></i> C#</span>
-    <span class="skill"><i class="fas fa-database" style="color:#333"></i> SQL</span>
-    <span class="skill"><i class="fab fa-html5" style="color:#006400"></i> HTML</span>
-    <span class="skill"><i class="fab fa-css3-alt" style="color:#264de4"></i> CSS</span>
-    <span class="skill"><i class="fas fa-code" style="color:#3c873a"></i> Django</span>
-    <span class="skill"><i class="fas fa-laptop-code"></i> Web Development</span>
-    <span class="skill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
-    <span class="skill"><i class="fab fa-git-alt" style="color:#f1502f"></i> Git</span>
-    <span class="skill"><i class="fas fa-plug"></i> REST API</span>
-    <span class="skill"><i class="fab fa-microsoft" style="color:#0078D4"></i> Microsoft Office</span>
-    <span class="skill"><i class="fas fa-car" style="color:#666"></i> Prawo jazdy kat. B</span>
-    <span class="skill"><i class="fab fa-linux" style="color:#00bfae"></i> Linux (administracja)</span>
-  </div>
-  <h2>Języki</h2>
-  <div class="skills-list">
-    <span class="skill"><i class="fa fa-flag" style="color:#DC143C"></i> Polski (ojczysty)</span>
-    <span class="skill"><i class="fa fa-flag" style="color:#00247D"></i> Angielski (średni)</span>
-  </div>
-</section>
+  <section id="skills" class="fade-in">
+    <h2>Umiejętności</h2>
+    <div class="skills-list">
+      <span class="skill"><i class="fab fa-js" style="color:#F7DF1E"></i> JavaScript</span>
+      <span class="skill"><i class="fab fa-react" style="color:#61DAFB"></i> React</span>
+      <span class="skill"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</span>
+      <span class="skill"><i class="fas fa-desktop" style="color:#47848F"></i> Electron</span>
+      <span class="skill"><i class="fas fa-database" style="color:#4479A1"></i> MySQL</span>
+      <span class="skill"><i class="fas fa-fire" style="color:#FFCA28"></i> Firebase</span>
+      <span class="skill"><i class="fab fa-php" style="color:#333"></i> PHP</span>
+      <span class="skill"><i class="fa fa-code" style="color:#FF7F50"></i> C++</span>
+      <span class="skill"><i class="fab fa-python" style="color:#007ACC"></i> Python</span>
+      <span class="skill"><i class="fab fa-microsoft" style="color:#2196F3"></i> C#</span>
+      <span class="skill"><i class="fas fa-database" style="color:#333"></i> SQL</span>
+      <span class="skill"><i class="fab fa-html5" style="color:#006400"></i> HTML</span>
+      <span class="skill"><i class="fab fa-css3-alt" style="color:#264de4"></i> CSS</span>
+      <span class="skill"><i class="fas fa-code" style="color:#3c873a"></i> Django</span>
+      <span class="skill"><i class="fas fa-laptop-code"></i> Web Development</span>
+      <span class="skill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+      <span class="skill"><i class="fab fa-git-alt" style="color:#f1502f"></i> Git</span>
+      <span class="skill"><i class="fas fa-plug"></i> REST API</span>
+      <span class="skill"><i class="fab fa-microsoft" style="color:#0078D4"></i> Microsoft Office</span>
+      <span class="skill"><i class="fas fa-car" style="color:#666"></i> Prawo jazdy kat. B</span>
+      <span class="skill"><i class="fab fa-linux" style="color:#00bfae"></i> Linux (administracja)</span>
+    </div>
+    <h2>Języki</h2>
+    <div class="skills-list">
+      <span class="skill"><i class="fa fa-flag" style="color:#DC143C"></i> Polski (ojczysty)</span>
+      <span class="skill"><i class="fa fa-flag" style="color:#00247D"></i> Angielski (średni)</span>
+    </div>
+  </section>
 
-  <section id="edu">
+  <section id="edu" class="fade-in">
     <h2>Wykształcenie</h2>
     <ul class="edu-timeline">
       <li>
@@ -532,7 +568,7 @@ footer {
     </ul>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Certyfikaty i szkolenia</h2>
     <div class="certs-list">
       <span class="cert-item">
@@ -547,7 +583,6 @@ footer {
         <i class="fas fa-certificate"></i>
         Kwalifikacje E.12, E.13, E.14 (ZSLiT Tuchola)
       </span>
-
       <span class="cert-item" style="margin-top: 13px; font-weight:600;">
         Certyfikaty specjalisty – Strefa Kursów:
       </span>
@@ -562,7 +597,7 @@ footer {
     </div>
   </section>
 
-  <section>
+  <section class="fade-in">
     <h2>Zainteresowania</h2>
     <div class="hobbies-list">
       <span class="hobby-item">
@@ -599,102 +634,102 @@ footer {
       </span>
       <span class="hobby-item">
         <i class="fas fa-music"></i>
-      Słuchanie muzyki
+        Słuchanie muzyki
       </span>
     </div>
   </section>
 
- <section id="projects">
-  <h2>Projekty</h2>
-  <div class="projects-grid">
+  <section id="projects" class="fade-in">
+    <h2>Projekty</h2>
+    <div class="projects-grid">
 
-    <!-- Kółko i Krzyżyk -->
-    <div class="project-card">
-      <h3>
-        <i class="fas fa-times-circle"></i>
-        Kółko i Krzyżyk
-      </h3>
-      <span class="tech">Electron, JavaScript</span>
-      <div>
-        Prosta, intuicyjna gra dla dwóch osób, działająca jako aplikacja desktopowa dzięki Electron. Pozwala na szybkie rozgrywki i analizę wyników w jednej sesji.
-        <ul>
-          <li>Nowoczesny interfejs desktopowy</li>
-          <li>Błyskawiczne rozpoczęcie nowej gry</li>
-          <li>Wyraźna obsługa zwycięstw i remisów</li>
-        </ul>
+      <!-- Kółko i Krzyżyk -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-times-circle"></i>
+          Kółko i Krzyżyk
+        </h3>
+        <span class="tech">Electron, JavaScript</span>
+        <div>
+          Prosta, intuicyjna gra dla dwóch osób, działająca jako aplikacja desktopowa dzięki Electron. Pozwala na szybkie rozgrywki i analizę wyników w jednej sesji.
+          <ul>
+            <li>Nowoczesny interfejs desktopowy</li>
+            <li>Błyskawiczne rozpoczęcie nowej gry</li>
+            <li>Wyraźna obsługa zwycięstw i remisów</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
+          <a class="btn-demo" href="https://electron-projekt.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
       </div>
-      <div class="links">
-        <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
-        <a class="btn-demo" href="https://electron-projekt.netlify.app/" target="_blank">
-          <i class="fas fa-play"></i>
-          Demo
-        </a>
+
+      <!-- Quiz do Egzaminu -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-question-circle"></i>
+          Quiz do Egzaminu
+        </h3>
+        <span class="tech">React</span>
+        <div>
+          Interaktywna aplikacja webowa, która umożliwia naukę do egzaminu dyplomowego z informatyki. Szybka informacja zwrotna oraz czytelne podsumowanie wyniku.
+          <ul>
+            <li>Wybór zestawu pytań tematycznych</li>
+            <li>Natychmiastowa ocena każdej odpowiedzi</li>
+            <li>Wyświetlanie wyniku końcowego oraz analizy błędów</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
+          <a class="btn-demo" href="https://quiz-egazmin.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- TaskMaster -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-tasks"></i>
+          TaskMaster
+        </h3>
+        <span class="tech">React</span>
+        <div>
+          Planer i kalendarz zadań dedykowany małym firmom i zespołom, z naciskiem na użyteczność i przejrzystość.
+          <ul>
+            <li>Intuicyjne zarządzanie zadaniami (dodawanie, edycja, usuwanie)</li>
+            <li>Widok kalendarza i lista priorytetów</li>
+            <li>Rozwijana jako realna propozycja narzędzia dla małego biznesu</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
+          <a class="btn-demo" href="https://taskmaster-alfa.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Więcej projektów -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fab fa-github"></i>
+          Więcej projektów?
+        </h3>
+        <span class="tech">Sprawdź na GitHub</span>
+        <div>
+          <a class="btn-github" href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Quiz do Egzaminu -->
-    <div class="project-card">
-      <h3>
-        <i class="fas fa-question-circle"></i>
-        Quiz do Egzaminu
-      </h3>
-      <span class="tech">React</span>
-      <div>
-        Interaktywna aplikacja webowa, która umożliwia naukę do egzaminu dyplomowego z informatyki. Szybka informacja zwrotna oraz czytelne podsumowanie wyniku.
-        <ul>
-          <li>Wybór zestawu pytań tematycznych</li>
-          <li>Natychmiastowa ocena każdej odpowiedzi</li>
-          <li>Wyświetlanie wyniku końcowego oraz analizy błędów</li>
-        </ul>
-      </div>
-      <div class="links">
-        <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
-        <a class="btn-demo" href="https://quiz-egazmin.netlify.app/" target="_blank">
-          <i class="fas fa-play"></i>
-          Demo
-        </a>
-      </div>
-    </div>
-
-    <!-- TaskMaster -->
-    <div class="project-card">
-      <h3>
-        <i class="fas fa-tasks"></i>
-        TaskMaster
-      </h3>
-      <span class="tech">React</span>
-      <div>
-        Planer i kalendarz zadań dedykowany małym firmom i zespołom, z naciskiem na użyteczność i przejrzystość.
-        <ul>
-          <li>Intuicyjne zarządzanie zadaniami (dodawanie, edycja, usuwanie)</li>
-          <li>Widok kalendarza i lista priorytetów</li>
-          <li>Rozwijana jako realna propozycja narzędzia dla małego biznesu</li>
-        </ul>
-      </div>
-      <div class="links">
-        <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
-        <a class="btn-demo" href="https://taskmaster-alfa.netlify.app/" target="_blank">
-          <i class="fas fa-play"></i>
-          Demo
-        </a>
-      </div>
-    </div>
-
-    <!-- Więcej projektów -->
-    <div class="project-card">
-      <h3>
-        <i class="fab fa-github"></i>
-        Więcej projektów?
-      </h3>
-      <span class="tech">Sprawdź na GitHub</span>
-      <div>
-        <a class="btn-github" href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Kontakt</h2>
     <div class="contact-center">
       <a href="mailto:szymon.bawat@gmail.com" class="button">
@@ -724,5 +759,68 @@ footer {
   <footer>
     © 2025 Szymon Piotr Bławat
   </footer>
+
+  <!-- JavaScript: wiek + darkmode + fade-in -->
+  <script>
+    // Automatyczne obliczanie wieku
+    const birthDate = new Date('1999-10-17');
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    document.getElementById('age').textContent = age;
+  </script>
+  <script>
+    // DARK MODE + system preference + localStorage
+    const darkModeBtn = document.getElementById('toggle-darkmode');
+    const rootBody = document.body;
+    function setDarkMode(on) {
+      if (on) {
+        rootBody.classList.add('dark');
+        localStorage.setItem('darkmode', 'on');
+        darkModeBtn.innerHTML = '<i class="fa fa-sun"></i>';
+        darkModeBtn.setAttribute('aria-label','Przełącz na jasny motyw');
+      } else {
+        rootBody.classList.remove('dark');
+        localStorage.setItem('darkmode', 'off');
+        darkModeBtn.innerHTML = '<i class="fa fa-moon"></i>';
+        darkModeBtn.setAttribute('aria-label','Przełącz na ciemny motyw');
+      }
+    }
+    darkModeBtn.onclick = () => setDarkMode(!rootBody.classList.contains('dark'));
+    (function checkUserOrSystemPreference() {
+      const userPref = localStorage.getItem('darkmode');
+      if (userPref === 'on') {
+        setDarkMode(true);
+      } else if (userPref === 'off') {
+        setDarkMode(false);
+      } else {
+        // Brak zapisu w localStorage – wykryj motyw systemowy
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setDarkMode(systemDark);
+      }
+    })();
+    // Aktualizacja na zmianę systemowego motywu (jeśli user nie nadpisał ręcznie)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (localStorage.getItem('darkmode') === null) {
+        setDarkMode(e.matches);
+      }
+    });
+  </script>
+  <script>
+    // FADE-IN ON SCROLL
+    function fadeInOnScroll() {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 90) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+  </script>
 </body>
 </html>

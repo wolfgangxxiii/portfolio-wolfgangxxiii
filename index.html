@@ -8,163 +8,125 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #090e2e 0%, #2563eb 100%);
-      min-height: 100vh;
-      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(135deg, #eff6ff 0%, #bae6fd 100%);
     }
-    .glass {
-      background: rgba(34, 40, 67, 0.8);
-      backdrop-filter: blur(16px) saturate(160%);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-    }
-    .avatar-glow {
-      box-shadow: 0 0 0 6px rgba(94,234,212,0.15), 0 4px 24px 0 rgba(59,130,246,0.25);
-    }
-    .fade-in {
-      animation: fadeInUp 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translate3d(0, 32px, 0);
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #67e8f9 10%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    /* Mobile-friendly fixed bottom nav */
-    .bottom-nav {
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      z-index: 40;
-    }
-    @media (min-width: 640px) {
-      .main-card { margin-top: 40px; }
-      .bottom-nav { max-width: 400px; left: 50%; transform: translateX(-50%); }
+    .nav-active {
+      color: #0ea5e9;
+      font-weight: bold;
+      border-bottom: 2px solid #0ea5e9;
     }
   </style>
 </head>
-<body class="flex flex-col items-center min-h-screen px-2 pt-4 pb-24 relative">
+<body class="min-h-screen text-gray-800">
 
-  <!-- Main Card -->
-  <div class="w-full max-w-xs main-card fade-in">
-    <!-- Section: O mnie -->
-    <section id="section-home" class="glass rounded-3xl p-7 flex flex-col items-center shadow-2xl">
-      <div class="avatar-glow w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 via-cyan-300 to-emerald-400 flex items-center justify-center mb-4 shadow-lg">
-        <span class="text-4xl font-extrabold gradient-text">SB</span>
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-50">
+    <nav class="max-w-2xl mx-auto px-4 flex justify-between items-center h-14">
+      <span class="font-extrabold text-xl tracking-tight text-sky-500">SB</span>
+      <div class="flex gap-6 text-base font-medium">
+        <a href="#about" id="nav-about" class="nav-active transition-colors">O mnie</a>
+        <a href="#projects" id="nav-projects" class="transition-colors">Projekty</a>
+        <a href="#contact" id="nav-contact" class="transition-colors">Kontakt</a>
       </div>
-      <h1 class="gradient-text text-2xl font-extrabold mb-2 tracking-wide drop-shadow">Szymon Piotr Bławat</h1>
-      <p class="text-base text-gray-200 mb-1 text-center">Programista aplikacji mobilnych i baz danych</p>
-      <p class="text-xs text-teal-300 mb-4 text-center">Licencjat Informatyka,<br>WSB Merito Gdańsk</p>
-      <div class="w-full flex flex-col gap-1 mb-3">
-        <span class="text-sm text-gray-400">Email:</span>
-        <a href="mailto:szymon.bawat@gmail.com" class="text-sm text-blue-400 underline">szymon.bawat@gmail.com</a>
-      </div>
-      <div class="w-full flex flex-col gap-1 mb-2">
-        <span class="text-sm text-gray-400">Specjalizacja:</span>
-        <span class="text-sm text-gray-200">Aplikacje mobilne i bazy danych</span>
-      </div>
-      <div class="w-full flex flex-col gap-1">
-        <span class="text-sm text-gray-400">Uczelnia:</span>
-        <span class="text-sm text-gray-200">WSB Merito Gdańsk</span>
+    </nav>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 pb-10">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="pt-10 pb-10">
+      <div class="flex flex-col items-center gap-4 text-center">
+        <div class="w-24 h-24 rounded-full bg-sky-200 flex items-center justify-center text-3xl font-extrabold text-sky-500 mb-2 shadow">
+          SB
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">Szymon Piotr Bławat</h1>
+        <p class="text-base text-gray-600 mb-2">Programista aplikacji mobilnych i baz danych</p>
+        <p class="text-sm text-sky-700 mb-4">Licencjat Informatyka, WSB Merito Gdańsk</p>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs text-gray-400">Specjalizacja:</span>
+          <span class="text-sm text-gray-800">Aplikacje mobilne i bazy danych</span>
+        </div>
+        <a href="mailto:szymon.bawat@gmail.com"
+           class="mt-5 px-6 py-2 rounded-lg bg-sky-500 text-white font-semibold shadow hover:bg-sky-600 transition">Napisz do mnie</a>
       </div>
     </section>
 
-    <!-- Section: Projekty -->
-    <section id="section-projects" class="glass rounded-3xl p-6 mt-2 hidden flex-col items-center shadow-2xl">
-      <h2 class="text-xl font-bold gradient-text mb-4 text-center">Projekty</h2>
-      <!-- Projekt 1 -->
-      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
-        <h3 class="text-base font-semibold text-teal-300 mb-1">🎮 Kółko i Krzyżyk – Electron Projekt</h3>
-        <p class="text-xs text-gray-400 mb-1">Gra napisana w Electron.js, interfejs webowy.</p>
-        <div class="flex gap-2 mt-1">
-          <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
-          <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="pt-2 pb-10">
+      <h2 class="text-xl font-bold text-sky-600 mb-6 text-center">Moje projekty</h2>
+      <div class="grid gap-5">
+        <!-- Projekt 1 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-lg p-5 transition border">
+          <h3 class="text-lg font-semibold text-sky-600 mb-1">🎮 Kółko i Krzyżyk – Electron Projekt</h3>
+          <p class="text-sm text-gray-600 mb-2">Gra napisana w Electron.js, interfejs webowy.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-sky-500 underline hover:text-sky-700 text-sm">Kod źródłowy</a>
+            <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-teal-500 underline hover:text-teal-700 text-sm">Demo</a>
+          </div>
+        </div>
+        <!-- Projekt 2 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-lg p-5 transition border">
+          <h3 class="text-lg font-semibold text-sky-600 mb-1">📝 Quiz do Egzaminu Dyplomowego</h3>
+          <p class="text-sm text-gray-600 mb-2">Quiz przygotowujący do egzaminu z informatyki.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-sky-500 underline hover:text-sky-700 text-sm">Kod źródłowy</a>
+            <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-teal-500 underline hover:text-teal-700 text-sm">Demo</a>
+          </div>
+        </div>
+        <!-- Projekt 3 -->
+        <div class="bg-white rounded-2xl shadow hover:shadow-lg p-5 transition border">
+          <h3 class="text-lg font-semibold text-sky-600 mb-1">📅 TaskMaster – Planer dla firm</h3>
+          <p class="text-sm text-gray-600 mb-2">Koncepcja planera/kalendarza dla małych firm.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-sky-500 underline hover:text-sky-700 text-sm">Kod źródłowy</a>
+            <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-teal-500 underline hover:text-teal-700 text-sm">Demo</a>
+          </div>
+        </div>
+        <!-- Więcej -->
+        <div class="text-center mt-2 text-sm">
+          Więcej projektów na <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-sky-600 underline hover:text-sky-800">GitHubie</a>
         </div>
       </div>
-      <!-- Projekt 2 -->
-      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
-        <h3 class="text-base font-semibold text-teal-300 mb-1">📝 Quiz do Egzaminu Dyplomowego</h3>
-        <p class="text-xs text-gray-400 mb-1">Quiz przygotowujący do egzaminu z informatyki.</p>
-        <div class="flex gap-2 mt-1">
-          <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
-          <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
-        </div>
-      </div>
-      <!-- Projekt 3 -->
-      <div class="mb-5 bg-gray-800/70 rounded-2xl p-4 shadow-md">
-        <h3 class="text-base font-semibold text-teal-300 mb-1">📅 TaskMaster – Planer dla firm</h3>
-        <p class="text-xs text-gray-400 mb-1">Koncepcja planera/kalendarza dla małych firm.</p>
-        <div class="flex gap-2 mt-1">
-          <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-blue-300 hover:text-blue-400 text-xs underline">Kod źródłowy</a>
-          <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-teal-300 hover:text-teal-400 text-xs underline">Demo</a>
-        </div>
-      </div>
-      <!-- Inne projekty -->
-      <div class="text-xs text-gray-400">Więcej na <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-blue-400 underline hover:text-blue-500">GitHubie</a></div>
     </section>
 
-    <!-- Section: Kontakt -->
-    <section id="section-contact" class="glass rounded-3xl p-6 mt-2 hidden flex-col items-center shadow-2xl">
-      <h2 class="text-xl font-bold gradient-text mb-4 text-center">Kontakt</h2>
-      <p class="text-sm text-gray-300 mb-2 text-center">
-        Masz pytania lub propozycje współpracy?<br>Śmiało napisz!
-      </p>
-      <a href="mailto:szymon.bawat@gmail.com"
-         class="transition bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold py-2 px-6 rounded-xl mb-3 hover:scale-105 hover:shadow-xl focus:ring-2 focus:ring-blue-400 focus:outline-none duration-150 block text-center">
-        ✉️ szymon.bawat@gmail.com
-      </a>
-      <div class="flex justify-center gap-4 mt-2">
-        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub"
-           class="p-2 bg-gray-900/60 rounded-full hover:bg-gradient-to-r hover:from-blue-500 hover:to-teal-400 hover:text-white transition-all shadow-md">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="pt-2 pb-4">
+      <h2 class="text-xl font-bold text-sky-600 mb-5 text-center">Kontakt</h2>
+      <div class="flex flex-col items-center gap-3">
+        <a href="mailto:szymon.bawat@gmail.com"
+           class="px-6 py-2 rounded-lg bg-sky-500 text-white font-semibold shadow hover:bg-sky-600 transition">szymon.bawat@gmail.com</a>
+        <a href="https://github.com/wolfgangxxiii" target="_blank" class="flex items-center gap-2 text-sky-700 underline hover:text-sky-900 mt-2">
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
             <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.9.9 2.7 1 .4-.7.8-1.5.8-2.1-2.6-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C18 7.4 19 7.7 19 7.7c.6 1.7.2 3 .1 3.3.7.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.8.6 1.1 1.6 1.1 3.1v4.5c0 .3.2.7.8.6C20.7 21.3 24 17.1 24 12 24 5.7 18.3.5 12 .5z"/>
           </svg>
+          GitHub
         </a>
       </div>
     </section>
-    <p class="mt-6 text-xs text-gray-600 text-center">© 2025 Szymon Piotr Bławat</p>
-  </div>
 
-  <!-- Bottom Navigation -->
-  <nav class="bottom-nav w-full max-w-xs mx-auto bg-gray-800/80 backdrop-blur rounded-t-3xl px-8 py-3 flex justify-between items-center shadow-xl border-t border-blue-800">
-    <button onclick="showSection('home')" id="nav-home" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
-      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 21V9h6v12"/></svg>
-      <span>O mnie</span>
-    </button>
-    <button onclick="showSection('projects')" id="nav-projects" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
-      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6v6H9z"/></svg>
-      <span>Projekty</span>
-    </button>
-    <button onclick="showSection('contact')" id="nav-contact" class="flex flex-col items-center text-xs text-gray-400 focus:outline-none group transition">
-      <svg class="w-7 h-7 mb-0.5 group-[.active]:text-teal-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10.8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4.8c0 5.2 9 10.2 9 10.2s9-5 9-10.2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.27 6.96L12 13l8.73-6.04"/></svg>
-      <span>Kontakt</span>
-    </button>
-  </nav>
+    <footer class="pt-8 pb-2 text-center text-xs text-gray-400">
+      © 2025 Szymon Piotr Bławat
+    </footer>
+  </main>
 
   <script>
-    // Proste przełączanie sekcji
-    function showSection(section) {
-      document.getElementById('section-home').style.display = (section === 'home') ? 'flex' : 'none';
-      document.getElementById('section-projects').style.display = (section === 'projects') ? 'flex' : 'none';
-      document.getElementById('section-contact').style.display = (section === 'contact') ? 'flex' : 'none';
-      // Zmiana koloru ikon
-      document.getElementById('nav-home').classList.toggle('text-teal-300', section === 'home');
-      document.getElementById('nav-home').classList.toggle('text-gray-400', section !== 'home');
-      document.getElementById('nav-projects').classList.toggle('text-teal-300', section === 'projects');
-      document.getElementById('nav-projects').classList.toggle('text-gray-400', section !== 'projects');
-      document.getElementById('nav-contact').classList.toggle('text-teal-300', section === 'contact');
-      document.getElementById('nav-contact').classList.toggle('text-gray-400', section !== 'contact');
+    // Prosta nawigacja z podświetlaniem aktywnej sekcji
+    const navLinks = {
+      about: document.getElementById('nav-about'),
+      projects: document.getElementById('nav-projects'),
+      contact: document.getElementById('nav-contact')
+    };
+    function setActive(section) {
+      Object.entries(navLinks).forEach(([key, el]) => {
+        el.classList.toggle('nav-active', key === section);
+      });
     }
-    // Domyślnie O mnie
-    showSection('home');
+    window.addEventListener('hashchange', () => {
+      const section = location.hash.replace('#','') || 'about';
+      setActive(section);
+    });
+    // Set initial nav state
+    setActive(location.hash.replace('#','') || 'about');
   </script>
 </body>
 </html>

@@ -103,7 +103,9 @@
     }
     /* BUTTON */
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 11px 32px;
       font-size: 1rem;
       font-weight: 600;
@@ -156,8 +158,8 @@
       border-radius: 11px;
     }
     .skill svg {
-      width: 29px;
-      height: 29px;
+      width: 27px;
+      height: 27px;
       flex-shrink: 0;
       background: none;
     }
@@ -189,7 +191,7 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 9px;
     }
     .project-card .tech {
       font-size: 0.97rem;
@@ -292,7 +294,14 @@
     <h1>Szymon Piotr Bławat</h1>
     <p><strong>Programista aplikacji mobilnych i baz danych</strong></p>
     <p>Licencjat Informatyka, WSB Merito Gdańsk</p>
-    <a href="mailto:szymon.bawat@gmail.com" class="button">Napisz do mnie</a>
+    <a href="mailto:szymon.bawat@gmail.com" class="button">
+      <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
+        <rect width="256" height="256" fill="none"/>
+        <rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/>
+        <polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/>
+      </svg>
+      Napisz do mnie
+    </a>
   </div>
 
   <!-- UMIEJĘTNOŚCI -->
@@ -300,33 +309,33 @@
     <h2>Umiejętności</h2>
     <div class="skills-list">
       <span class="skill">
-        <!-- JavaScript SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#F7DF1E" xmlns="http://www.w3.org/2000/svg"><title>JavaScript</title><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <!-- JavaScript -->
+        <svg width="27" height="27" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="48" width="192" height="160" rx="16" stroke="#F7DF1E" stroke-width="16" fill="none"/><path d="M104 104h48v48h-48z" stroke="#F7DF1E" stroke-width="16"/></svg>
         JavaScript
       </span>
       <span class="skill">
-        <!-- React SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#61DAFB" xmlns="http://www.w3.org/2000/svg"><title>React</title><path d="M12 2.2c-5.4 0-9.8 2.5-9.8 5.6 0 1.1 1.1 2.2 3.2 3 1.5.6 3.5 1 5.6 1s4.1-.4 5.6-1c2.1-.8 3.2-1.9 3.2-3 0-3.1-4.4-5.6-9.8-5.6zm0 9.2c-4.2 0-7.7-1.6-7.7-3.6s3.5-3.6 7.7-3.6 7.7 1.6 7.7 3.6-3.5 3.6-7.7 3.6z"/><circle cx="12" cy="7.8" r="2.6"/></svg>
+        <!-- React -->
+        <svg width="27" height="27" fill="none" stroke="#61DAFB" stroke-width="2" viewBox="0 0 256 256"><ellipse cx="128" cy="128" rx="64" ry="112" stroke="#61DAFB" stroke-width="16"/><ellipse cx="128" cy="128" rx="112" ry="64" stroke="#61DAFB" stroke-width="16"/><circle cx="128" cy="128" r="48" fill="none" stroke="#61DAFB" stroke-width="16"/></svg>
         React
       </span>
       <span class="skill">
-        <!-- Node.js SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#339933" xmlns="http://www.w3.org/2000/svg"><title>Node.js</title><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <!-- Node.js -->
+        <svg width="27" height="27" fill="none" stroke="#339933" stroke-width="2" viewBox="0 0 256 256"><polygon points="128 24 232 64 232 192 128 232 24 192 24 64 128 24" stroke="#339933" stroke-width="16" fill="none"/><polyline points="104 104 152 128 104 152" stroke="#339933" stroke-width="16" fill="none"/></svg>
         Node.js
       </span>
       <span class="skill">
-        <!-- Electron SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#47848F" xmlns="http://www.w3.org/2000/svg"><title>Electron</title><path d="M22.2 15.9c-1.6 2.9-4.1 5.1-7.3 6-3.2.9-6.5.4-9.2-1.5-.3-.2-.6-.1-.8.2-.2.3-.1.7.2.9 3.1 2.1 6.8 2.7 10.4 1.7 3.6-1 6.6-3.5 8.4-6.8.2-.3.1-.7-.2-.8-.3-.2-.7-.1-.9.2zm-9.3 6.2C6.5 21.7 3.1 18.7 2 14.7c-1.1-4.1.1-8.6 3.1-11.8.3-.3.3-.7 0-.9-.3-.2-.7-.2-.9 0-3.3 3.5-4.7 8.4-3.4 13 .7 2.5 2.3 4.7 4.7 6.1.3.2.7.1.9-.2.2-.3.1-.7-.2-.9z"/></svg>
+        <!-- Electron -->
+        <svg width="27" height="27" fill="none" stroke="#47848F" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="#47848F" stroke-width="16" fill="none"/><circle cx="128" cy="80" r="16" fill="#47848F"/><circle cx="176" cy="152" r="16" fill="#47848F"/><circle cx="80" cy="152" r="16" fill="#47848F"/><path d="M128 96v56" stroke="#47848F" stroke-width="12"/><path d="M144 160h24" stroke="#47848F" stroke-width="12"/><path d="M88 160h24" stroke="#47848F" stroke-width="12"/></svg>
         Electron
       </span>
       <span class="skill">
-        <!-- MySQL SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#4479A1" xmlns="http://www.w3.org/2000/svg"><title>MySQL</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.015 19.22c-2.147 0-4.206-.56-5.846-1.67-.269-.175-.36-.524-.192-.796.164-.271.519-.362.792-.193C7.4 17.345 9.398 17.867 12 17.867c2.59 0 4.582-.52 5.92-1.293.267-.154.626-.065.784.203.158.269.066.627-.201.783-1.644 1.11-3.704 1.66-5.878 1.66zm8.201-5.815c-.27.172-.623.087-.786-.186-1.235-2.07-5.518-3.287-9.464-2.37-.302.07-.603-.113-.672-.412-.07-.298.112-.6.413-.672 4.284-.981 8.872.368 10.332 2.756.156.269.061.627-.177.884zm-13.413-3.03c-.301-.068-.484-.37-.415-.669.07-.299.375-.48.675-.41 4.011.931 8.292-.272 9.535-2.364.161-.27.517-.355.785-.187.27.171.355.522.187.786-1.527 2.484-6.361 3.825-10.767 2.844zm1.905-3.447c-.21-.234-.187-.603.048-.814.236-.211.607-.188.817.046 2.103 2.346 8.377 2.472 10.571.233.211-.236.582-.259.816-.048.235.21.258.579.048.815-2.601 2.829-9.53 2.663-12.3-.232z"/></svg>
+        <!-- MySQL -->
+        <svg width="27" height="27" fill="none" stroke="#4479A1" stroke-width="2" viewBox="0 0 256 256"><ellipse cx="128" cy="128" rx="96" ry="56" stroke="#4479A1" stroke-width="16"/><ellipse cx="128" cy="128" rx="56" ry="96" stroke="#4479A1" stroke-width="16"/><circle cx="128" cy="128" r="24" fill="#4479A1"/></svg>
         MySQL
       </span>
       <span class="skill">
-        <!-- Firebase SVG -->
-        <svg width="29" height="29" viewBox="0 0 24 24" fill="#FFCA28" xmlns="http://www.w3.org/2000/svg"><title>Firebase</title><path d="M3.89 15.672 2.014 18.856c-.228.39-.058.776.337.866l8.5 1.978c.254.059.39-.09.306-.32l-2.058-5.814zm.468-1.063 4.62-8.547a.49.49 0 0 1 .83 0l1.62 2.98-7.07 6.128zm10.987-6.206 1.755-3.157c.201-.362.583-.362.783 0l5.117 8.986zm-.822 1.443-3.193-5.866a.427.427 0 0 1 .134-.553c.22-.155.492-.075.622.179l8.763 16.967c.17.328-.016.433-.338.235l-6.013-4.064a.927.927 0 0 0-.984 0l-6.023 4.07c-.32.216-.502.095-.338-.235z"/></svg>
+        <!-- Firebase (Flame) -->
+        <svg width="27" height="27" fill="none" stroke="#FFCA28" stroke-width="2" viewBox="0 0 256 256"><path d="M128 232C48 200 48 104 128 24c80 80 80 176 0 208z" fill="#FFCA28" stroke="#FFCA28" stroke-width="16"/></svg>
         Firebase
       </span>
     </div>
@@ -337,7 +346,16 @@
     <h2>Projekty</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <h3>🎮 Kółko i Krzyżyk</h3>
+        <h3>
+          <!-- Game Controller Icon -->
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"/>
+            <rect x="40" y="88" width="176" height="80" rx="40" stroke="currentColor" stroke-width="16" fill="none"/>
+            <circle cx="92" cy="128" r="12" fill="currentColor"/>
+            <circle cx="164" cy="128" r="12" fill="currentColor"/>
+          </svg>
+          Kółko i Krzyżyk
+        </h3>
         <span class="tech">Electron.js</span>
         <div>Gra z interfejsem webowym.</div>
         <div class="links">
@@ -346,7 +364,15 @@
         </div>
       </div>
       <div class="project-card">
-        <h3>📝 Quiz do Egzaminu</h3>
+        <h3>
+          <!-- Book/Exam Icon -->
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
+            <rect x="32" y="48" width="192" height="160" rx="16" stroke="currentColor" stroke-width="16" fill="none"/>
+            <path d="M160 72v112" stroke="currentColor" stroke-width="16"/>
+            <path d="M96 72v112" stroke="currentColor" stroke-width="16"/>
+          </svg>
+          Quiz do Egzaminu
+        </h3>
         <span class="tech">React</span>
         <div>Quiz do egzaminu dyplomowego.</div>
         <div class="links">
@@ -355,7 +381,14 @@
         </div>
       </div>
       <div class="project-card">
-        <h3>📅 TaskMaster</h3>
+        <h3>
+          <!-- Calendar Icon -->
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
+            <rect x="40" y="40" width="176" height="176" rx="24" stroke="currentColor" stroke-width="16" fill="none"/>
+            <line x1="40" y1="80" x2="216" y2="80" stroke="currentColor" stroke-width="16"/>
+          </svg>
+          TaskMaster
+        </h3>
         <span class="tech">React</span>
         <div>Planer i kalendarz dla małych firm.</div>
         <div class="links">
@@ -364,7 +397,14 @@
         </div>
       </div>
       <div class="project-card">
-        <h3>Więcej projektów?</h3>
+        <h3>
+          <!-- GitHub Icon -->
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <title>GitHub</title>
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          Więcej projektów?
+        </h3>
         <span class="tech">Sprawdź na GitHub</span>
         <div><a href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a></div>
       </div>
@@ -375,10 +415,16 @@
   <section id="contact">
     <h2>Kontakt</h2>
     <div class="contact-center">
-      <a href="mailto:szymon.bawat@gmail.com" class="button">szymon.bawat@gmail.com</a>
+      <a href="mailto:szymon.bawat@gmail.com" class="button">
+        <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/>
+          <polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/>
+        </svg>
+        szymon.bawat@gmail.com
+      </a>
       <div class="contact-icons">
         <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub">
-          <!-- GitHub SVG from Simple Icons -->
           <svg width="25" height="25" fill="#23292f" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <title>GitHub</title>
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>

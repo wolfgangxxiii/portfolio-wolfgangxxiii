@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Szymon Bławat</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
@@ -323,6 +323,9 @@
       transition: color 0.18s, background 0.18s;
       text-decoration: none !important;
     }
+    .project-card .links a:visited {
+      color: #a259f7 !important;
+    }
     .contact-center {
       display: flex;
       flex-direction: column;
@@ -377,7 +380,8 @@
       background: var(--primary);
       color: #fff !important;
     }
-    .btn-demo {
+    /* POPRAWKA: mocny selektor pod Netlify i każdy hosting */
+    a.btn-demo {
       background: var(--primary-dark);
       color: #fff !important;
       border: none;
@@ -394,31 +398,22 @@
       align-items: center;
       gap: 9px;
     }
-    .btn-demo i {
-      vertical-align: middle;
-      margin-right: 2px;
-    }
-    .btn-demo:hover {
+    a.btn-demo:hover,
+    a.btn-demo:focus {
       background: var(--primary);
       color: #fff !important;
       transform: translateY(-2px) scale(1.04);
       box-shadow: 0 4px 20px 0 rgba(162,89,247,0.18);
+      text-decoration: none !important;
     }
-    .btn-demo:disabled,
-    .btn-demo.disabled {
+    a.btn-demo.disabled,
+    a.btn-demo[aria-disabled="true"] {
       opacity: 0.5;
       cursor: not-allowed;
       background: #d1b3fa !important;
       color: #fff !important;
       box-shadow: none !important;
       pointer-events: none;
-    }
-    body.dark .btn-demo:disabled,
-    body.dark .btn-demo.disabled {
-      opacity: 0.45;
-      background: #4d3575 !important;
-      color: #d6c9f5 !important;
-      border: 2px solid #a259f7;
     }
     .btn-github {
       background: #2e2050;
@@ -438,9 +433,6 @@
     .btn-github:hover {
       background: #533b81;
       color: var(--primary) !important;
-    }
-    .project-card .links a:visited {
-      color: #a259f7 !important;
     }
     .fade-in {
       opacity: 0;
@@ -513,7 +505,7 @@
       color: #c18fff !important;
     }
     body.dark .btn-primary,
-    body.dark .btn-demo {
+    body.dark a.btn-demo {
       background: var(--primary);
       color: #231943 !important;
       border: 2px solid #b39ddb;
@@ -521,7 +513,7 @@
       box-shadow: 0 2px 10px 0 rgba(162,89,247,0.19);
     }
     body.dark .btn-primary:hover,
-    body.dark .btn-demo:hover {
+    body.dark a.btn-demo:hover {
       background: var(--primary-dark);
       color: #fff !important;
     }
@@ -568,7 +560,7 @@
     body.dark .fade-in {
       box-shadow: none !important;
     }
-    /* KOLORY UMIEJĘTNOŚCI */
+    /* KOLORY UMIEJĘTNOŚCI, JĘZYKÓW, HOBBY (jak w poprzednim kodzie) */
     .icon-js { color: #ffd600; }
     .icon-react { color: #00bcd4; }
     .icon-node { color: #388e3c; }
@@ -590,12 +582,8 @@
     .icon-office { color: #1565c0; }
     .icon-car { color: #616161; }
     .icon-linux { color: #00c853; }
-    
-    /* KOLORY JĘZYKÓW */
     .icon-pl { color: #d32f2f; }
     .icon-en { color: #1976d2; }
-    
-    /* KOLORY ZAINTERESOWAŃ */
     .icon-terminal { color: #4527a0; }
     .icon-dumbbell { color: #c62828; }
     .icon-bike { color: #00bfae; }
@@ -605,8 +593,6 @@
     .icon-chess { color: #795548; }
     .icon-film { color: #212121; }
     .icon-music { color: #ad1457; }
-    
-    /* Tryb ciemny – jasne odcienie */
     body.dark .icon-js { color: #ffe082; }
     body.dark .icon-react { color: #4dd0e1; }
     body.dark .icon-node { color: #66bb6a; }
@@ -628,10 +614,8 @@
     body.dark .icon-office { color: #64b5f6; }
     body.dark .icon-car { color: #bdbdbd; }
     body.dark .icon-linux { color: #69f0ae; }
-    
     body.dark .icon-pl { color: #ef9a9a; }
     body.dark .icon-en { color: #90caf9; }
-    
     body.dark .icon-terminal { color: #b39ddb; }
     body.dark .icon-dumbbell { color: #ef5350; }
     body.dark .icon-bike { color: #80cbc4; }
@@ -641,7 +625,6 @@
     body.dark .icon-chess { color: #a1887f; }
     body.dark .icon-film { color: #bdbdbd; }
     body.dark .icon-music { color: #f06292; }
-
   </style>
 </head>
 <body>
@@ -795,7 +778,6 @@
   <section id="projects" class="fade-in">
     <h2>Projekty</h2>
     <div class="projects-grid">
-
       <!-- Kółko i Krzyżyk -->
       <div class="project-card fade-in">
         <h3>

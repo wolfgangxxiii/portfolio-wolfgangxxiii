@@ -1,136 +1,365 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Szymon Bławat – Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    // Tryb ciemny z systemu
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
+  <style>
+    :root {
+      --primary: #35BF5C;
+      --primary-dark: #209344;
+      --bg: #F5F8FA;
+      --bg-dark: #23262F;
+      --text: #23262F;
+      --text-light: #5B5B98;
+      --card: #fff;
+      --card-dark: #282C37;
     }
-  </script>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-dark);
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 16px 32px;
+      background: var(--card);
+    }
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 2px 16px 0 rgba(53,191,92,0.07);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin: 8px 0 6px 0;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--primary-dark);
+    }
+    .hero p {
+      margin: 5px 0;
+      color: var(--text-light);
+      font-size: 1.13rem;
+    }
+    .hero .button {
+      margin-top: 22px;
+    }
+
+    /* BUTTON */
+    .button {
+      display: inline-block;
+      padding: 11px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: transparent;
+      border: 2px solid var(--primary);
+      border-radius: 24px;
+      color: var(--primary-dark);
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 16px 0 rgba(53,191,92,0.11);
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 880px;
+      margin: 44px auto;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+      padding: 40px 20px 30px;
+    }
+    section h2 {
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.4px;
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 36px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 1rem;
+      color: var(--text-light);
+      background: #f2f2fa;
+      padding: 7px 15px 7px 11px;
+      border-radius: 11px;
+    }
+    .skill img {
+      width: 29px;
+      height: 29px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    .project-card {
+      border-radius: 15px;
+      background: #f7faf9;
+      box-shadow: 0 2px 8px 0 rgba(53,191,92,0.07);
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 4px solid var(--primary);
+      transition: transform 0.17s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px) scale(1.012);
+      box-shadow: 0 8px 26px 0 rgba(53,191,92,0.13);
+    }
+    .project-card h3 {
+      margin: 0;
+      font-size: 1.13rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-card .tech {
+      font-size: 0.97rem;
+      color: var(--text-light);
+    }
+    .project-card .links {
+      display: flex;
+      gap: 16px;
+      margin-top: 7px;
+    }
+    .project-card .links a {
+      color: var(--primary-dark);
+      font-weight: 500;
+      text-decoration: underline;
+      font-size: 0.99rem;
+      transition: color 0.16s;
+    }
+    .project-card .links a:hover {
+      color: var(--primary);
+    }
+
+    /* CONTACT */
+    .contact-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 15px;
+    }
+    .contact-icons {
+      display: flex;
+      gap: 14px;
+      margin-top: 5px;
+    }
+    .contact-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 41px; height: 41px;
+      border-radius: 50%;
+      background: #e9f7ee;
+      color: var(--primary-dark);
+      font-size: 1.6rem;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .contact-icons a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: #a0afbd;
+      padding: 26px 0 18px 0;
+      font-size: 0.98rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; gap: 10px; height: auto; padding: 14px 0; }
+      section { margin: 22px 8px; padding: 24px 7px 19px; }
+      .projects-grid { gap: 14px; }
+      .hero { padding: 38px 8px 18px; }
+    }
+    @media (max-width: 480px) {
+      .avatar { width: 72px; height: 72px; }
+      .hero h1 { font-size: 1.45rem; }
+      section { padding: 13px 2vw 13px; }
+    }
+  </style>
 </head>
-<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-  <!-- Górna nawigacja -->
-  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm">
-    <div class="max-w-2xl mx-auto flex items-center justify-between px-4 py-3">
-      <div class="flex items-center gap-3">
-        <img src="avatar.jpg" alt="Avatar" class="w-9 h-9 rounded-full border-2 border-blue-200 dark:border-blue-700" />
-        <span class="font-bold text-lg tracking-tight">Szymon Bławat</span>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="nav">
+      <span class="logo">Szymon Bławat</span>
+      <nav>
+        <ul>
+          <li><a href="#about" class="active">O mnie</a></li>
+          <li><a href="#skills">Umiejętności</a></li>
+          <li><a href="#projects">Projekty</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero" id="about">
+    <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="avatar" />
+    <h1>Szymon Piotr Bławat</h1>
+    <p><strong>Programista aplikacji mobilnych i baz danych</strong></p>
+    <p>Licencjat Informatyka, WSB Merito Gdańsk</p>
+    <a href="mailto:szymon.bawat@gmail.com" class="button">Napisz do mnie</a>
+  </div>
+
+  <!-- UMIEJĘTNOŚCI -->
+  <section id="skills">
+    <h2>Umiejętności</h2>
+    <div class="skills-list">
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React</span>
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="">Node.js</span>
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="">Electron</span>
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">MySQL</span>
+      <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="">Firebase</span>
+    </div>
+  </section>
+
+  <!-- PROJEKTY -->
+  <section id="projects">
+    <h2>Projekty</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>🎮 Kółko i Krzyżyk</h3>
+        <span class="tech">Electron.js</span>
+        <div>Gra z interfejsem webowym.</div>
+        <div class="links">
+          <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
+          <a href="https://electron-projekt.netlify.app/" target="_blank">Demo</a>
+        </div>
       </div>
-      <div class="flex gap-4 text-base font-medium">
-        <a href="#about" class="hover:text-blue-600 transition">O mnie</a>
-        <a href="#skills" class="hover:text-blue-600 transition">Umiejętności</a>
-        <a href="#projects" class="hover:text-blue-600 transition">Projekty</a>
-        <a href="#contact" class="hover:text-blue-600 transition">Kontakt</a>
+      <div class="project-card">
+        <h3>📝 Quiz do Egzaminu</h3>
+        <span class="tech">React</span>
+        <div>Quiz do egzaminu dyplomowego.</div>
+        <div class="links">
+          <a href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
+          <a href="https://quiz-egazmin.netlify.app/" target="_blank">Demo</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>📅 TaskMaster</h3>
+        <span class="tech">React</span>
+        <div>Planer i kalendarz dla małych firm.</div>
+        <div class="links">
+          <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
+          <a href="https://taskmaster-alfa.netlify.app/" target="_blank">Demo</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Więcej projektów?</h3>
+        <span class="tech">Sprawdź na GitHub</span>
+        <div><a href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a></div>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <main class="max-w-2xl mx-auto px-4 py-8 space-y-14">
-    <!-- Hero / O mnie -->
-    <section id="about" class="flex flex-col items-center text-center space-y-4">
-      <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 dark:border-blue-700 shadow-lg mb-2" />
-      <h1 class="text-3xl font-extrabold">Szymon Piotr Bławat</h1>
-      <p class="text-blue-700 dark:text-blue-300 font-semibold">Programista aplikacji mobilnych i baz danych</p>
-      <p class="text-slate-500 dark:text-slate-400">Licencjat Informatyka, WSB Merito Gdańsk</p>
-      <a href="mailto:szymon.bawat@gmail.com" class="inline-block px-5 py-2 rounded-lg bg-blue-600 text-white font-medium shadow hover:bg-blue-700 transition">Napisz do mnie</a>
-    </section>
-
-    <!-- Umiejętności -->
-    <section id="skills" class="bg-gray-50 dark:bg-slate-800 rounded-2xl shadow p-6">
-      <h2 class="text-xl font-bold mb-3 text-blue-700 dark:text-blue-300 text-center">Umiejętności</h2>
-      <div class="flex flex-wrap justify-center gap-5 mt-2">
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" class="w-9 h-9" />
-          <span class="text-xs mt-1">JavaScript</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-9 h-9" />
-          <span class="text-xs mt-1">React</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-9 h-9" />
-          <span class="text-xs mt-1">Node.js</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="Electron" class="w-9 h-9" />
-          <span class="text-xs mt-1">Electron</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-9 h-9" />
-          <span class="text-xs mt-1">MySQL</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-9 h-9" />
-          <span class="text-xs mt-1">Firebase</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projekty -->
-    <section id="projects">
-      <h2 class="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300 text-center">Projekty</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-5 flex flex-col gap-2 hover:scale-105 transition">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-lg">🎮</span>
-            <span class="font-semibold text-base text-blue-700 dark:text-blue-300">Kółko i Krzyżyk</span>
-          </div>
-          <p class="text-xs text-slate-400">Electron.js</p>
-          <p class="text-sm text-slate-700 dark:text-slate-200 mb-2">Gra z interfejsem webowym.</p>
-          <div class="flex gap-4">
-            <a href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
-            <a href="https://electron-projekt.netlify.app/" target="_blank" class="text-blue-700 dark:text-blue-200 hover:underline text-sm">Demo</a>
-          </div>
-        </div>
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-5 flex flex-col gap-2 hover:scale-105 transition">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-lg">📝</span>
-            <span class="font-semibold text-base text-blue-700 dark:text-blue-300">Quiz do Egzaminu</span>
-          </div>
-          <p class="text-xs text-slate-400">React</p>
-          <p class="text-sm text-slate-700 dark:text-slate-200 mb-2">Quiz do egzaminu dyplomowego.</p>
-          <div class="flex gap-4">
-            <a href="https://github.com/wolfgangxxiii/quiz" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
-            <a href="https://quiz-egazmin.netlify.app/" target="_blank" class="text-blue-700 dark:text-blue-200 hover:underline text-sm">Demo</a>
-          </div>
-        </div>
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-5 flex flex-col gap-2 hover:scale-105 transition">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-lg">📅</span>
-            <span class="font-semibold text-base text-blue-700 dark:text-blue-300">TaskMaster</span>
-          </div>
-          <p class="text-xs text-slate-400">React</p>
-          <p class="text-sm text-slate-700 dark:text-slate-200 mb-2">Planer i kalendarz dla małych firm.</p>
-          <div class="flex gap-4">
-            <a href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank" class="text-blue-500 hover:underline text-sm">Kod</a>
-            <a href="https://taskmaster-alfa.netlify.app/" target="_blank" class="text-blue-700 dark:text-blue-200 hover:underline text-sm">Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center text-xs mt-5 text-slate-500 dark:text-slate-400">
-        Więcej projektów na <a href="https://github.com/wolfgangxxiii" target="_blank" class="text-blue-600 dark:text-blue-300 underline">GitHub</a>
-      </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="contact" class="bg-gray-50 dark:bg-slate-800 rounded-2xl shadow p-6 mt-10 text-center">
-      <h2 class="text-xl font-bold mb-3 text-blue-700 dark:text-blue-300">Kontakt</h2>
-      <a href="mailto:szymon.bawat@gmail.com"
-         class="inline-block px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition mb-3">szymon.bawat@gmail.com</a>
-      <div class="flex justify-center mt-4 gap-5">
-        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub" class="text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-white transition">
-          <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+  <!-- KONTAKT -->
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <div class="contact-center">
+      <a href="mailto:szymon.bawat@gmail.com" class="button">szymon.bawat@gmail.com</a>
+      <div class="contact-icons">
+        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="25" height="25">
             <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.9.9 2.7 1 .4-.7.8-1.5.8-2.1-2.6-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C18 7.4 19 7.7 19 7.7c.6 1.7.2 3 .1 3.3.7.8 1.2 1.8 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.8.6 1.1 1.6 1.1 3.1v4.5c0 .3.2.7.8.6C20.7 21.3 24 17.1 24 12 24 5.7 18.3.5 12 .5z"/>
           </svg>
         </a>
       </div>
-    </section>
-  </main>
-  <footer class="py-7 text-center text-xs text-slate-400 dark:text-slate-600 mt-8">
+    </div>
+  </section>
+
+  <footer>
     © 2025 Szymon Piotr Bławat
   </footer>
 </body>

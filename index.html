@@ -68,7 +68,6 @@
     nav a.active {
       color: var(--primary-dark);
     }
-    /* HERO */
     .hero {
       display: flex;
       flex-direction: column;
@@ -116,7 +115,6 @@
       margin-right: 5px;
       color: var(--primary-dark);
     }
-    /* BUTTON */
     .button {
       display: inline-flex;
       align-items: center;
@@ -137,7 +135,6 @@
       color: #fff;
       box-shadow: 0 2px 16px 0 rgba(53,191,92,0.11);
     }
-    /* SECTIONS */
     section {
       max-width: 880px;
       margin: 44px auto;
@@ -154,7 +151,6 @@
       text-align: center;
       letter-spacing: 0.4px;
     }
-    /* SKILLS */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -178,7 +174,46 @@
       flex-shrink: 0;
       background: none;
     }
-    /* TIMELINE */
+    .langs {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .lang-item svg {
+      width: 20px; height: 20px; color: var(--primary-dark);
+    }
+    .edu-timeline {
+      margin: 30px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .edu-timeline li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .edu-timeline .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .edu-timeline .desc {
+      font-size: 1.01rem;
+      color: var(--text-light);
+    }
     .timeline {
       margin: 30px 0 0 0;
       padding-left: 0;
@@ -202,168 +237,32 @@
       font-size: 1.01rem;
       color: var(--text-light);
     }
-    /* LANGUAGES */
-    .langs {
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .lang-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 1rem;
-      color: var(--text-light);
-    }
-    .lang-item svg {
-      width: 20px; height: 20px; color: var(--primary-dark);
-    }
-    /* CERTS */
-    .certs-list {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-      margin: 20px 0 0 0;
-    }
-    .cert-item {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      color: var(--text-light);
-      font-size: 1.01rem;
-    }
-    .cert-item svg { width: 20px; height: 20px; color: var(--primary-dark); }
-    /* ZAINTERESOWANIA */
-    .hobbies-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-      margin-top: 15px;
-      font-size: 1.05rem;
-      color: var(--primary-dark);
-    }
-    .hobby-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: #e6fbe7;
-      border-radius: 10px;
-      padding: 7px 16px;
-    }
-    .hobby-item svg { width: 22px; height: 22px; }
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-    .project-card {
-      border-radius: 15px;
-      background: #f7faf9;
-      box-shadow: 0 2px 8px 0 rgba(53,191,92,0.07);
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      border-left: 4px solid var(--primary);
-      transition: transform 0.17s;
-    }
-    .project-card:hover {
-      transform: translateY(-4px) scale(1.012);
-      box-shadow: 0 8px 26px 0 rgba(53,191,92,0.13);
-    }
-    .project-card h3 {
-      margin: 0;
-      font-size: 1.13rem;
-      color: var(--primary-dark);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-    .project-card .tech {
-      font-size: 0.97rem;
-      color: var(--text-light);
-    }
-    .project-card .links {
-      display: flex;
-      gap: 16px;
-      margin-top: 7px;
-    }
-    .project-card .links a {
-      color: var(--primary-dark);
-      font-weight: 500;
-      text-decoration: underline;
-      font-size: 0.99rem;
-      transition: color 0.16s;
-    }
-    .project-card .links a:hover {
-      color: var(--primary);
-    }
-    /* CONTACT */
-    .contact-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      margin-top: 15px;
-    }
-    .contact-icons {
-      display: flex;
-      gap: 14px;
-      margin-top: 5px;
-    }
-    .contact-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 41px; height: 41px;
-      border-radius: 50%;
-      background: #e9f7ee;
-      color: var(--primary-dark);
-      font-size: 1.6rem;
-      transition: background 0.2s;
-      text-decoration: none;
-    }
-    .contact-icons a:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-    .contact-icons svg {
-      width: 25px;
-      height: 25px;
-      fill: var(--primary-dark);
-      transition: fill 0.2s;
-    }
-    .contact-icons a:hover svg {
-      fill: #fff;
-    }
-    /* FOOTER */
-    footer {
-      text-align: center;
-      color: #a0afbd;
-      padding: 26px 0 18px 0;
-      font-size: 0.98rem;
-      margin-top: 40px;
-    }
-    @media (max-width: 700px) {
-      .nav { flex-direction: column; gap: 10px; height: auto; padding: 14px 0; }
-      section { margin: 22px 8px; padding: 24px 7px 19px; }
-      .projects-grid { gap: 14px; }
-      .hero { padding: 38px 8px 18px; }
-    }
-    @media (max-width: 480px) {
-      .avatar { width: 72px; height: 72px; }
-      .hero h1 { font-size: 1.45rem; }
-      section { padding: 13px 2vw 13px; }
-    }
+    .certs-list { display: flex; flex-direction: column; gap: 13px; margin: 20px 0 0 0;}
+    .cert-item {display: flex; align-items: center; gap: 11px; color: var(--text-light); font-size: 1.01rem;}
+    .cert-item svg { width: 20px; height: 20px; color: var(--primary-dark);}
+    .hobbies-list { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-top: 15px; font-size: 1.05rem; color: var(--primary-dark);}
+    .hobby-item { display: flex; align-items: center; gap: 7px; background: #e6fbe7; border-radius: 10px; padding: 7px 16px;}
+    .hobby-item svg { width: 22px; height: 22px;}
+    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 22px;}
+    .project-card { border-radius: 15px; background: #f7faf9; box-shadow: 0 2px 8px 0 rgba(53,191,92,0.07); padding: 20px 16px; display: flex; flex-direction: column; gap: 8px; border-left: 4px solid var(--primary); transition: transform 0.17s;}
+    .project-card:hover { transform: translateY(-4px) scale(1.012); box-shadow: 0 8px 26px 0 rgba(53,191,92,0.13);}
+    .project-card h3 { margin: 0; font-size: 1.13rem; color: var(--primary-dark); font-weight: 600; display: flex; align-items: center; gap: 9px;}
+    .project-card .tech { font-size: 0.97rem; color: var(--text-light);}
+    .project-card .links { display: flex; gap: 16px; margin-top: 7px;}
+    .project-card .links a { color: var(--primary-dark); font-weight: 500; text-decoration: underline; font-size: 0.99rem; transition: color 0.16s;}
+    .project-card .links a:hover { color: var(--primary);}
+    .contact-center { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 15px;}
+    .contact-icons { display: flex; gap: 14px; margin-top: 5px;}
+    .contact-icons a { display: inline-flex; align-items: center; justify-content: center; width: 41px; height: 41px; border-radius: 50%; background: #e9f7ee; color: var(--primary-dark); font-size: 1.6rem; transition: background 0.2s; text-decoration: none;}
+    .contact-icons a:hover { background: var(--primary); color: #fff;}
+    .contact-icons svg { width: 25px; height: 25px; fill: var(--primary-dark); transition: fill 0.2s;}
+    .contact-icons a:hover svg { fill: #fff;}
+    footer { text-align: center; color: #a0afbd; padding: 26px 0 18px 0; font-size: 0.98rem; margin-top: 40px;}
+    @media (max-width: 700px) {.nav { flex-direction: column; gap: 10px; height: auto; padding: 14px 0;} section { margin: 22px 8px; padding: 24px 7px 19px;} .projects-grid { gap: 14px;} .hero { padding: 38px 8px 18px;}}
+    @media (max-width: 480px) {.avatar { width: 72px; height: 72px;} .hero h1 { font-size: 1.45rem;} section { padding: 13px 2vw 13px;}}
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
   <header>
     <div class="nav">
       <span class="logo">Portfolio</span>
@@ -371,6 +270,7 @@
         <ul>
           <li><a href="#about" class="active">O mnie</a></li>
           <li><a href="#skills">Umiejętności</a></li>
+          <li><a href="#edu">Wykształcenie</a></li>
           <li><a href="#exp">Doświadczenie</a></li>
           <li><a href="#projects">Projekty</a></li>
           <li><a href="#contact">Kontakt</a></li>
@@ -379,7 +279,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <div class="hero" id="about">
     <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="avatar" />
     <h1>Szymon Piotr Bławat</h1>
@@ -392,14 +291,9 @@
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/></svg>
         szymon.bawat@gmail.com
       </span>
-      <span>
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M40 56h176a8 8 0 0 1 8 8v128a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8V64a8 8 0 0 1 8-8zm0 0l88 88 88-88" stroke="currentColor" stroke-width="16" fill="none"/></svg>
-        720 775 534
-      </span>
     </div>
   </div>
 
-  <!-- UMIEJĘTNOŚCI -->
   <section id="skills">
     <h2>Umiejętności</h2>
     <div class="skills-list">
@@ -462,25 +356,44 @@
     </div>
     <div class="langs">
       <span class="lang-item">
-        <svg fill="currentColor" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><path d="M84 156l88-56" stroke="currentColor" stroke-width="16"/><path d="M176 156l-88-56" stroke="currentColor" stroke-width="16"/></svg>
+        <svg width="20" height="20" fill="#DC143C" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" fill="#fff"/><path d="M32 128a96 96 0 0 0 192 0" fill="#DC143C"/></svg>
         Polski (ojczysty)
       </span>
       <span class="lang-item">
-        <svg fill="currentColor" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/></svg>
+        <svg width="20" height="20" fill="none" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#00247D"/><path d="M0 0l32 32m0-32L0 32" stroke="#fff" stroke-width="4"/><path d="M0 0l32 32m0-32L0 32" stroke="#CF142B" stroke-width="2"/><rect x="12" width="8" height="32" fill="#fff"/><rect y="12" width="32" height="8" fill="#fff"/><rect x="13" width="6" height="32" fill="#CF142B"/><rect y="13" width="32" height="6" fill="#CF142B"/></svg>
         Angielski (średni)
       </span>
     </div>
   </section>
 
-  <!-- DOŚWIADCZENIE I EDUKACJA -->
+  <section id="edu">
+    <h2>Wykształcenie</h2>
+    <ul class="edu-timeline">
+      <li>
+        <span class="dot"></span>
+        <div>
+          <strong>10.2022 – obecnie:</strong> WSB Merito Gdańsk<br/>
+          <span class="desc">Licencjat Informatyka, spec. Aplikacje mobilne i bazy danych</span>
+        </div>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div>
+          <strong>09.2015 – 04.2019:</strong> ZSLiT Tuchola<br/>
+          <span class="desc">Technik Informatyk</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
   <section id="exp">
-    <h2>Doświadczenie zawodowe i edukacja</h2>
+    <h2>Doświadczenie zawodowe</h2>
     <ul class="timeline">
       <li>
         <span class="dot"></span>
         <div>
-          <strong>2021 – obecnie:</strong> Operator Wprowadzania Danych, Regionalne Centrum Informatyki Gdynia/Gdańsk <br/>
-          <span class="desc">Stanowisko: Żołnierz Zawodowy (Szeregowy)</span>
+          <strong>2021 – obecnie:</strong> Praca w sektorze IT / dane poufne*<br/>
+          <span class="desc">Stanowisko: Operator Wprowadzania Danych (szczegóły na rozmowie)</span>
         </div>
       </li>
       <li>
@@ -525,24 +438,10 @@
           <span class="desc">Obsługa maszyn, praktyki szkolne.</span>
         </div>
       </li>
-      <li>
-        <span class="dot"></span>
-        <div>
-          <strong>10.2022 – obecnie:</strong> WSB Merito Gdańsk<br/>
-          <span class="desc">Licencjat Informatyka, spec. Aplikacje mobilne i bazy danych</span>
-        </div>
-      </li>
-      <li>
-        <span class="dot"></span>
-        <div>
-          <strong>09.2015 – 04.2019:</strong> ZSLiT Tuchola<br/>
-          <span class="desc">Technik Informatyk</span>
-        </div>
-      </li>
     </ul>
+    <div style="color:#888;font-size:0.97rem;margin:12px 0 0 34px;">*Z powodów formalnych i bezpieczeństwa szczegóły obecnej pracy przekazuję wyłącznie podczas rozmowy rekrutacyjnej.</div>
   </section>
 
-  <!-- CERTYFIKATY -->
   <section>
     <h2>Certyfikaty i szkolenia</h2>
     <div class="certs-list">
@@ -561,7 +460,6 @@
     </div>
   </section>
 
-  <!-- ZAINTERESOWANIA -->
   <section>
     <h2>Zainteresowania</h2>
     <div class="hobbies-list">
@@ -580,7 +478,6 @@
     </div>
   </section>
 
-  <!-- PROJEKTY -->
   <section id="projects">
     <h2>Projekty</h2>
     <div class="projects-grid">
@@ -646,7 +543,6 @@
     </div>
   </section>
 
-  <!-- KONTAKT -->
   <section id="contact">
     <h2>Kontakt</h2>
     <div class="contact-center">

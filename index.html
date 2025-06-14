@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Szymon Bławat</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <span class="logo">Portfolio</span>
+      <!-- HAMBURGER MENU BUTTON -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Pokaż menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- DARK MODE TOGGLE BUTTON -->
+      <button class="toggle-darkmode" id="toggle-darkmode" aria-label="Przełącz tryb ciemny">
+        <i class="fa fa-moon"></i>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about" class="active">O mnie</a></li>
+          <li><a href="#skills">Umiejętności</a></li>
+          <li><a href="#edu">Wykształcenie</a></li>
+          <li><a href="#projects">Projekty</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="hero fade-in" id="about">
+    <img src="avatar.jpg" alt="Zdjęcie profilowe Szymona Piotra Bławata" class="avatar" />
+    <h1>Szymon Piotr Bławat</h1>
+    <div class="hero-desc">
+      <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
+      <p>Miejscowość: Śliwice | Wiek: <span id="age">25</span> lat</p>
+    </div>
+    <div class="hero-contact">
+      <span>
+        <i class="fa fa-envelope"></i>
+        szymon.bawat@gmail.com
+      </span>
+    </div>
+  </div>
+  <section id="exp" class="fade-in">
+    <h2>Droga kariery i rozwój</h2>
+    <p>
+      Obecnie pracuję w sektorze IT na stanowisku Operatora Wprowadzania Danych (szczegóły chętnie omówię podczas rozmowy). 
+      Wcześniej zdobyłem doświadczenie w różnych rolach technicznych i produkcyjnych, co pozwoliło mi rozwinąć umiejętności organizacji pracy, obsługi sprzętu i pracy w zespole.
+    </p>
+    <p>
+      Z pasją rozwijam swoje kompetencje w programowaniu i technologii – od projektowania aplikacji mobilnych, przez bazy danych, aż po automatyzację procesów. 
+      Chętnie podejmuję się nowych wyzwań, a swoją wiedzę stale pogłębiam poprzez kursy, certyfikaty i projekty własne.
+    </p>
+    <p>
+      Planuję również kontynuować naukę na studiach magisterskich w dziedzinie informatyki – 
+      zarówno z myślą o rozwoju w nowym miejscu pracy, jak i samodzielnie, jeśli nie znajdę odpowiedniego pracodawcy. 
+      Jestem gotów inwestować w siebie, aby w pełni wykorzystać swój potencjał i przyczynić się do sukcesu firmy, z którą zwiążę swoją karierę.
+    </p>
+  </section>
+  <section id="skills" class="fade-in">
+    <h2>Umiejętności</h2>
+    <div class="skills-list">
+      <span class="skill"><i class="fab fa-js icon-js"></i> JavaScript</span>
+      <span class="skill"><i class="fab fa-react icon-react"></i> React</span>
+      <span class="skill"><i class="fab fa-node-js icon-node"></i> Node.js</span>
+      <span class="skill"><i class="fas fa-desktop icon-electron"></i> Electron</span>
+      <span class="skill"><i class="fas fa-database icon-mysql"></i> MySQL</span>
+      <span class="skill"><i class="fas fa-fire icon-firebase"></i> Firebase</span>
+      <span class="skill"><i class="fab fa-php icon-php"></i> PHP</span>
+      <span class="skill"><i class="fa fa-code icon-cpp"></i> C++</span>
+      <span class="skill"><i class="fab fa-python icon-python"></i> Python</span>
+      <span class="skill"><i class="fab fa-microsoft icon-csharp"></i> C#</span>
+      <span class="skill"><i class="fas fa-database icon-sql"></i> SQL</span>
+      <span class="skill"><i class="fab fa-html5 icon-html"></i> HTML</span>
+      <span class="skill"><i class="fab fa-css3-alt icon-css"></i> CSS</span>
+      <span class="skill"><i class="fas fa-code icon-django"></i> Django</span>
+      <span class="skill"><i class="fas fa-laptop-code icon-web"></i> Web Development</span>
+      <span class="skill"><i class="fas fa-mobile-alt icon-responsive"></i> Responsive Design</span>
+      <span class="skill"><i class="fab fa-git-alt icon-git"></i> Git</span>
+      <span class="skill"><i class="fas fa-plug icon-rest"></i> REST API</span>
+      <span class="skill"><i class="fab fa-microsoft icon-office"></i> Microsoft Office</span>
+      <span class="skill"><i class="fas fa-car icon-car"></i> Prawo jazdy kat. B</span>
+      <span class="skill"><i class="fab fa-linux icon-linux"></i> Linux (administracja)</span>
+    </div>
+    <h2>Języki</h2>
+    <div class="skills-list">
+      <span class="skill"><i class="fa fa-flag icon-pl"></i> Polski (ojczysty)</span>
+      <span class="skill"><i class="fa fa-flag icon-en"></i> Angielski (średni)</span>
+    </div>
+  </section>
+  <section id="edu" class="fade-in">
+    <h2>Wykształcenie</h2>
+    <ul class="edu-timeline">
+      <li>
+        <span class="dot"></span>
+        <div>
+          <strong>10.2022 – obecnie:</strong> WSB Merito Gdańsk<br/>
+          <span class="desc">Licencjat Informatyka, spec. Aplikacje mobilne i bazy danych</span>
+        </div>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div>
+          <strong>09.2015 – 04.2019:</strong> ZSLiT Tuchola<br/>
+          <span class="desc">Technik Informatyk</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="fade-in">
+    <h2>Certyfikaty i szkolenia</h2>
+    <div class="certs-list">
+      <span class="cert-item">
+        <i class="fas fa-certificate"></i>
+        CCNAv7: Introduction to Networks, Cisco (2022)
+      </span>
+      <span class="cert-item">
+        <i class="fas fa-certificate"></i>
+        ECDL BASE Certificate (2018)
+      </span>
+      <span class="cert-item">
+        <i class="fas fa-certificate"></i>
+        Kwalifikacje E.12, E.13, E.14 (ZSLiT Tuchola)
+      </span>
+      <span class="cert-item" style="margin-top: 13px; font-weight:600;">
+        Certyfikaty specjalisty – Strefa Kursów:
+      </span>
+      <span class="cert-item">
+        <i class="fas fa-certificate"></i>
+        PHP Developer <span style="color:#888;font-size:0.97em;">(26.08.2021)</span>
+      </span>
+      <span class="cert-item">
+        <i class="fas fa-certificate"></i>
+        Administrator Linux <span style="color:#888;font-size:0.97em;">(06.05.2025)</span>
+      </span>
+    </div>
+  </section>
+  <section class="fade-in">
+    <h2>Zainteresowania</h2>
+    <div class="hobbies-list">
+      <span class="hobby-item"><i class="fas fa-terminal icon-terminal"></i> Pisanie skryptów</span>
+      <span class="hobby-item"><i class="fas fa-dumbbell icon-dumbbell"></i> Trening siłowy i wytrzymałościowy</span>
+      <span class="hobby-item"><i class="fas fa-bicycle icon-bike"></i> Jazda rowerem</span>
+      <span class="hobby-item"><i class="fas fa-mountain icon-mountain"></i> Wędrówki górskie</span>
+      <span class="hobby-item"><i class="fas fa-child icon-yoga"></i> Joga</span>
+      <span class="hobby-item"><i class="fas fa-gamepad icon-gamepad"></i> Gry komputerowe (single player)</span>
+      <span class="hobby-item"><i class="fas fa-chess icon-chess"></i> Planszówki</span>
+      <span class="hobby-item"><i class="fas fa-film icon-film"></i> Kino</span>
+      <span class="hobby-item"><i class="fas fa-music icon-music"></i> Słuchanie muzyki</span>
+    </div>
+  </section>
+  <section id="projects" class="fade-in">
+    <h2>Projekty</h2>
+    <div class="projects-grid">
+      <!-- Kółko i Krzyżyk -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-times-circle"></i>
+          Kółko i Krzyżyk
+        </h3>
+        <span class="tech">Electron, JavaScript</span>
+        <div>
+          Prosta, intuicyjna gra dla dwóch osób, działająca jako aplikacja desktopowa dzięki Electron. Pozwala na szybkie rozgrywki i analizę wyników w jednej sesji.
+          <ul>
+            <li>Nowoczesny interfejs desktopowy</li>
+            <li>Błyskawiczne rozpoczęcie nowej gry</li>
+            <li>Wyraźna obsługa zwycięstw i remisów</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
+          <a class="btn-primary btn-demo-green" href="https://electron-projekt.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+      <!-- Quiz do Egzaminu -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-question-circle"></i>
+          Quiz do Egzaminu
+        </h3>
+        <span class="tech">React</span>
+        <div>
+          Interaktywna aplikacja webowa, która umożliwia naukę do egzaminu dyplomowego z informatyki. Szybka informacja zwrotna oraz czytelne podsumowanie wyniku.
+          <ul>
+            <li>Wybór zestawu pytań tematycznych</li>
+            <li>Natychmiastowa ocena każdej odpowiedzi</li>
+            <li>Wyświetlanie wyniku końcowego oraz analizy błędów</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
+          <a class="btn-primary btn-demo-green" href="https://quiz-egazmin.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+      <!-- TaskMaster -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fas fa-tasks"></i>
+          TaskMaster
+        </h3>
+        <span class="tech">React</span>
+        <div>
+          Planer i kalendarz zadań dedykowany małym firmom i zespołom, z naciskiem na użyteczność i przejrzystość.
+          <ul>
+            <li>Intuicyjne zarządzanie zadaniami (dodawanie, edycja, usuwanie)</li>
+            <li>Widok kalendarza i lista priorytetów</li>
+            <li>Rozwijana jako realna propozycja narzędzia dla małego biznesu</li>
+          </ul>
+        </div>
+        <div class="links">
+          <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
+          <a class="btn-primary btn-demo-green" href="https://taskmaster-alfa.netlify.app/" target="_blank">
+            <i class="fas fa-play"></i>
+            Demo
+          </a>
+        </div>
+      </div>
+      <!-- Więcej projektów -->
+      <div class="project-card fade-in">
+        <h3>
+          <i class="fab fa-github"></i>
+          Więcej projektów?
+        </h3>
+        <span class="tech">Sprawdź na GitHub</span>
+        <div>
+          <a class="btn-github" href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="fade-in">
+    <h2>Kontakt</h2>
+    <div class="contact-center">
+      <a href="mailto:szymon.bawat@gmail.com" class="button">
+        <i class="fa fa-envelope"></i>
+        szymon.bawat@gmail.com
+      </a>
+      <div class="contact-icons">
+        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/szymon-piotr-b%C5%82awat-b5b504193/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/wolfgangxxiii/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/WolfGangXXIII99/?locale=pl_PL" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.snapchat.com/add/wolfgangxxiii" target="_blank" aria-label="Snapchat">
+          <i class="fab fa-snapchat-ghost"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    © 2025 Szymon Piotr Bławat
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -436,19 +436,32 @@ footer {
   </header>
 
   <div class="hero" id="about">
-    <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="avatar" />
-    <h1>Szymon Piotr Bławat</h1>
-    <div class="hero-desc">
-      <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
-      <p>Miejscowość: Śliwice | Data urodzenia: 17.10.1999</p>
-    </div>
-    <div class="hero-contact">
-      <span>
-        <i class="fa fa-envelope"></i>
-        szymon.bawat@gmail.com
-      </span>
-    </div>
+  <img src="avatar.jpg" alt="Szymon Piotr Bławat" class="avatar" />
+  <h1>Szymon Piotr Bławat</h1>
+  <div class="hero-desc">
+    <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
+    <p>Miejscowość: Śliwice | Wiek: <span id="age"></span> lat</p>
   </div>
+  <div class="hero-contact">
+    <span>
+      <i class="fa fa-envelope"></i>
+      szymon.bawat@gmail.com
+    </span>
+  </div>
+</div>
+
+<script>
+  // Automatyczne obliczanie wieku na podstawie daty urodzenia
+  const birthDate = new Date('1999-10-17');
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  document.getElementById('age').textContent = age;
+</script>
+
 
   <section id="skills">
   <h2>Umiejętności</h2>

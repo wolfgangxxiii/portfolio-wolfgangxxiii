@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Dodane Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
   --primary: #35BF5C;
@@ -111,7 +113,7 @@ nav a.active {
   justify-content: center;
   align-items: center;
 }
-.hero-contact svg {
+.hero-contact i {
   vertical-align: middle;
   margin-right: 5px;
   color: var(--primary-dark);
@@ -169,10 +171,8 @@ section h2 {
   padding: 7px 15px 7px 11px;
   border-radius: 11px;
 }
-.skill svg {
-  width: 27px;
-  height: 27px;
-  flex-shrink: 0;
+.skill i {
+  font-size: 1.5em;
   background: none;
 }
 .langs {
@@ -189,7 +189,7 @@ section h2 {
   font-size: 1rem;
   color: var(--text-light);
 }
-.lang-item svg {
+.lang-item i {
   width: 20px; height: 20px; color: var(--primary-dark);
 }
 .edu-timeline {
@@ -240,10 +240,10 @@ section h2 {
 }
 .certs-list { display: flex; flex-direction: column; gap: 13px; margin: 20px 0 0 0;}
 .cert-item {display: flex; align-items: center; gap: 11px; color: var(--text-light); font-size: 1.01rem;}
-.cert-item svg { width: 20px; height: 20px; color: var(--primary-dark);}
+.cert-item i { font-size: 1.2em; color: var(--primary-dark);}
 .hobbies-list { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-top: 15px; font-size: 1.05rem; color: var(--primary-dark);}
 .hobby-item { display: flex; align-items: center; gap: 7px; background: #e6fbe7; border-radius: 10px; padding: 7px 16px;}
-.hobby-item svg { width: 22px; height: 22px;}
+.hobby-item i { font-size: 1.25em;}
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 22px;}
 .project-card {
   border-radius: 15px;
@@ -309,13 +309,9 @@ section h2 {
   background: var(--primary);
   color: #fff;
 }
-.contact-icons svg {
-  width: 25px;
-  height: 25px;
-  fill: var(--primary-dark);
-  transition: fill 0.2s;
+.contact-icons i {
+  font-size: 1.3em;
 }
-.contact-icons a:hover svg { fill: #fff;}
 footer {
   text-align: center;
   color: #a0afbd;
@@ -360,7 +356,7 @@ footer {
   align-items: center;
   gap: 9px;
 }
-.btn-demo svg {
+.btn-demo i {
   vertical-align: middle;
   margin-right: 2px;
 }
@@ -448,7 +444,7 @@ footer {
     </div>
     <div class="hero-contact">
       <span>
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/></svg>
+        <i class="fa fa-envelope"></i>
         szymon.bawat@gmail.com
       </span>
     </div>
@@ -457,77 +453,25 @@ footer {
   <section id="skills">
   <h2>Umiejętności</h2>
   <div class="skills-list">
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#F7DF1E" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="48" width="192" height="160" rx="16" stroke="#F7DF1E" stroke-width="16" fill="none"/><path d="M104 104h48v48h-48z" stroke="#F7DF1E" stroke-width="16"/></svg>
-      JavaScript
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#61DAFB" stroke-width="2" viewBox="0 0 256 256"><ellipse cx="128" cy="128" rx="64" ry="112" stroke="#61DAFB" stroke-width="16"/><ellipse cx="128" cy="128" rx="112" ry="64" stroke="#61DAFB" stroke-width="16"/><circle cx="128" cy="128" r="48" fill="none" stroke="#61DAFB" stroke-width="16"/></svg>
-      React
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#339933" stroke-width="2" viewBox="0 0 256 256"><polygon points="128 24 232 64 232 192 128 232 24 192 24 64 128 24" stroke="#339933" stroke-width="16" fill="none"/><polyline points="104 104 152 128 104 152" stroke="#339933" stroke-width="16" fill="none"/></svg>
-      Node.js
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#47848F" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="#47848F" stroke-width="16" fill="none"/><circle cx="128" cy="80" r="16" fill="#47848F"/><circle cx="176" cy="152" r="16" fill="#47848F"/><circle cx="80" cy="152" r="16" fill="#47848F"/><path d="M128 96v56" stroke="#47848F" stroke-width="12"/><path d="M144 160h24" stroke="#47848F" stroke-width="12"/><path d="M88 160h24" stroke="#47848F" stroke-width="12"/></svg>
-      Electron
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#4479A1" stroke-width="2" viewBox="0 0 256 256"><ellipse cx="128" cy="128" rx="96" ry="56" stroke="#4479A1" stroke-width="16"/><ellipse cx="128" cy="128" rx="56" ry="96" stroke="#4479A1" stroke-width="16"/><circle cx="128" cy="128" r="24" fill="#4479A1"/></svg>
-      MySQL
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#FFCA28" stroke-width="2" viewBox="0 0 256 256"><path d="M128 232C48 200 48 104 128 24c80 80 80 176 0 208z" fill="#FFCA28" stroke="#FFCA28" stroke-width="16"/></svg>
-      Firebase
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 256 256"><rect x="40" y="40" width="176" height="176" rx="24" stroke="#333" stroke-width="16" fill="none"/><path d="M104 112h48v48h-48z" stroke="#333" stroke-width="16"/><rect x="48" y="160" width="160" height="32" rx="8" stroke="#333" stroke-width="12" fill="none"/></svg>
-      PHP
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#FF7F50" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="48" width="192" height="160" rx="16" stroke="#FF7F50" stroke-width="16" fill="none"/><path d="M64 128h128M128 64v128" stroke="#FF7F50" stroke-width="16"/></svg>
-      C++
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#007ACC" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="#007ACC" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="#007ACC" stroke-width="16" fill="none"/></svg>
-      Python
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#2196F3" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="#2196F3" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="#2196F3" stroke-width="16" fill="none"/></svg>
-      C#
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="#333" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="#333" stroke-width="16" fill="none"/></svg>
-      SQL
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#006400" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="#006400" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="#006400" stroke-width="16" fill="none"/></svg>
-      HTML
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#0078D4" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="#0078D4" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="#0078D4" stroke-width="16" fill="none"/></svg>
-      Microsoft Office
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#666" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="#666" stroke-width="16" fill="none"/><path d="M88 168h80M128 120v48" stroke="#666" stroke-width="16" fill="none"/></svg>
-      Prawo jazdy kat. B
-    </span>
-    <span class="skill">
-      <svg width="27" height="27" fill="none" stroke="#00bfae" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="#00bfae" stroke-width="16" fill="none"/><rect x="80" y="104" width="96" height="48" stroke="#00bfae" stroke-width="12" fill="none"/></svg>
-      Linux (administracja)
-    </span>
-    <span class="skill">
-      <svg width="20" height="20" fill="#DC143C" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" fill="#fff"/><path d="M32 128a96 96 0 0 0 192 0" fill="#DC143C"/></svg>
-      Polski (ojczysty)
-    </span>
-    <span class="skill">
-      <svg width="20" height="20" fill="none" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#00247D"/><path d="M0 0l32 32m0-32L0 32" stroke="#fff" stroke-width="4"/><path d="M0 0l32 32m0-32L0 32" stroke="#CF142B" stroke-width="2"/><rect x="12" width="8" height="32" fill="#fff"/><rect y="12" width="32" height="8" fill="#fff"/><rect x="13" width="6" height="32" fill="#CF142B"/><rect y="13" width="32" height="6" fill="#CF142B"/></svg>
-      Angielski (średni)
-    </span>
+    <span class="skill"><i class="fab fa-js" style="color:#F7DF1E"></i> JavaScript</span>
+    <span class="skill"><i class="fab fa-react" style="color:#61DAFB"></i> React</span>
+    <span class="skill"><i class="fab fa-node-js" style="color:#339933"></i> Node.js</span>
+    <span class="skill"><i class="fas fa-desktop" style="color:#47848F"></i> Electron</span>
+    <span class="skill"><i class="fas fa-database" style="color:#4479A1"></i> MySQL</span>
+    <span class="skill"><i class="fas fa-fire" style="color:#FFCA28"></i> Firebase</span>
+    <span class="skill"><i class="fab fa-php" style="color:#333"></i> PHP</span>
+    <span class="skill"><i class="fa fa-code" style="color:#FF7F50"></i> C++</span>
+    <span class="skill"><i class="fab fa-python" style="color:#007ACC"></i> Python</span>
+    <span class="skill"><i class="fab fa-microsoft" style="color:#2196F3"></i> C#</span>
+    <span class="skill"><i class="fas fa-database" style="color:#333"></i> SQL</span>
+    <span class="skill"><i class="fab fa-html5" style="color:#006400"></i> HTML</span>
+    <span class="skill"><i class="fab fa-microsoft" style="color:#0078D4"></i> Microsoft Office</span>
+    <span class="skill"><i class="fas fa-car" style="color:#666"></i> Prawo jazdy kat. B</span>
+    <span class="skill"><i class="fab fa-linux" style="color:#00bfae"></i> Linux (administracja)</span>
+    <span class="skill"><i class="fa fa-flag" style="color:#DC143C"></i> Polski (ojczysty)</span>
+    <span class="skill"><i class="fa fa-flag" style="color:#00247D"></i> Angielski (średni)</span>
   </div>
 </section>
-
 
   <section id="edu">
     <h2>Wykształcenie</h2>
@@ -609,15 +553,15 @@ footer {
     <h2>Certyfikaty i szkolenia</h2>
     <div class="certs-list">
       <span class="cert-item">
-        <svg viewBox="0 0 256 256" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><rect x="96" y="96" width="64" height="64" stroke="currentColor" stroke-width="12" fill="none"/></svg>
+        <i class="fas fa-certificate"></i>
         CCNAv7: Introduction to Networks, Cisco (2022)
       </span>
       <span class="cert-item">
-        <svg viewBox="0 0 256 256" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><rect x="96" y="96" width="64" height="64" stroke="currentColor" stroke-width="12" fill="none"/></svg>
+        <i class="fas fa-certificate"></i>
         ECDL BASE Certificate (2018)
       </span>
       <span class="cert-item">
-        <svg viewBox="0 0 256 256" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><rect x="96" y="96" width="64" height="64" stroke="currentColor" stroke-width="12" fill="none"/></svg>
+        <i class="fas fa-certificate"></i>
         Kwalifikacje E.12, E.13, E.14 (ZSLiT Tuchola)
       </span>
 
@@ -625,11 +569,11 @@ footer {
         Certyfikaty specjalisty – Strefa Kursów:
       </span>
       <span class="cert-item">
-        <svg viewBox="0 0 256 256" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><rect x="96" y="96" width="64" height="64" stroke="currentColor" stroke-width="12" fill="none"/></svg>
+        <i class="fas fa-certificate"></i>
         PHP Developer <span style="color:#888;font-size:0.97em;">(26.08.2021)</span>
       </span>
       <span class="cert-item">
-        <svg viewBox="0 0 256 256" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><rect x="96" y="96" width="64" height="64" stroke="currentColor" stroke-width="12" fill="none"/></svg>
+        <i class="fas fa-certificate"></i>
         Administrator Linux <span style="color:#888;font-size:0.97em;">(06.05.2025)</span>
       </span>
     </div>
@@ -639,15 +583,15 @@ footer {
     <h2>Zainteresowania</h2>
     <div class="hobbies-list">
       <span class="hobby-item">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><path d="M104 184c-24-8-40-32-40-64a72 72 0 0 1 144 0c0 32-16 56-40 64" stroke="currentColor" stroke-width="16" fill="none"/><path d="M128 160v24" stroke="currentColor" stroke-width="16" fill="none"/></svg>
+        <i class="fas fa-dumbbell"></i>
         Kalistenika
       </span>
       <span class="hobby-item">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/><polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/></svg>
+        <i class="fas fa-terminal"></i>
         Pisanie skryptów
       </span>
       <span class="hobby-item">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="16" fill="none"/><path d="M88 168h80M128 120v48" stroke="currentColor" stroke-width="16" fill="none"/></svg>
+        <i class="fas fa-running"></i>
         Bieganie
       </span>
     </div>
@@ -660,12 +604,7 @@ footer {
     <!-- Kółko i Krzyżyk -->
     <div class="project-card">
       <h3>
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none"/>
-          <rect x="40" y="88" width="176" height="80" rx="40" stroke="currentColor" stroke-width="16" fill="none"/>
-          <circle cx="92" cy="128" r="12" fill="currentColor"/>
-          <circle cx="164" cy="128" r="12" fill="currentColor"/>
-        </svg>
+        <i class="fas fa-times-circle"></i>
         Kółko i Krzyżyk
       </h3>
       <span class="tech">Electron, JavaScript</span>
@@ -680,10 +619,7 @@ footer {
       <div class="links">
         <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
         <a class="btn-demo" href="https://electron-projekt.netlify.app/" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
+          <i class="fas fa-play"></i>
           Demo
         </a>
       </div>
@@ -692,11 +628,7 @@ footer {
     <!-- Quiz do Egzaminu -->
     <div class="project-card">
       <h3>
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
-          <rect x="32" y="48" width="192" height="160" rx="16" stroke="currentColor" stroke-width="16" fill="none"/>
-          <path d="M160 72v112" stroke="currentColor" stroke-width="16"/>
-          <path d="M96 72v112" stroke="currentColor" stroke-width="16"/>
-        </svg>
+        <i class="fas fa-question-circle"></i>
         Quiz do Egzaminu
       </h3>
       <span class="tech">React</span>
@@ -711,10 +643,7 @@ footer {
       <div class="links">
         <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
         <a class="btn-demo" href="https://quiz-egazmin.netlify.app/" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
+          <i class="fas fa-play"></i>
           Demo
         </a>
       </div>
@@ -723,10 +652,7 @@ footer {
     <!-- TaskMaster -->
     <div class="project-card">
       <h3>
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
-          <rect x="40" y="40" width="176" height="176" rx="24" stroke="currentColor" stroke-width="16" fill="none"/>
-          <line x1="40" y1="80" x2="216" y2="80" stroke="currentColor" stroke-width="16"/>
-        </svg>
+        <i class="fas fa-tasks"></i>
         TaskMaster
       </h3>
       <span class="tech">React</span>
@@ -741,10 +667,7 @@ footer {
       <div class="links">
         <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
         <a class="btn-demo" href="https://taskmaster-alfa.netlify.app/" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
+          <i class="fas fa-play"></i>
           Demo
         </a>
       </div>
@@ -753,10 +676,7 @@ footer {
     <!-- Więcej projektów -->
     <div class="project-card">
       <h3>
-        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-          <title>GitHub</title>
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
+        <i class="fab fa-github"></i>
         Więcej projektów?
       </h3>
       <span class="tech">Sprawdź na GitHub</span>
@@ -771,19 +691,12 @@ footer {
     <h2>Kontakt</h2>
     <div class="contact-center">
       <a href="mailto:szymon.bawat@gmail.com" class="button">
-        <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none"/>
-          <rect x="32" y="56" width="192" height="144" rx="8" stroke="currentColor" stroke-width="16" fill="none"/>
-          <polyline points="224 56 128 144 32 56" stroke="currentColor" stroke-width="16" fill="none"/>
-        </svg>
+        <i class="fa fa-envelope"></i>
         szymon.bawat@gmail.com
       </a>
       <div class="contact-icons">
         <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub">
-          <svg width="25" height="25" fill="#23292f" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <title>GitHub</title>
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.175c-3.338.724-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.754-1.333-1.754-1.088-.744.083-.729.083-.729 1.205.086 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.107-.775.418-1.305.76-1.605-2.665-.306-5.467-1.334-5.467-5.933 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.182 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3.003-.404c1.018.004 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.655.243 2.879.12 3.182.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.813 1.096.813 2.211v3.285c0 .32.192.694.801.576C20.565 21.797 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
+          <i class="fab fa-github"></i>
         </a>
       </div>
     </div>

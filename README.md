@@ -38,8 +38,11 @@ Menu nawigacji oraz sekcje dostosowują się do małych ekranów (breakpointy: 7
 
 /
 ├── index.html     # Główna strona portfolio
+
 ├── style.css      # Stylowanie + media queries mobile
+
 ├── script.js      # Interaktywność (dark mode, menu, fade-in, wiek)
+
 ├── img            # Folder z grafiką 
 
 ## 🧑‍💻 Technologie

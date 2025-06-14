@@ -380,40 +380,6 @@
       background: var(--primary);
       color: #fff !important;
     }
-    /* POPRAWKA: mocny selektor pod Netlify i każdy hosting */
-    a.btn-demo {
-      background: var(--primary-dark);
-      color: #ffffff !important;
-      border: none;
-      border-radius: 21px;
-      margin-left: 8px;
-      padding: 10px 26px;
-      font-weight: 600;
-      font-size: 1.02rem;
-      box-shadow: 0 2px 10px 0 rgba(162,89,247,0.13);
-      text-decoration: none !important;
-      transition: background 0.18s, color 0.18s, border 0.18s, transform 0.17s, box-shadow 0.18s;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-    }
-    a.btn-demo:hover,
-    a.btn-demo:focus {
-      background: var(--primary);
-      color: #ffffff !important;
-      transform: translateY(-2px) scale(1.04);
-      box-shadow: 0 4px 20px 0 rgba(162,89,247,0.18);
-      text-decoration: none !important;
-    }
-    a.btn-demo.disabled,
-    a.btn-demo[aria-disabled="true"] {
-      cursor: not-allowed;
-      background: #d1b3fa !important;
-      color: #fff !important;
-      box-shadow: none !important;
-      pointer-events: none;
-    }
     .btn-github {
       background: #2e2050;
       color: #fff !important;
@@ -448,7 +414,7 @@
       section { margin: 22px 8px; padding: 24px 7px 19px;}
       .projects-grid { gap: 14px;}
       .hero { padding: 38px 8px 18px;}
-      .btn-primary, .btn-demo, .btn-github {
+      .btn-primary, .btn-github {
         width: 100%;
         margin: 7px 0 0 0;
         font-size: 1rem;
@@ -503,16 +469,14 @@
     body.dark .project-card .links a:visited {
       color: #c18fff !important;
     }
-    body.dark .btn-primary,
-    body.dark a.btn-demo {
+    body.dark .btn-primary {
       background: var(--primary);
       color: #231943 !important;
       border: 2px solid #b39ddb;
       font-weight: 700;
       box-shadow: 0 2px 10px 0 rgba(162,89,247,0.19);
     }
-    body.dark .btn-primary:hover,
-    body.dark a.btn-demo:hover {
+    body.dark .btn-primary:hover {
       background: var(--primary-dark);
       color: #fff !important;
     }

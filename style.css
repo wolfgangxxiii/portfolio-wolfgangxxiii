@@ -2833,3 +2833,27 @@ footer + * {
                 transform 0.5s cubic-bezier(.2,.72,.25,1) min(var(--reveal-delay, 0ms), 140ms) !important;
   }
 }
+
+/* ===== V26: poprawne wyświetlanie ostatnich elementów na smartfonie ===== */
+@media (max-width: 700px), (pointer: coarse) {
+  /* Social media animują się jako jedna stabilna grupa, nie pięć osobnych elementów. */
+  .contact-icons.scroll-reveal {
+    transition-delay: 60ms !important;
+  }
+
+  .contact-icons.scroll-reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.97);
+  }
+
+  .contact-icons.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .contact-icons a {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease !important;
+  }
+}

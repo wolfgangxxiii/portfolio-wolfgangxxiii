@@ -114,32 +114,57 @@ document.querySelectorAll('main > section').forEach(section => {
   }
 });
 
-if (reducedMotion || !('IntersectionObserver' in window)) {
+if (reducedMotion) {
   revealElements.forEach(element => element.classList.add('is-visible'));
 } else {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+  // Stabilna animacja dwukierunkowa:
+  // - element pozostaje widoczny, dopóki choć część znajduje się na ekranie,
+  // - po pełnym opuszczeniu widoku jest resetowany,
+  // - po ponownym wejściu od góry lub od dołu animuje się ponownie.
+  // Zastosowanie requestAnimationFrame zapobiega wielokrotnym obliczeniom w jednej klatce.
+  let ticking = false;
+  const exitBuffer = mobileAnimationMode ? 24 : 48;
+  const enterTop = mobileAnimationMode ? window.innerHeight * 0.94 : window.innerHeight * 0.90;
+  const enterBottom = mobileAnimationMode ? window.innerHeight * 0.06 : window.innerHeight * 0.10;
 
-        // Na smartfonach animujemy element tylko raz. Ogranicza to liczbę
-        // przeliczeń stylów podczas przewijania i zapobiega przycięciom.
-        if (mobileAnimationMode) {
-          revealObserver.unobserve(entry.target);
-          window.setTimeout(() => {
-            entry.target.classList.add('animation-complete');
-          }, 750);
+  function updateRevealState() {
+    revealElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const currentlyVisible = element.classList.contains('is-visible');
+
+      // Element jest naprawdę poza ekranem — dopiero wtedy można go zresetować.
+      const fullyAbove = rect.bottom < -exitBuffer;
+      const fullyBelow = rect.top > window.innerHeight + exitBuffer;
+
+      if (fullyAbove || fullyBelow) {
+        if (currentlyVisible) {
+          element.classList.remove('is-visible');
         }
-      } else if (!mobileAnimationMode) {
-        entry.target.classList.remove('is-visible');
+        return;
+      }
+
+      // Element wchodzi do aktywnej części widoku. Działa przy przewijaniu w obu kierunkach.
+      const entersViewport = rect.top < enterTop && rect.bottom > enterBottom;
+      if (entersViewport && !currentlyVisible) {
+        element.classList.add('is-visible');
       }
     });
-  }, {
-    threshold: mobileAnimationMode ? 0.08 : 0.18,
-    rootMargin: mobileAnimationMode ? '0px 0px -4% 0px' : '-4% 0px -10% 0px'
-  });
 
-  revealElements.forEach(element => revealObserver.observe(element));
+    ticking = false;
+  }
+
+  function requestRevealUpdate() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateRevealState);
+  }
+
+  window.addEventListener('scroll', requestRevealUpdate, { passive: true });
+  window.addEventListener('resize', requestRevealUpdate, { passive: true });
+  window.addEventListener('orientationchange', requestRevealUpdate, { passive: true });
+
+  // Pierwsze ustawienie stanu po pełnym ułożeniu strony.
+  requestAnimationFrame(() => requestAnimationFrame(updateRevealState));
 }
 
 // Po powrocie do strony z pamięci przeglądarki odtwarzamy prawidłowy stan widoczności.
@@ -149,7 +174,9 @@ window.addEventListener('pageshow', event => {
     revealElements.forEach(element => {
       const rect = element.getBoundingClientRect();
       const visible = rect.bottom > -80 && rect.top < window.innerHeight + 80;
-      element.classList.toggle('is-visible', visible);
+      if (visible) {
+        element.classList.add('is-visible');
+      }
     });
   });
 });

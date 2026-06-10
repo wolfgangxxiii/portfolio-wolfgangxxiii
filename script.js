@@ -99,6 +99,8 @@ const translations = {
   'Sieci komputerowe': 'Computer networks',
   'Full Stack': 'Full Stack',
   'Śliwice / Gdańsk / zdalnie': 'Śliwice / Gdańsk / remote',
+  'Lokalizacja': 'Location',
+  'Wiek': 'Age',
   'Wiek:': 'Age:',
   'lat': 'years old',
   'Napisz do mnie': 'Contact me',
@@ -202,6 +204,24 @@ const translations = {
   'Wykorzystane w projektach Windhawk, narzędziach dla Windows oraz aplikacjach React/Electron.': 'Used in Windhawk projects, Windows tools and React/Electron applications.',
   '.bat / .reg': '.bat / .reg',
   'trzymiesięczny okres wypowiedzenia': 'three-month notice period',
+  'Informatyka – studia magisterskie': 'Computer Science – master’s degree',
+  'Informatyka – studia licencjackie': 'Computer Science – bachelor’s degree',
+  'Technik informatyk': 'IT technician',
+  '10.2025 – obecnie': '10.2025 – present',
+  'Cyberbezpieczeństwo': 'Cybersecurity',
+  'Kryptografia': 'Cryptography',
+  'Audyt bezpieczeństwa': 'Security audit',
+  'Zakres studiów': 'Study scope',
+  'Zakres kształcenia': 'Education scope',
+  'Specjalizacja: Bezpieczeństwo systemów informacyjno-komunikacyjnych. Program obejmuje bezpieczeństwo sieci, ochronę danych, audyt bezpieczeństwa i zarządzanie incydentami.': 'Specialization: Information and communication systems security. The program covers network security, data protection, security audit and incident management.',
+  'Aplikacje mobilne': 'Mobile applications',
+  'Bazy danych': 'Databases',
+  'Ocena 4.5': 'Grade 4.5',
+  'Specjalizacja: Aplikacje mobilne i bazy danych. Zakres: programowanie aplikacji, projektowanie baz danych, inżynieria oprogramowania i podstawy bezpieczeństwa systemów informatycznych.': 'Specialization: Mobile applications and databases. Scope: application programming, database design, software engineering and fundamentals of information systems security.',
+  'ZSLiT im. Ziemi Tucholskiej w Tucholi': 'Technical School Complex in Tuchola',
+  'Specjalizacja: sieci komputerowe, administracja systemów, obsługa sprzętu IT oraz tworzenie aplikacji internetowych i baz danych.': 'Specialization: computer networks, system administration, IT hardware support, web application and database development.',
+  'Napisz do mnie': 'Contact me',
+  'Najwygodniejszy kontakt to wiadomość e-mail. Odpowiem w sprawie praktyk, projektów lub współpracy IT.': 'The most convenient contact method is email. I can respond about internships, projects or IT cooperation.',
 };
 const reverseTranslations = Object.fromEntries(Object.entries(translations).map(([pl, en]) => [en, pl]));
 function translateTextNodes(root, targetLang) {
@@ -246,7 +266,7 @@ if (langBtn) {
 }
 
 // Delikatny efekt światła pod kursorem na kartach
-const glowCards = document.querySelectorAll('.project-card, .skill-panel, .skill-compact-card, .language-pill, .cert-item, .soft-compact-card, .contact-compact-card, .contact-action');
+const glowCards = document.querySelectorAll('.project-card, .skill-panel, .skill-compact-card, .language-pill, .cert-item, .soft-compact-card, .contact-compact-card, .contact-action, .timeline-card, .hero-meta-card');
 glowCards.forEach(card => {
   card.addEventListener('pointermove', event => {
     const rect = card.getBoundingClientRect();

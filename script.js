@@ -44,17 +44,102 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
   }
 });
 
-// FADE-IN ON SCROLL
-function fadeInOnScroll() {
-  document.querySelectorAll('.fade-in').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 90) {
-      el.classList.add('visible');
-    }
-  });
+// ANIMOWANE WCZYTYWANIE I REVEAL PODCZAS PRZEWIJANIA
+// Po ręcznym odświeżeniu strona startuje od góry, aby animacje uruchomiły się od początku.
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
 }
-window.addEventListener('scroll', fadeInOnScroll);
-window.addEventListener('load', fadeInOnScroll);
+
+const navigationEntry = performance.getEntriesByType('navigation')[0];
+if (navigationEntry?.type === 'reload') {
+  window.scrollTo(0, 0);
+}
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Nie animujemy jednocześnie całej sekcji i jej dzieci. Dzięki temu elementy nie znikają
+// podwójnie i nie powstaje efekt szarpania podczas przewijania.
+const revealGroups = [
+  {
+    selector: '.hero-photo-wrap, .hero-copy > h1, .hero-copy > .hero-desc, .premium-tags, .hero-meta-grid, .hero-actions',
+    variant: 'reveal-up'
+  },
+  {
+    selector: 'section > h2, .section-heading, .contact-panel-copy',
+    variant: 'reveal-up'
+  },
+  {
+    selector: '.project-card, .skill-compact-card, .cert-item, .soft-compact-card, .contact-compact-card',
+    variant: 'reveal-card'
+  },
+  {
+    selector: '.education-timeline-item',
+    variant: 'reveal-left'
+  },
+  {
+    selector: '.language-pill, .skill-mini-list > span, .education-tags > span, .soft-chip, .hero-tags > span',
+    variant: 'reveal-scale'
+  },
+  {
+    selector: '.contact-action, .contact-icons a, .hero-actions .button, .btn-primary, .btn-github',
+    variant: 'reveal-scale'
+  }
+];
+
+const revealElements = [];
+const seen = new Set();
+
+revealGroups.forEach(group => {
+  document.querySelectorAll(group.selector).forEach((element, index) => {
+    if (seen.has(element)) return;
+    seen.add(element);
+    element.classList.add('scroll-reveal', group.variant);
+    element.style.setProperty('--reveal-delay', `${Math.min((index % 6) * 75, 375)}ms`);
+    revealElements.push(element);
+  });
+});
+
+// Sekcje bez szczegółowych kart otrzymują delikatną animację własnej zawartości.
+document.querySelectorAll('main > section').forEach(section => {
+  const hasAnimatedChild = section.querySelector('.scroll-reveal');
+  if (!hasAnimatedChild) {
+    [...section.children].forEach((element, index) => {
+      if (seen.has(element)) return;
+      seen.add(element);
+      element.classList.add('scroll-reveal', 'reveal-up');
+      element.style.setProperty('--reveal-delay', `${Math.min(index * 85, 340)}ms`);
+      revealElements.push(element);
+    });
+  }
+});
+
+if (reducedMotion || !('IntersectionObserver' in window)) {
+  revealElements.forEach(element => element.classList.add('is-visible'));
+} else {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      // Szerszy margines sprawia, że element znika dopiero po wyraźnym opuszczeniu ekranu.
+      entry.target.classList.toggle('is-visible', entry.isIntersecting);
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: '-4% 0px -10% 0px'
+  });
+
+  revealElements.forEach(element => revealObserver.observe(element));
+}
+
+// Po powrocie do strony z pamięci przeglądarki odtwarzamy prawidłowy stan widoczności.
+window.addEventListener('pageshow', event => {
+  if (!event.persisted || reducedMotion) return;
+  requestAnimationFrame(() => {
+    revealElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const visible = rect.bottom > -80 && rect.top < window.innerHeight + 80;
+      element.classList.toggle('is-visible', visible);
+    });
+  });
+});
 
 // Hamburger menu logic
 const hamburger = document.getElementById('hamburger-menu');

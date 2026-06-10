@@ -56,6 +56,7 @@ if (navigationEntry?.type === 'reload') {
 }
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobileAnimationMode = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
 
 // Nie animujemy jednocześnie całej sekcji i jej dzieci. Dzięki temu elementy nie znikają
 // podwójnie i nie powstaje efekt szarpania podczas przewijania.
@@ -118,12 +119,24 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 } else {
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      // Szerszy margines sprawia, że element znika dopiero po wyraźnym opuszczeniu ekranu.
-      entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+
+        // Na smartfonach animujemy element tylko raz. Ogranicza to liczbę
+        // przeliczeń stylów podczas przewijania i zapobiega przycięciom.
+        if (mobileAnimationMode) {
+          revealObserver.unobserve(entry.target);
+          window.setTimeout(() => {
+            entry.target.classList.add('animation-complete');
+          }, 750);
+        }
+      } else if (!mobileAnimationMode) {
+        entry.target.classList.remove('is-visible');
+      }
     });
   }, {
-    threshold: 0.18,
-    rootMargin: '-4% 0px -10% 0px'
+    threshold: mobileAnimationMode ? 0.08 : 0.18,
+    rootMargin: mobileAnimationMode ? '0px 0px -4% 0px' : '-4% 0px -10% 0px'
   });
 
   revealElements.forEach(element => revealObserver.observe(element));

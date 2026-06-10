@@ -2771,3 +2771,65 @@ footer + * {
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* ===== V23: stabilne animacje bez skakania na desktopie ===== */
+@media (min-width: 701px) and (pointer: fine) {
+  .scroll-reveal.animation-complete {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    will-change: auto;
+  }
+}
+
+/* ===== V24: animacje dwukierunkowe bez skakania w polu widzenia ===== */
+.scroll-reveal {
+  contain: paint;
+}
+
+/* Stan widoczny pozostaje stabilny aż do pełnego opuszczenia ekranu. */
+.scroll-reveal.is-visible {
+  pointer-events: auto;
+}
+
+/* Klasa zachowana dla zgodności ze starszym kodem, ale nie blokuje ponownej animacji. */
+.scroll-reveal.animation-complete {
+  transition: opacity 0.78s ease-out var(--reveal-delay, 0ms),
+              transform 0.92s cubic-bezier(.16,.84,.28,1) var(--reveal-delay, 0ms),
+              filter 0.78s ease-out var(--reveal-delay, 0ms) !important;
+}
+
+@media (max-width: 700px), (pointer: coarse) {
+  .scroll-reveal.animation-complete {
+    transition: opacity 0.42s ease-out min(var(--reveal-delay, 0ms), 140ms),
+                transform 0.5s cubic-bezier(.2,.72,.25,1) min(var(--reveal-delay, 0ms), 140ms) !important;
+  }
+}
+
+/* ===== V25: widoczne animacje przy każdym przewijaniu w górę i w dół ===== */
+/* Starsza klasa nie może blokować ponownego odtwarzania animacji. */
+.scroll-reveal.animation-complete {
+  opacity: inherit;
+  transform: inherit;
+  filter: inherit;
+  will-change: opacity, transform, filter;
+  transition: opacity 0.78s ease-out var(--reveal-delay, 0ms),
+              transform 0.92s cubic-bezier(.16,.84,.28,1) var(--reveal-delay, 0ms),
+              filter 0.78s ease-out var(--reveal-delay, 0ms) !important;
+}
+
+/* Po wyjściu poza ekran element wraca do stanu początkowego bez zmiany układu. */
+.scroll-reveal:not(.is-visible) {
+  pointer-events: none;
+}
+
+.scroll-reveal.is-visible {
+  pointer-events: auto;
+}
+
+@media (max-width: 700px), (pointer: coarse) {
+  .scroll-reveal.animation-complete {
+    transition: opacity 0.42s ease-out min(var(--reveal-delay, 0ms), 140ms),
+                transform 0.5s cubic-bezier(.2,.72,.25,1) min(var(--reveal-delay, 0ms), 140ms) !important;
+  }
+}

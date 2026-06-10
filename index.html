@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Szymon Bławat</title>
-  <meta name="description" content="Portfolio – Szymon Bławat. Programista aplikacji mobilnych i baz danych, pasjonat IT. Projekty, umiejętności, certyfikaty.">
-  <meta name="keywords" content="Portfolio, Szymon Bławat, programista, aplikacje mobilne, web developer, projekty IT, React, Electron, MySQL, Śliwice">
+  <title>Portfolio – Szymon Bławat | IT Security & Full Stack</title>
+  <meta name="description" content="Portfolio – Szymon Bławat. Specjalista IT i Full Stack Developer rozwijający się w kierunku cyberbezpieczeństwa, SOC, Linux oraz bezpieczeństwa aplikacji webowych.">
+  <meta name="keywords" content="Szymon Bławat, portfolio, cyberbezpieczeństwo, bezpieczeństwo IT, SOC, pentesting, Linux, Full Stack Developer, PHP, Python, Django, MySQL, Gdańsk, Śliwice">
   <meta name="author" content="Szymon Piotr Bławat">
   <meta name="theme-color" content="#a259f7">
 
-  <!-- OpenGraph / Facebook -->
-  <meta property="og:title" content="Portfolio – Szymon Bławat">
-  <meta property="og:description" content="Programista aplikacji mobilnych i baz danych, pasjonat IT. Zobacz moje projekty i doświadczenie.">
-  <meta property="og:image" content="avatar.jpg">
+  <meta property="og:title" content="Portfolio – Szymon Bławat | IT Security & Full Stack">
+  <meta property="og:description" content="Doświadczenie IT w środowisku wojskowym, zaplecze programistyczne i systemowe oraz rozwój w kierunku bezpieczeństwa IT.">
+  <meta property="og:image" content="img/avatar.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portfolio-wolfgangxxiii.netlify.app/">
+  <meta property="og:url" content="https://wolfgangxxiii.org/">
 
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,254 +27,399 @@
   <header>
     <div class="nav">
       <span class="logo">Portfolio</span>
-      <!-- HAMBURGER MENU BUTTON -->
       <button class="hamburger" id="hamburger-menu" aria-label="Pokaż menu">
         <i class="fa fa-bars"></i>
       </button>
-      <!-- DARK MODE TOGGLE BUTTON -->
       <button class="toggle-darkmode" id="toggle-darkmode" aria-label="Przełącz tryb ciemny">
         <i class="fa fa-moon"></i>
       </button>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Główna nawigacja">
         <ul>
-          <li><a href="#about" class="active">O mnie</a></li>
+          <li><a href="#about" class="active">Start</a></li>
+          <li><a href="#profile">Profil</a></li>
+          <li><a href="#exp">Doświadczenie</a></li>
           <li><a href="#skills">Umiejętności</a></li>
-          <li><a href="#edu">Wykształcenie</a></li>
+          <li><a href="#practice">Rozwój praktyczny</a></li>
           <li><a href="#projects">Projekty</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <div class="hero fade-in" id="about">
-    <img src="img/avatar.jpg" alt="Zdjęcie profilowe Szymona Piotra Bławata" class="avatar" />
-    <h1>Szymon Piotr Bławat</h1>
-    <div class="hero-desc">
-      <p>Programista aplikacji mobilnych i baz danych • pasjonat IT</p>
-      <p>Miejscowość: Śliwice | Wiek: <span id="age">25</span> lat</p>
-    </div>
-  </div>
-  <section id="exp" class="fade-in">
-  <h2>Droga kariery i rozwój</h2>
-  <p>
-    Obecnie pracuję w sektorze IT na stanowisku Operatora Wprowadzania Danych (szczegóły chętnie omówię podczas rozmowy).
-    Wcześniej zdobyłem doświadczenie w różnych rolach technicznych i produkcyjnych, co pozwoliło mi rozwinąć umiejętności organizacji pracy, obsługi sprzętu oraz pracy w zespole.
-  </p>
-  <p>
-    Z pasją rozwijam swoje kompetencje w programowaniu i technologii – od projektowania aplikacji mobilnych, przez bazy danych, aż po automatyzację procesów.
-    Chętnie podejmuję się nowych wyzwań, a swoją wiedzę stale poszerzam poprzez kursy, certyfikaty i projekty własne.
-  </p>
-  <p>
-    Zależy mi na zdobyciu 2-3 lat prawdziwego, praktycznego doświadczenia w sektorze IT, aby w pełni rozwinąć swoje umiejętności w środowisku zawodowym. 
-    Planuję również podjąć studia magisterskie na kierunku związanym z sieciami komputerowymi lub cyberbezpieczeństwem – zarówno z myślą o rozwoju w nowym miejscu pracy, jak i samodzielnie, jeśli nie znajdę odpowiedniego pracodawcy.
-    Jestem gotów inwestować w siebie, by w pełni wykorzystać swój potencjał i przyczynić się do sukcesu firmy, z którą zwiążę swoją karierę.
-  </p>
-</section>
-  <section id="skills" class="fade-in">
-    <h2>Umiejętności</h2>
-    <div class="skills-list">
-      <span class="skill"><i class="fab fa-js icon-js"></i> JavaScript</span>
-      <span class="skill"><i class="fab fa-react icon-react"></i> React</span>
-      <span class="skill"><i class="fab fa-node-js icon-node"></i> Node.js</span>
-      <span class="skill"><i class="fas fa-desktop icon-electron"></i> Electron</span>
-      <span class="skill"><i class="fas fa-database icon-mysql"></i> MySQL</span>
-      <span class="skill"><i class="fas fa-fire icon-firebase"></i> Firebase</span>
-      <span class="skill"><i class="fab fa-php icon-php"></i> PHP</span>
-      <span class="skill"><i class="fa fa-code icon-cpp"></i> C++</span>
-      <span class="skill"><i class="fab fa-python icon-python"></i> Python</span>
-      <span class="skill"><i class="fab fa-microsoft icon-csharp"></i> C#</span>
-      <span class="skill"><i class="fas fa-database icon-sql"></i> SQL</span>
-      <span class="skill"><i class="fab fa-html5 icon-html"></i> HTML</span>
-      <span class="skill"><i class="fab fa-css3-alt icon-css"></i> CSS</span>
-      <span class="skill"><i class="fas fa-code icon-django"></i> Django</span>
-      <span class="skill"><i class="fas fa-laptop-code icon-web"></i> Web Development</span>
-      <span class="skill"><i class="fas fa-mobile-alt icon-responsive"></i> Responsive Design</span>
-      <span class="skill"><i class="fab fa-git-alt icon-git"></i> Git</span>
-      <span class="skill"><i class="fas fa-plug icon-rest"></i> REST API</span>
-      <span class="skill"><i class="fab fa-microsoft icon-office"></i> Microsoft Office</span>
-      <span class="skill"><i class="fas fa-car icon-car"></i> Prawo jazdy kat. B</span>
-      <span class="skill"><i class="fab fa-linux icon-linux"></i> Linux (administracja)</span>
-    </div>
-    <h2>Języki</h2>
-    <div class="skills-list">
-      <span class="skill"><i class="fa fa-flag icon-pl"></i> Polski (ojczysty)</span>
-      <span class="skill"><i class="fa fa-flag icon-en"></i> Angielski (średni)</span>
-    </div>
-  </section>
-  <section id="edu" class="fade-in">
-    <h2>Wykształcenie</h2>
-    <ul class="edu-timeline">
-      <li>
-        <span class="dot"></span>
-        <div>
-          <strong>10.2022 – obecnie:</strong> WSB Merito Gdańsk<br/>
-          <span class="desc">Licencjat Informatyka, spec. Aplikacje mobilne i bazy danych</span>
+
+  <main>
+    <section class="hero fade-in" id="about">
+      <div class="hero-inner">
+        <div class="hero-photo-card">
+          <div class="avatar-fallback" aria-hidden="true">SB</div>
+          <img src="img/avatar.jpg" alt="Zdjęcie profilowe Szymona Piotra Bławata" class="avatar" onerror="this.style.display='none'" />
         </div>
-      </li>
-      <li>
-        <span class="dot"></span>
-        <div>
-          <strong>09.2015 – 04.2019:</strong> ZSLiT Tuchola<br/>
-          <span class="desc">Technik Informatyk</span>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <section class="fade-in">
-    <h2>Certyfikaty i szkolenia</h2>
-    <div class="certs-list">
-      <span class="cert-item">
-        <i class="fas fa-certificate"></i>
-        CCNAv7: Introduction to Networks, Cisco (2022)
-      </span>
-      <span class="cert-item">
-        <i class="fas fa-certificate"></i>
-        ECDL BASE Certificate (2018)
-      </span>
-      <span class="cert-item">
-        <i class="fas fa-certificate"></i>
-        Kwalifikacje E.12, E.13, E.14 (ZSLiT Tuchola)
-      </span>
-      <span class="cert-item" style="margin-top: 13px; font-weight:600;">
-        Certyfikaty specjalisty – Strefa Kursów:
-      </span>
-      <span class="cert-item">
-        <i class="fas fa-certificate"></i>
-        PHP Developer <span style="color:#888;font-size:0.97em;">(26.08.2021)</span>
-      </span>
-      <span class="cert-item">
-        <i class="fas fa-certificate"></i>
-        Administrator Linux <span style="color:#888;font-size:0.97em;">(06.05.2025)</span>
-      </span>
-    </div>
-  </section>
-  <section class="fade-in">
-    <h2>Zainteresowania</h2>
-    <div class="hobbies-list">
-      <span class="hobby-item"><i class="fas fa-terminal icon-terminal"></i> Pisanie skryptów</span>
-      <span class="hobby-item"><i class="fas fa-dumbbell icon-dumbbell"></i> Trening siłowy i wytrzymałościowy</span>
-      <span class="hobby-item"><i class="fas fa-bicycle icon-bike"></i> Jazda rowerem</span>
-      <span class="hobby-item"><i class="fas fa-mountain icon-mountain"></i> Wędrówki górskie</span>
-      <span class="hobby-item"><i class="fas fa-child icon-yoga"></i> Joga</span>
-      <span class="hobby-item"><i class="fas fa-gamepad icon-gamepad"></i> Gry komputerowe (single player)</span>
-      <span class="hobby-item"><i class="fas fa-chess icon-chess"></i> Planszówki</span>
-      <span class="hobby-item"><i class="fas fa-film icon-film"></i> Kino</span>
-      <span class="hobby-item"><i class="fas fa-music icon-music"></i> Słuchanie muzyki</span>
-    </div>
-  </section>
-  <section id="projects" class="fade-in">
-    <h2>Projekty</h2>
-    <div class="projects-grid">
-      <!-- Kółko i Krzyżyk -->
-      <div class="project-card fade-in">
-        <h3>
-          <i class="fas fa-times-circle"></i>
-          Kółko i Krzyżyk
-        </h3>
-        <span class="tech">Electron, JavaScript</span>
-        <div>
-          Prosta, intuicyjna gra dla dwóch osób, działająca jako aplikacja desktopowa dzięki Electron. Pozwala na szybkie rozgrywki i analizę wyników w jednej sesji.
-          <ul>
-            <li>Nowoczesny interfejs desktopowy</li>
-            <li>Błyskawiczne rozpoczęcie nowej gry</li>
-            <li>Wyraźna obsługa zwycięstw i remisów</li>
-          </ul>
-        </div>
-        <div class="links">
-          <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
-          <a class="btn-primary btn-demo-green" href="https://electron-projekt.netlify.app/" target="_blank">
-            <i class="fas fa-play"></i>
-            Demo
-          </a>
+        <div class="hero-content">
+          <h1>Szymon Piotr Bławat</h1>
+          <div class="hero-desc">
+            <p>Doświadczenie w środowisku wojskowym, zaplecze programistyczne i systemowe oraz aktualna specjalizacja w bezpieczeństwie systemów informacyjno-komunikacyjnych.</p>
+          </div>
+          <div class="hero-tags" aria-label="Najważniejsze obszary rozwoju">
+            <span><i class="fa-solid fa-shield-halved"></i> Cyberbezpieczeństwo</span>
+            <span><i class="fa-brands fa-linux"></i> Linux & serwery</span>
+            <span><i class="fa-solid fa-network-wired"></i> Sieci komputerowe</span>
+            <span><i class="fa-solid fa-code"></i> Full Stack</span>
+          </div>
+          <div class="hero-contact">
+            <span><i class="fa fa-location-dot"></i> Śliwice / Gdańsk / zdalnie</span>
+            <span><i class="fa fa-cake-candles"></i> Wiek: <strong><span id="age">26</span></strong> lat</span>
+          </div>
+          <div class="hero-actions">
+            <a href="mailto:szymon.bawat@gmail.com" class="button"><i class="fa fa-envelope"></i> Napisz do mnie</a>
+            <a href="https://github.com/wolfgangxxiii" target="_blank" class="button button-secondary"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-      <!-- Quiz do Egzaminu -->
-      <div class="project-card fade-in">
-        <h3>
-          <i class="fas fa-question-circle"></i>
-          Quiz do Egzaminu
-        </h3>
-        <span class="tech">React</span>
-        <div>
-          Interaktywna aplikacja webowa, która umożliwia naukę do egzaminu dyplomowego z informatyki. Szybka informacja zwrotna oraz czytelne podsumowanie wyniku.
-          <ul>
-            <li>Wybór zestawu pytań tematycznych</li>
-            <li>Natychmiastowa ocena każdej odpowiedzi</li>
-            <li>Wyświetlanie wyniku końcowego oraz analizy błędów</li>
-          </ul>
+    </section>
+
+    <section id="profile" class="fade-in">
+      <h2>Profil zawodowy</h2>
+      <p class="section-lead">
+        Jestem studentem studiów magisterskich na kierunku Informatyka ze specjalizacją bezpieczeństwo systemów informacyjno-komunikacyjnych. Poszukuję praktyk studenckich w obszarze cyberbezpieczeństwa, szczególnie w kierunku SOC, pentestingu lub administracji bezpieczeństwem IT.
+      </p>
+      <p>
+        Posiadam 5-letnie doświadczenie IT w środowisku o podwyższonych wymaganiach bezpieczeństwa. Rozwijam kompetencje w administracji systemami Linux, bezpieczeństwie sieci, testach podatności aplikacji webowych, informatyce śledczej oraz automatyzacji zadań administracyjnych przy użyciu Bash i Python.
+      </p>
+    </section>
+
+    <section id="exp" class="fade-in">
+      <h2>Doświadczenie zawodowe</h2>
+      <ul class="timeline">
+        <li>
+          <span class="dot"></span>
+          <div>
+            <strong>05.2021 – obecnie: Operator / Żołnierz zawodowy – Specjalista IT</strong><br>
+            <span class="desc">Regionalne Centrum Informatyki Gdynia | Gdańsk</span>
+            <ul class="experience-details">
+              <li>Obsługa i konfiguracja systemów informatycznych w środowisku o podwyższonych wymaganiach bezpieczeństwa.</li>
+              <li>Wsparcie techniczne oraz rozwiązywanie problemów sieciowych i systemowych.</li>
+              <li>Zapewnienie ciągłości działania systemów krytycznych i prowadzenie dokumentacji eksploatacyjnej.</li>
+              <li>Praca zespołowa w środowisku opartym na procedurach, odpowiedzialności i wysokiej dokładności.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <div>
+            <strong>10.2019 – 05.2020: Pracownik Serwisu Elektronicznego</strong><br>
+            <span class="desc">Ivy Technology | Bydgoszcz</span>
+            <ul class="experience-details">
+              <li>Diagnostyka i naprawa urządzeń elektronicznych oraz sprzętu IT.</li>
+              <li>Testowanie, kontrola jakości oraz wymiana podzespołów i komponentów elektronicznych.</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="cyber" class="fade-in">
+      <h2>Rozwój w kierunku cyberbezpieczeństwa</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3><i class="fa-solid fa-shield-virus"></i> Bezpieczeństwo systemów i sieci</h3>
+          <p>Praktyczna administracja systemami Linux, konfiguracja bezpiecznych środowisk testowych, podstawy bezpieczeństwa sieci oraz wiedza potwierdzona certyfikatem CCNAv7.</p>
         </div>
-        <div class="links">
-          <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
-          <a class="btn-primary btn-demo-green" href="https://quiz-egazmin.netlify.app/" target="_blank">
-            <i class="fas fa-play"></i>
-            Demo
-          </a>
+        <div class="project-card">
+          <h3><i class="fa-solid fa-bug"></i> Podstawy pentestów</h3>
+          <p>Przygotowanie z metodyki OSSTMM, podstawowe badania penetracyjne oraz znajomość zagrożeń aplikacji webowych: SQL Injection, XSS i CSRF.</p>
+        </div>
+        <div class="project-card">
+          <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Informatyka śledcza</h3>
+          <p>Podstawy zabezpieczania materiału cyfrowego, analiza incydentów oraz rozwijanie praktycznego podejścia do dokumentowania ustaleń technicznych.</p>
         </div>
       </div>
-      <!-- TaskMaster -->
-      <div class="project-card fade-in">
-        <h3>
-          <i class="fas fa-tasks"></i>
-          TaskMaster
-        </h3>
-        <span class="tech">React</span>
-        <div>
-          Planer i kalendarz zadań dedykowany małym firmom i zespołom, z naciskiem na użyteczność i przejrzystość.
-          <ul>
-            <li>Intuicyjne zarządzanie zadaniami (dodawanie, edycja, usuwanie)</li>
-            <li>Widok kalendarza i lista priorytetów</li>
-            <li>Rozwijana jako realna propozycja narzędzia dla małego biznesu</li>
-          </ul>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2>Umiejętności techniczne</h2>
+      <p class="section-lead skills-intro">
+        Najważniejsze kompetencje podzielone według obszarów: bezpieczeństwo, systemy, programowanie, web oraz narzędzia pracy.
+      </p>
+      <div class="skills-dashboard">
+        <article class="skill-panel skill-panel-security">
+          <div class="skill-panel-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <h3>Bezpieczeństwo & systemy</h3>
+              <p>Linux, sieci, serwery i podstawy testów bezpieczeństwa.</p>
+            </div>
+          </div>
+          <div class="skill-cloud">
+            <span>Linux: Ubuntu / Debian</span>
+            <span>Bezpieczeństwo sieci</span>
+            <span>Administracja serwerami</span>
+            <span>CCNAv7 – podstawy sieci</span>
+            <span>OSSTMM</span>
+            <span>Podstawy pentestów</span>
+            <span>Informatyka śledcza</span>
+            <span>Bash Scripting</span>
+            <span>Nginx / Apache</span>
+          </div>
+        </article>
+
+        <article class="skill-panel skill-panel-code">
+          <div class="skill-panel-header">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <h3>Programowanie & bazy danych</h3>
+              <p>Backend, skrypty, API, aplikacje webowe i projekty narzędziowe pod Windows.</p>
+            </div>
+          </div>
+          <div class="skill-cloud skill-cloud-featured">
+            <span>PHP</span>
+            <span>Python</span>
+            <span>Django</span>
+            <span>MySQL</span>
+            <span>JavaScript ES6+</span>
+            <span>REST API</span>
+            <span>SQL</span>
+            <span>C++</span>
+            <span>Electron</span>
+            <span>React</span>
+            <span>Windows API / Explorer</span>
+            <span>Skrypty .bat / .reg</span>
+          </div>
+          <div class="skill-note">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>W praktyce wykorzystane m.in. w projektach Windhawk, narzędziach dla Windows oraz aplikacjach React/Electron.</span>
+          </div>
+        </article>
+
+        <article class="skill-panel">
+          <div class="skill-panel-header">
+            <i class="fa-solid fa-laptop-code"></i>
+            <div>
+              <h3>Frontend & narzędzia</h3>
+              <p>Tworzenie stron, praca z repozytoriami i narzędziami projektowymi.</p>
+            </div>
+          </div>
+          <div class="skill-cloud">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Responsive Design</span>
+            <span>Bootstrap</span>
+            <span>WordPress</span>
+            <span>jQuery</span>
+            <span>Git / GitHub</span>
+            <span>Postman</span>
+            <span>Figma – podstawy</span>
+            <span>Microsoft Office</span>
+          </div>
+        </article>
+
+        <article class="skill-panel skill-panel-languages">
+          <div class="skill-panel-header">
+            <i class="fa-solid fa-language"></i>
+            <div>
+              <h3>Języki</h3>
+              <p>Komunikacja w pracy technicznej i dokumentacji.</p>
+            </div>
+          </div>
+          <div class="language-cards">
+            <div class="language-card">
+              <span class="language-icon"><i class="fa-solid fa-flag"></i></span>
+              <div>
+                <span class="language-name">Polski</span>
+                <strong>ojczysty</strong>
+              </div>
+            </div>
+            <div class="language-card language-card-main">
+              <span class="language-icon"><i class="fa-solid fa-globe"></i></span>
+              <div>
+                <span class="language-name">Angielski</span>
+                <strong>C1 (2025)</strong>
+              </div>
+            </div>
+            <div class="language-card">
+              <span class="language-icon"><i class="fa-solid fa-medal"></i></span>
+              <div>
+                <span class="language-name">STANAG 6001</span>
+                <strong>angielski: SPJ 1111</strong>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="edu" class="fade-in">
+      <h2>Wykształcenie</h2>
+      <ul class="edu-timeline">
+        <li>
+          <span class="dot"></span>
+          <div>
+            <strong>10.2025 – obecnie: Informatyka – studia magisterskie</strong><br>
+            <span class="desc">Uniwersytet WSB Merito Warszawa<br>Specjalizacja: Bezpieczeństwo systemów informacyjno-komunikacyjnych. Program obejmuje m.in. cyberbezpieczeństwo, kryptografię, bezpieczeństwo sieci, ochronę danych, audyt bezpieczeństwa i zarządzanie incydentami.</span>
+          </div>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <div>
+            <strong>10.2022 – 06.2025: Informatyka – studia licencjackie</strong><br>
+            <span class="desc">Uniwersytet WSB Merito Gdańsk<br>Specjalizacja: Aplikacje mobilne i bazy danych. Ocena końcowa: 4.5. Zakres: programowanie aplikacji, projektowanie baz danych, inżynieria oprogramowania i podstawy bezpieczeństwa systemów informatycznych.</span>
+          </div>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <div>
+            <strong>09.2015 – 04.2019: Technik informatyk</strong><br>
+            <span class="desc">Zespół Szkół Licealnych i Technicznych im. Ziemi Tucholskiej w Tucholi<br>Kwalifikacje: E.12, E.13, E.14. Specjalizacja: sieci komputerowe, administracja systemów i obsługa sprzętu IT.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="certs" class="fade-in">
+      <h2>Certyfikaty i kwalifikacje</h2>
+      <div class="certs-list">
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>Ekspert Bezpieczeństwa OSSTMM</strong><br><span class="cert-meta">ECSC | 2026 – metodyka testów bezpieczeństwa, analiza ryzyka i weryfikacja zabezpieczeń.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>Podstawowe badanie penetracyjne</strong><br><span class="cert-meta">ECSC | 2026 – podstawy pentestów, identyfikacja podatności i raportowanie wyników audytu.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>STANAG 6001 (SPJ 1111)</strong><br><span class="cert-meta">Centrum Szkolenia Marynarki Wojennej w Ustce | 2026 – język angielski.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>CEFR C1 in the EnglishScore Core Skills</strong><br><span class="cert-meta">British Council EnglishScore | 2025, kod weryfikacyjny: 7f2f26649a1b.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>Informatyka śledcza</strong><br><span class="cert-meta">ECSC | 2024 – zabezpieczanie materiału cyfrowego i analiza incydentów.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>CCNAv7: Introduction to Networks</strong><br><span class="cert-meta">Cisco Networking Academy / Uniwersytet WSB Merito w Gdańsku | 2022.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>Kwalifikacje E.13 i E.14</strong><br><span class="cert-meta">Sieci komputerowe, administracja oraz tworzenie aplikacji internetowych i baz danych.</span></span></span>
+        <span class="cert-item"><i class="fas fa-certificate"></i><span><strong>ECDL BASE Certificate</strong><br><span class="cert-meta">ZSLiT Tuchola | 2018.</span></span></span>
+      </div>
+    </section>
+
+    <section id="practice" class="fade-in">
+      <h2>Rozwój praktyczny</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <h3><i class="fab fa-linux"></i> Administracja systemów Linux</h3>
+          <span class="tech">Ubuntu / Debian, Bash, firewall, uprawnienia</span>
+          <p>Konfiguracja i zabezpieczanie serwerów, zarządzanie użytkownikami, uprawnieniami, usługami oraz podstawową ochroną systemu.</p>
         </div>
-        <div class="links">
-          <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
-          <a class="btn-primary btn-demo-green" href="https://taskmaster-alfa.netlify.app/" target="_blank">
-            <i class="fas fa-play"></i>
-            Demo
-          </a>
+        <div class="project-card fade-in">
+          <h3><i class="fa-solid fa-shield-halved"></i> Laboratoria bezpieczeństwa</h3>
+          <span class="tech">Linux, sieci, środowiska testowe</span>
+          <p>Tworzenie środowisk testowych do nauki zabezpieczania systemów, analizy zagrożeń i praktycznego sprawdzania konfiguracji.</p>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fa-solid fa-terminal"></i> Skrypty automatyzujące</h3>
+          <span class="tech">Python, Bash</span>
+          <p>Narzędzia do monitorowania systemów, logowania zdarzeń i automatyzacji zadań administracyjnych.</p>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fa-solid fa-bug"></i> Analiza bezpieczeństwa aplikacji webowych</h3>
+          <span class="tech">SQLi, XSS, CSRF, podstawy pentestów</span>
+          <p>Praktyczne poznawanie podatności aplikacji webowych oraz sposobów ich ograniczania i dokumentowania.</p>
         </div>
       </div>
-      <!-- Więcej projektów -->
-      <div class="project-card fade-in">
-        <h3>
-          <i class="fab fa-github"></i>
-          Więcej projektów?
-        </h3>
-        <span class="tech">Sprawdź na GitHub</span>
-        <div>
-          <a class="btn-github" href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2>Projekty</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <h3><i class="fa-solid fa-folder-open"></i> Block Folder Thumbnail Cache</h3>
+          <span class="tech">Windhawk Mod, C++, Windows Explorer, IThumbnailCache</span>
+          <p>Mod do Windhawk, który blokuje generowanie miniatur podglądu dla folderów w Eksploratorze Windows, a jednocześnie zostawia miniatury zwykłych plików. Projekt poprawia spójność wyglądu przy niestandardowych motywach ikon.</p>
+          <div class="links">
+            <a class="btn-primary" href="https://github.com/wolfgangxxiii/windhawk-block-folder-thumbnail-cache" target="_blank">Kod</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fa-brands fa-windows"></i> Disable MS Game Bar Popup / Overlay</h3>
+          <span class="tech">Windows, LTSC, .bat, .reg, GameDVR</span>
+          <p>Zestaw skryptów ograniczających wyskakujące okna Microsoft Game Bar / Gaming Overlay, protokół ms-gamebar oraz ustawienia GameDVR. Przydatne szczególnie przy grach, emulatorach, trybie fullscreen i kontrolerach.</p>
+          <div class="links">
+            <a class="btn-primary" href="https://github.com/wolfgangxxiii/disable-ms-gamebar-popup-ms-gamebar-overlay-win-ltsc" target="_blank">Kod</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fas fa-times-circle"></i> Kółko i Krzyżyk</h3>
+          <span class="tech">Electron, JavaScript</span>
+          <p>Prosta aplikacja desktopowa dla dwóch osób, z intuicyjnym interfejsem i obsługą wyniku gry.</p>
+          <div class="links">
+            <a class="btn-primary" href="https://github.com/wolfgangxxiii/Electron-Projekt" target="_blank">Kod</a>
+            <a class="btn-primary btn-demo-green" href="https://electron-projekt.netlify.app/" target="_blank"><i class="fas fa-play"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fas fa-question-circle"></i> Quiz do Egzaminu</h3>
+          <span class="tech">React</span>
+          <p>Aplikacja webowa wspierająca naukę do egzaminu dyplomowego z informatyki, z oceną odpowiedzi i podsumowaniem wyniku.</p>
+          <div class="links">
+            <a class="btn-primary" href="https://github.com/wolfgangxxiii/quiz" target="_blank">Kod</a>
+            <a class="btn-primary btn-demo-green" href="https://quiz-egazmin.netlify.app/" target="_blank"><i class="fas fa-play"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fas fa-tasks"></i> TaskMaster</h3>
+          <span class="tech">React</span>
+          <p>Planer i kalendarz zadań dla małych firm i zespołów, rozwijany z naciskiem na przejrzystość i prostą obsługę.</p>
+          <div class="links">
+            <a class="btn-primary" href="https://github.com/wolfgangxxiii/TaskMaster" target="_blank">Kod</a>
+            <a class="btn-primary btn-demo-green" href="https://taskmaster-alfa.netlify.app/" target="_blank"><i class="fas fa-play"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3><i class="fab fa-github"></i> Więcej projektów</h3>
+          <span class="tech">GitHub</span>
+          <p>Repozytoria i kolejne projekty rozwojowe publikuję na GitHubie.</p>
+          <div class="links">
+            <a class="btn-github" href="https://github.com/wolfgangxxiii" target="_blank">github.com/wolfgangxxiii</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="contact" class="fade-in">
-    <h2>Kontakt</h2>
-    <div class="contact-center">
-      <a href="mailto:szymon.bawat@gmail.com" class="button">
-        <i class="fa fa-envelope"></i>
-        szymon.bawat@gmail.com
-      </a>
-      <div class="contact-icons">
-        <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/szymon-piotr-b%C5%82awat-b5b504193/" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.instagram.com/wolfgangxxiii/" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/WolfGangXXIII99/?locale=pl_PL" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.snapchat.com/add/wolfgangxxiii" target="_blank" aria-label="Snapchat">
-          <i class="fab fa-snapchat-ghost"></i>
-        </a>
+    </section>
+
+    <section id="soft" class="fade-in">
+      <h2>Kompetencje miękkie i zainteresowania</h2>
+      <h3 class="center-heading">Kompetencje miękkie</h3>
+      <div class="hobbies-list">
+        <span class="hobby-item"><i class="fa-solid fa-check"></i> Samodyscyplina</span>
+        <span class="hobby-item"><i class="fa-solid fa-users"></i> Praca zespołowa</span>
+        <span class="hobby-item"><i class="fa-solid fa-lightbulb"></i> Rozwiązywanie problemów</span>
+        <span class="hobby-item"><i class="fa-solid fa-list-check"></i> Skrupulatność</span>
+        <span class="hobby-item"><i class="fa-solid fa-comments"></i> Komunikatywność</span>
+        <span class="hobby-item"><i class="fa-solid fa-user-shield"></i> Odpowiedzialność</span>
+        <span class="hobby-item"><i class="fa-solid fa-arrows-rotate"></i> Adaptacyjność</span>
+        <span class="hobby-item"><i class="fa-solid fa-book-open"></i> Nauka ciągła</span>
       </div>
-    </div>
-  </section>
+      <h3 class="center-heading">Zainteresowania</h3>
+      <div class="hobbies-list">
+        <span class="hobby-item"><i class="fas fa-terminal icon-terminal"></i> Cyberbezpieczeństwo</span>
+        <span class="hobby-item"><i class="fab fa-linux icon-linux"></i> Linux & Open Source</span>
+        <span class="hobby-item"><i class="fa-solid fa-microchip"></i> Elektronika i hardware</span>
+        <span class="hobby-item"><i class="fas fa-dumbbell icon-dumbbell"></i> Sport i aktywność fizyczna</span>
+        <span class="hobby-item"><i class="fas fa-gamepad icon-gamepad"></i> Gry strategiczne</span>
+        <span class="hobby-item"><i class="fa-solid fa-book"></i> Literatura techniczna</span>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Kontakt</h2>
+      <div class="contact-center">
+        <div class="contact-card">
+          <div class="contact-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div>
+            <span>Dostępność</span>
+            <strong>trzymiesięczny okres wypowiedzenia</strong>
+          </div>
+        </div>
+        <a href="mailto:szymon.bawat@gmail.com" class="button"><i class="fa fa-envelope"></i> szymon.bawat@gmail.com</a>
+        <a href="tel:+48720775534" class="button"><i class="fa fa-phone"></i> 720 775 534</a>
+        <div class="contact-icons">
+          <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/szymon-piotr-b%C5%82awat-b5b504193/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/wolfgangxxiii/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/WolfGangXXIII99/?locale=pl_PL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.snapchat.com/add/wolfgangxxiii" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    © 2025 Szymon Piotr Bławat
+    © 2026 Szymon Piotr Bławat | wolfgangxxiii.org
   </footer>
   <script src="script.js"></script>
 </body>

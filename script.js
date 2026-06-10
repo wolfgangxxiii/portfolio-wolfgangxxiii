@@ -195,6 +195,12 @@ const translations = {
   'Gry strategiczne': 'Strategy games',
   'Literatura techniczna': 'Technical literature',
   'Dostępność': 'Availability',
+  'Linux, sieci, serwery, podstawy testów bezpieczeństwa.': 'Linux, networks, servers and security testing basics.',
+  'Backend, API, skrypty, aplikacje webowe i narzędzia Windows.': 'Backend, APIs, scripts, web applications and Windows tools.',
+  'Strony, repozytoria i narzędzia pracy projektowej.': 'Websites, repositories and project workflow tools.',
+  'Komunikacja techniczna i dokumentacja.': 'Technical communication and documentation.',
+  'Wykorzystane w projektach Windhawk, narzędziach dla Windows oraz aplikacjach React/Electron.': 'Used in Windhawk projects, Windows tools and React/Electron applications.',
+  '.bat / .reg': '.bat / .reg',
   'trzymiesięczny okres wypowiedzenia': 'three-month notice period',
 };
 const reverseTranslations = Object.fromEntries(Object.entries(translations).map(([pl, en]) => [en, pl]));
@@ -240,7 +246,7 @@ if (langBtn) {
 }
 
 // Delikatny efekt światła pod kursorem na kartach
-const glowCards = document.querySelectorAll('.project-card, .skill-panel, .cert-item');
+const glowCards = document.querySelectorAll('.project-card, .skill-panel, .skill-compact-card, .language-pill, .cert-item, .soft-compact-card, .contact-compact-card, .contact-action');
 glowCards.forEach(card => {
   card.addEventListener('pointermove', event => {
     const rect = card.getBoundingClientRect();

@@ -203,7 +203,9 @@ https://github.com/wolfgangxxiii
 
 ## 📝 Licencja
 
-Projekt jest udostępniany na licencji MIT.
+Copyright © 2026 Szymon Piotr Bławat. Wszelkie prawa zastrzeżone.
+
+Kod źródłowy jest publicznie dostępny wyłącznie do wglądu. Kopiowanie, modyfikowanie, redystrybucja oraz wykorzystywanie komercyjne są zabronione bez uprzedniej pisemnej zgody autora.
 
 ## 👤 Autor
 
@@ -419,7 +421,11 @@ https://github.com/wolfgangxxiii
 
 ## 📝 License
 
-This project is available under the MIT License.
+Copyright © 2026 Szymon Piotr Bławat. All Rights Reserved.
+
+The source code is publicly available for viewing purposes only. Copying,
+modification, redistribution and commercial use are prohibited without prior
+written permission.
 
 ## 👤 Author
 

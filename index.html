@@ -41,6 +41,7 @@
           <li><a href="#about" class="active">Start</a></li>
           <li><a href="#profile">Profil</a></li>
           <li><a href="#skills">Umiejętności</a></li>
+          <li><a href="#edu">Wykształcenie</a></li>
           <li><a href="#practice">Rozwój praktyczny</a></li>
           <li><a href="#projects">Projekty</a></li>
           <li><a href="#contact">Kontakt</a></li>
@@ -61,15 +62,27 @@
           <div class="hero-desc">
             <p>Zaplecze programistyczne i systemowe oraz aktualna specjalizacja w bezpieczeństwie systemów informacyjno-komunikacyjnych.</p>
           </div>
-          <div class="hero-tags" aria-label="Najważniejsze obszary rozwoju">
+          <div class="hero-tags premium-tags" aria-label="Najważniejsze obszary rozwoju">
             <span><i class="fa-solid fa-shield-halved"></i> Cyberbezpieczeństwo</span>
             <span><i class="fa-brands fa-linux"></i> Linux & serwery</span>
             <span><i class="fa-solid fa-network-wired"></i> Sieci komputerowe</span>
             <span><i class="fa-solid fa-code"></i> Full Stack</span>
           </div>
-          <div class="hero-contact">
-            <span><i class="fa fa-location-dot"></i> Śliwice / Gdańsk / zdalnie</span>
-            <span><i class="fa fa-cake-candles"></i> Wiek: <strong><span id="age">26</span></strong> lat</span>
+          <div class="hero-meta-grid" aria-label="Informacje podstawowe">
+            <div class="hero-meta-card">
+              <i class="fa fa-location-dot"></i>
+              <div>
+                <small>Lokalizacja</small>
+                <strong>Śliwice / Gdańsk / zdalnie</strong>
+              </div>
+            </div>
+            <div class="hero-meta-card hero-age-card">
+              <i class="fa fa-cake-candles"></i>
+              <div>
+                <small>Wiek</small>
+                <strong><span id="age">26</span> lat</strong>
+              </div>
+            </div>
           </div>
           <div class="hero-actions">
             <a href="mailto:szymon.bawat@gmail.com" class="button"><i class="fa fa-envelope"></i> Napisz do mnie</a>
@@ -218,31 +231,54 @@
       </div>
     </section>
 
-    <section id="edu" class="fade-in">
-      <h2>Wykształcenie</h2>
-      <ul class="edu-timeline">
-        <li>
-          <span class="dot"></span>
-          <div>
-            <strong>10.2025 – obecnie: Informatyka – studia magisterskie</strong><br>
-            <span class="desc">Uniwersytet WSB Merito Warszawa<br>Specjalizacja: Bezpieczeństwo systemów informacyjno-komunikacyjnych. Program obejmuje m.in. cyberbezpieczeństwo, kryptografię, bezpieczeństwo sieci, ochronę danych, audyt bezpieczeństwa i zarządzanie incydentami.</span>
+    <section id="edu" class="fade-in education-section timeline-education-section">
+      <div class="section-heading no-kicker">
+        <h2>Wykształcenie</h2>
+      </div>
+
+      <div class="education-timeline" aria-label="Oś czasu wykształcenia">
+        <article class="education-timeline-item current-education">
+          <div class="timeline-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-card">
+            <span class="education-date">10.2025 – obecnie</span>
+            <h3>Informatyka – studia magisterskie</h3>
+            <p class="education-school">Uniwersytet WSB Merito Warszawa</p>
+            <div class="education-tags">
+              <span>Cyberbezpieczeństwo</span>
+              <span>Kryptografia</span>
+              <span>Audyt bezpieczeństwa</span>
+            </div>
           </div>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <div>
-            <strong>10.2022 – 06.2025: Informatyka – studia licencjackie</strong><br>
-            <span class="desc">Uniwersytet WSB Merito Gdańsk<br>Specjalizacja: Aplikacje mobilne i bazy danych. Ocena końcowa: 4.5. Zakres: programowanie aplikacji, projektowanie baz danych, inżynieria oprogramowania i podstawy bezpieczeństwa systemów informatycznych.</span>
+        </article>
+
+        <article class="education-timeline-item">
+          <div class="timeline-marker"><i class="fa-solid fa-code"></i></div>
+          <div class="timeline-card">
+            <span class="education-date">10.2022 – 06.2025</span>
+            <h3>Informatyka – studia licencjackie</h3>
+            <p class="education-school">Uniwersytet WSB Merito Gdańsk</p>
+            <div class="education-tags">
+              <span>Aplikacje mobilne</span>
+              <span>Bazy danych</span>
+              <span>Ocena 4.5</span>
+            </div>
           </div>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <div>
-            <strong>09.2015 – 04.2019: Technik informatyk</strong><br>
-            <span class="desc">Zespół Szkół Licealnych i Technicznych im. Ziemi Tucholskiej w Tucholi<br>Kwalifikacje: E.12, E.13, E.14. Specjalizacja: sieci komputerowe, administracja systemów i obsługa sprzętu IT.</span>
+        </article>
+
+        <article class="education-timeline-item">
+          <div class="timeline-marker"><i class="fa-solid fa-microchip"></i></div>
+          <div class="timeline-card">
+            <span class="education-date">09.2015 – 04.2019</span>
+            <h3>Technik informatyk</h3>
+            <p class="education-school">ZSLiT im. Ziemi Tucholskiej w Tucholi</p>
+            <div class="education-tags compact-tags">
+              <span>E.12</span>
+              <span>E.13</span>
+              <span>E.14</span>
+            </div>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
 
     <section id="certs" class="fade-in">
@@ -382,24 +418,32 @@
     </section>
 
     <section id="contact" class="fade-in compact-contact-section">
-      <div class="section-heading no-kicker">
-        <h2>Kontakt</h2>
-      </div>
-      <div class="contact-compact-card">
-        <div class="availability-line">
-          <span><i class="fa-solid fa-calendar-check"></i> Dostępność</span>
-          <strong>trzymiesięczny okres wypowiedzenia</strong>
+      <div class="contact-panel">
+        <div class="contact-panel-copy">
+          <span class="contact-kicker"><i class="fa-solid fa-paper-plane"></i> Kontakt</span>
+          <h2>Napisz do mnie</h2>
+          <p>Najwygodniejszy kontakt to wiadomość e-mail. Odpowiem w sprawie praktyk, projektów lub współpracy IT.</p>
         </div>
-        <div class="contact-action-row">
-          <a href="mailto:szymon.bawat@gmail.com" class="contact-action"><i class="fa fa-envelope"></i> szymon.bawat@gmail.com</a>
-          <a href="tel:+48720775534" class="contact-action"><i class="fa fa-phone"></i> 720 775 534</a>
-        </div>
-        <div class="contact-icons compact-socials">
-          <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/szymon-piotr-b%C5%82awat-b5b504193/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/wolfgangxxiii/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/WolfGangXXIII99/?locale=pl_PL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.snapchat.com/add/wolfgangxxiii" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+
+        <div class="contact-panel-actions">
+          <div class="availability-badge">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div>
+              <span>Dostępność</span>
+              <strong>trzymiesięczny okres wypowiedzenia</strong>
+            </div>
+          </div>
+          <a href="mailto:szymon.bawat@gmail.com" class="mail-cta">
+            <i class="fa fa-envelope"></i>
+            <span>szymon.bawat@gmail.com</span>
+          </a>
+          <div class="contact-icons compact-socials">
+            <a href="https://github.com/wolfgangxxiii" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/szymon-piotr-b%C5%82awat-b5b504193/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/wolfgangxxiii/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/WolfGangXXIII99/?locale=pl_PL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.snapchat.com/add/wolfgangxxiii" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+          </div>
         </div>
       </div>
     </section>

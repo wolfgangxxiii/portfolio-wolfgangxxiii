@@ -82,7 +82,7 @@ const revealGroups = [
     variant: 'reveal-scale'
   },
   {
-    selector: '.contact-action, .contact-icons a, .hero-actions .button, .btn-primary, .btn-github',
+    selector: '.contact-action, .contact-icons, .hero-actions .button, .btn-primary, .btn-github',
     variant: 'reveal-scale'
   }
 ];
@@ -144,8 +144,17 @@ if (reducedMotion) {
       }
 
       // Element wchodzi do aktywnej części widoku. Działa przy przewijaniu w obu kierunkach.
+      // Przy samym końcu dokumentu pokazujemy również elementy znajdujące się przy dolnej
+      // krawędzi ekranu — mobilny pasek przeglądarki nie wymusza wtedy drugiego gestu.
+      const documentHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      const nearPageBottom = window.scrollY + window.innerHeight >= documentHeight - 140;
       const entersViewport = rect.top < enterTop && rect.bottom > enterBottom;
-      if (entersViewport && !currentlyVisible) {
+      const entersAtPageEnd = nearPageBottom && rect.top < window.innerHeight + 80 && rect.bottom > -40;
+
+      if ((entersViewport || entersAtPageEnd) && !currentlyVisible) {
         element.classList.add('is-visible');
       }
     });
@@ -162,6 +171,10 @@ if (reducedMotion) {
   window.addEventListener('scroll', requestRevealUpdate, { passive: true });
   window.addEventListener('resize', requestRevealUpdate, { passive: true });
   window.addEventListener('orientationchange', requestRevealUpdate, { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', requestRevealUpdate, { passive: true });
+    window.visualViewport.addEventListener('scroll', requestRevealUpdate, { passive: true });
+  }
 
   // Pierwsze ustawienie stanu po pełnym ułożeniu strony.
   requestAnimationFrame(() => requestAnimationFrame(updateRevealState));

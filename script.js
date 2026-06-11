@@ -445,3 +445,10 @@ glowCards.forEach(card => {
     card.style.setProperty('--my', `${y}%`);
   });
 });
+
+// v31: utrzymanie poprawnego stanu mobilnego menu po zmianie orientacji/rozmiaru.
+window.addEventListener('orientationchange', () => {
+  window.setTimeout(() => {
+    if (window.innerWidth > 860) setMobileMenu(false);
+  }, 120);
+}, { passive: true });

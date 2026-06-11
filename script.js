@@ -473,3 +473,34 @@ window.addEventListener('orientationchange', () => {
 
   updateHeaderState();
 })();
+
+// v33: stabilizacja etykiety języka i mobilnego nagłówka
+(function () {
+  const header = document.querySelector('header');
+  const languageButton = document.getElementById('language-toggle');
+
+  function syncHeaderState() {
+    header?.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+
+  function ensureLanguageLabel() {
+    if (!languageButton) return;
+    let label = languageButton.querySelector('span');
+    if (!label) {
+      label = document.createElement('span');
+      languageButton.appendChild(label);
+    }
+    const currentLanguage = document.documentElement.lang === 'en' ? 'en' : 'pl';
+    label.textContent = currentLanguage === 'en' ? 'PL' : 'EN';
+  }
+
+  window.addEventListener('scroll', syncHeaderState, { passive: true });
+  window.addEventListener('pageshow', () => {
+    syncHeaderState();
+    ensureLanguageLabel();
+  });
+  languageButton?.addEventListener('click', () => requestAnimationFrame(ensureLanguageLabel));
+
+  syncHeaderState();
+  ensureLanguageLabel();
+})();

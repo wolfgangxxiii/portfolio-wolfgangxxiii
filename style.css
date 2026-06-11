@@ -3193,3 +3193,167 @@ body.menu-open {
     z-index: 2147483640 !important;
   }
 }
+
+/* ===== v31: mobilny pasek nawigacji zawsze widoczny + menu nad bieżącą treścią ===== */
+@media (max-width: 860px) {
+  html {
+    scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px));
+  }
+
+  body {
+    padding-top: calc(72px + env(safe-area-inset-top, 0px));
+  }
+
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-height: calc(72px + env(safe-area-inset-top, 0px));
+    z-index: 3000 !important;
+    transform: none !important;
+    background: color-mix(in srgb, var(--card-solid) 96%, transparent) !important;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(44, 24, 91, 0.10);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .nav {
+    min-height: calc(72px + env(safe-area-inset-top, 0px));
+    height: calc(72px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 12px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px 42px 44px;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap !important;
+  }
+
+  .logo {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .toggle-darkmode,
+  .language-toggle,
+  .hamburger {
+    position: static !important;
+    inset: auto !important;
+    margin: 0 !important;
+    z-index: auto !important;
+    width: 42px;
+    height: 42px;
+    box-shadow: none;
+    background: var(--card-solid);
+    border: 1px solid var(--line);
+  }
+
+  .hamburger {
+    display: inline-flex !important;
+    grid-column: 4;
+  }
+
+  .toggle-darkmode { grid-column: 2; }
+  .language-toggle { grid-column: 3; }
+
+  .main-nav {
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    order: initial !important;
+  }
+
+  .main-nav ul,
+  .main-nav ul.open {
+    position: fixed !important;
+    top: calc(78px + env(safe-area-inset-top, 0px)) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-height: calc(100dvh - 94px - env(safe-area-inset-top, 0px));
+    overflow-y: auto;
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin: 0 !important;
+    padding: 12px !important;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--card-solid) !important;
+    box-shadow: 0 22px 60px rgba(24, 15, 45, 0.24);
+    z-index: 2999 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -10px, 0);
+    transition: opacity .2s ease, transform .24s cubic-bezier(.2,.75,.25,1), visibility 0s linear .24s;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav ul.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+  }
+
+  .main-nav li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .main-nav a {
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 14px;
+    border-radius: 12px;
+  }
+
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    inset: calc(72px + env(safe-area-inset-top, 0px)) 0 0;
+    z-index: 2990 !important;
+    background: rgba(18, 11, 36, 0.18) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .2s ease, visibility 0s linear .2s;
+  }
+
+  .menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    touch-action: auto !important;
+  }
+
+  body.menu-open main,
+  body.menu-open footer {
+    pointer-events: auto !important;
+  }
+
+  body.dark header,
+  body.dark .main-nav ul {
+    background: var(--card-solid) !important;
+  }
+}

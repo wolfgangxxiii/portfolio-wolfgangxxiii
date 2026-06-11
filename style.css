@@ -2866,12 +2866,13 @@ body {
   overflow-x: clip;
 }
 
+html.menu-open,
 body.menu-open {
-  position: fixed;
-  left: 0;
-  right: 0;
-  width: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body.menu-open {
   touch-action: none;
 }
 
@@ -2960,19 +2961,21 @@ body.menu-open {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translate3d(0, -18px, 0) scale(.97);
-    transform-origin: top right;
-    transition: opacity .24s ease,
-                transform .34s cubic-bezier(.18,.86,.24,1),
-                visibility 0s linear .34s;
+    transform: translate3d(0, -12px, 0);
+    transform-origin: top center;
+    will-change: opacity, transform;
+    transition: opacity .20s ease-out,
+                transform .26s cubic-bezier(.2,.8,.2,1),
+                visibility 0s linear .26s;
     -webkit-overflow-scrolling: touch;
+    contain: layout paint;
   }
 
   .main-nav ul.open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0);
     transition-delay: 0s;
   }
 
@@ -3009,7 +3012,7 @@ body.menu-open {
     position: fixed;
     inset: 0;
     z-index: 1190;
-    background: rgba(18, 11, 36, .44);
+    background: rgba(18, 11, 36, .34);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -3026,7 +3029,21 @@ body.menu-open {
   body.dark .main-nav ul {
     background: var(--card-solid);
   }
+
+  body.menu-open main,
+  body.menu-open footer {
+    pointer-events: none;
+  }
+
+  body.menu-open .scroll-reveal,
+  body.menu-open section,
+  body.menu-open .project-card,
+  body.menu-open .skill-compact-card,
+  body.menu-open .cert-item {
+    transition: none !important;
+  }
 }
+
 
 @media (max-width: 700px), (pointer: coarse) {
   /* Mobilnie animujemy raz, bez blur i bez ciągłego resetowania podczas scrolla. */

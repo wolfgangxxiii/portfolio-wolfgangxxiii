@@ -116,45 +116,73 @@ document.querySelectorAll('main > section').forEach(section => {
 
 if (reducedMotion) {
   revealElements.forEach(element => element.classList.add('is-visible'));
+} else if (mobileAnimationMode) {
+  // Na smartfonach używamy IntersectionObserver i animujemy każdy element tylko raz.
+  // Eliminuje to kosztowne getBoundingClientRect() wykonywane podczas każdego scrolla.
+  const mobileRevealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+      element.classList.add('is-visible');
+      mobileRevealObserver.unobserve(element);
+
+      const finishAnimation = () => {
+        element.classList.add('animation-complete');
+        element.style.removeProperty('will-change');
+      };
+
+      element.addEventListener('transitionend', finishAnimation, { once: true });
+      window.setTimeout(finishAnimation, 850);
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px 110px 0px',
+    threshold: 0.025
+  });
+
+  revealElements.forEach(element => mobileRevealObserver.observe(element));
+
+  // Przy końcu strony pokaż wszystkie ostatnie elementy bez potrzeby drugiego gestu.
+  const revealPageEnd = () => {
+    const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    if (window.scrollY + window.innerHeight < docHeight - 180) return;
+
+    revealElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 140 && rect.bottom > -60) {
+        element.classList.add('is-visible', 'animation-complete');
+        mobileRevealObserver.unobserve(element);
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealPageEnd, { passive: true });
+  window.addEventListener('resize', revealPageEnd, { passive: true });
+  window.visualViewport?.addEventListener('resize', revealPageEnd, { passive: true });
 } else {
-  // Stabilna animacja dwukierunkowa:
-  // - element pozostaje widoczny, dopóki choć część znajduje się na ekranie,
-  // - po pełnym opuszczeniu widoku jest resetowany,
-  // - po ponownym wejściu od góry lub od dołu animuje się ponownie.
-  // Zastosowanie requestAnimationFrame zapobiega wielokrotnym obliczeniom w jednej klatce.
+  // Desktop: animacja działa przy przewijaniu w obie strony, ale reset następuje
+  // dopiero po pełnym opuszczeniu ekranu, więc elementy w polu widzenia nie skaczą.
   let ticking = false;
-  const exitBuffer = mobileAnimationMode ? 24 : 48;
-  const enterTop = mobileAnimationMode ? window.innerHeight * 0.94 : window.innerHeight * 0.90;
-  const enterBottom = mobileAnimationMode ? window.innerHeight * 0.06 : window.innerHeight * 0.10;
+  const exitBuffer = 80;
 
   function updateRevealState() {
+    const viewportHeight = window.innerHeight;
+    const enterTop = viewportHeight * 0.90;
+    const enterBottom = viewportHeight * 0.10;
+
     revealElements.forEach(element => {
       const rect = element.getBoundingClientRect();
       const currentlyVisible = element.classList.contains('is-visible');
-
-      // Element jest naprawdę poza ekranem — dopiero wtedy można go zresetować.
       const fullyAbove = rect.bottom < -exitBuffer;
-      const fullyBelow = rect.top > window.innerHeight + exitBuffer;
+      const fullyBelow = rect.top > viewportHeight + exitBuffer;
 
       if (fullyAbove || fullyBelow) {
-        if (currentlyVisible) {
-          element.classList.remove('is-visible');
-        }
+        if (currentlyVisible) element.classList.remove('is-visible');
         return;
       }
 
-      // Element wchodzi do aktywnej części widoku. Działa przy przewijaniu w obu kierunkach.
-      // Przy samym końcu dokumentu pokazujemy również elementy znajdujące się przy dolnej
-      // krawędzi ekranu — mobilny pasek przeglądarki nie wymusza wtedy drugiego gestu.
-      const documentHeight = Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight
-      );
-      const nearPageBottom = window.scrollY + window.innerHeight >= documentHeight - 140;
-      const entersViewport = rect.top < enterTop && rect.bottom > enterBottom;
-      const entersAtPageEnd = nearPageBottom && rect.top < window.innerHeight + 80 && rect.bottom > -40;
-
-      if ((entersViewport || entersAtPageEnd) && !currentlyVisible) {
+      if (rect.top < enterTop && rect.bottom > enterBottom && !currentlyVisible) {
         element.classList.add('is-visible');
       }
     });
@@ -170,13 +198,6 @@ if (reducedMotion) {
 
   window.addEventListener('scroll', requestRevealUpdate, { passive: true });
   window.addEventListener('resize', requestRevealUpdate, { passive: true });
-  window.addEventListener('orientationchange', requestRevealUpdate, { passive: true });
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', requestRevealUpdate, { passive: true });
-    window.visualViewport.addEventListener('scroll', requestRevealUpdate, { passive: true });
-  }
-
-  // Pierwsze ustawienie stanu po pełnym ułożeniu strony.
   requestAnimationFrame(() => requestAnimationFrame(updateRevealState));
 }
 
@@ -194,31 +215,50 @@ window.addEventListener('pageshow', event => {
   });
 });
 
-// Hamburger menu logic
+// Hamburger menu logic — panel nad treścią, bez przesuwania dokumentu
 const hamburger = document.getElementById('hamburger-menu');
 const navList = document.querySelector('.main-nav ul');
-hamburger.addEventListener('click', function () {
-  navList.classList.toggle('open');
-  hamburger.setAttribute(
-    'aria-label',
-    navList.classList.contains('open') ? 'Ukryj menu' : 'Pokaż menu'
-  );
-  // Ikona zmiany (hamburger ↔ close)
-  hamburger.innerHTML = navList.classList.contains('open')
-    ? '<i class="fa fa-times"></i>'
-    : '<i class="fa fa-bars"></i>';
-});
-// Automatycznie zamykaj menu po kliknięciu w link (mobile)
-document.querySelectorAll('.main-nav ul li a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth < 701) {
-      navList.classList.remove('open');
-      hamburger.innerHTML = '<i class="fa fa-bars"></i>';
-      hamburger.setAttribute('aria-label','Pokaż menu');
-    }
-  });
+const menuOverlay = document.getElementById('menu-overlay');
+let lockedScrollY = 0;
+
+function setMobileMenu(open) {
+  if (!hamburger || !navList) return;
+
+  hamburger.classList.toggle('is-open', open);
+  navList.classList.toggle('open', open);
+  menuOverlay?.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Ukryj menu' : 'Pokaż menu');
+  menuOverlay?.setAttribute('aria-hidden', String(!open));
+
+  if (open) {
+    lockedScrollY = window.scrollY;
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.classList.add('menu-open');
+  } else if (document.body.classList.contains('menu-open')) {
+    document.body.classList.remove('menu-open');
+    document.body.style.removeProperty('top');
+    window.scrollTo(0, lockedScrollY);
+  }
+}
+
+hamburger?.addEventListener('click', () => {
+  setMobileMenu(!navList?.classList.contains('open'));
 });
 
+menuOverlay?.addEventListener('click', () => setMobileMenu(false));
+
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => setMobileMenu(false));
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') setMobileMenu(false);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 860) setMobileMenu(false);
+}, { passive: true });
 
 // LANGUAGE TOGGLE PL / EN
 const langBtn = document.getElementById('language-toggle');

@@ -3866,3 +3866,41 @@ body.menu-open {
     filter: none !important;
   }
 }
+
+/* ===== v35: desktopowe podświetlenie opcji w menu mobilnym ===== */
+@media (max-width: 860px) {
+  .main-nav a {
+    transition:
+      transform .2s ease,
+      color .2s ease,
+      background .2s ease,
+      box-shadow .2s ease !important;
+  }
+
+  /* Ten sam efekt co w nawigacji desktopowej. */
+  .main-nav a:hover,
+  .main-nav a:focus-visible,
+  .main-nav a.active,
+  .main-nav a:active {
+    color: #fff !important;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.24) !important;
+    transform: translateY(-1px) !important;
+    outline: none !important;
+  }
+
+  /* W trybie ciemnym tekst również pozostaje biały i czytelny. */
+  body.dark .main-nav a:hover,
+  body.dark .main-nav a:focus-visible,
+  body.dark .main-nav a.active,
+  body.dark .main-nav a:active {
+    color: #fff !important;
+    background: linear-gradient(135deg, #6d28d9, #9333ea) !important;
+    box-shadow: 0 10px 26px rgba(147, 51, 234, 0.34) !important;
+  }
+
+  /* Delikatne podświetlenie podczas sterowania dotykiem. */
+  .main-nav a {
+    -webkit-tap-highlight-color: rgba(139, 92, 246, 0.18);
+  }
+}

@@ -227,7 +227,6 @@ function setMobileMenu(open) {
   navList.classList.toggle('open', open);
   menuOverlay?.classList.toggle('open', open);
   rootBody.classList.toggle('menu-open', open);
-  document.documentElement.classList.toggle('menu-open', open);
 
   hamburger.setAttribute('aria-expanded', String(open));
   hamburger.setAttribute('aria-label', open ? 'Ukryj menu' : 'Pokaż menu');

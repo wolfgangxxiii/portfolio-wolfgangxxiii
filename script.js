@@ -219,7 +219,6 @@ window.addEventListener('pageshow', event => {
 const hamburger = document.getElementById('hamburger-menu');
 const navList = document.querySelector('.main-nav ul');
 const menuOverlay = document.getElementById('menu-overlay');
-let lockedScrollY = 0;
 
 function setMobileMenu(open) {
   if (!hamburger || !navList) return;
@@ -227,19 +226,12 @@ function setMobileMenu(open) {
   hamburger.classList.toggle('is-open', open);
   navList.classList.toggle('open', open);
   menuOverlay?.classList.toggle('open', open);
+  rootBody.classList.toggle('menu-open', open);
+  document.documentElement.classList.toggle('menu-open', open);
+
   hamburger.setAttribute('aria-expanded', String(open));
   hamburger.setAttribute('aria-label', open ? 'Ukryj menu' : 'Pokaż menu');
   menuOverlay?.setAttribute('aria-hidden', String(!open));
-
-  if (open) {
-    lockedScrollY = window.scrollY;
-    document.body.style.top = `-${lockedScrollY}px`;
-    document.body.classList.add('menu-open');
-  } else if (document.body.classList.contains('menu-open')) {
-    document.body.classList.remove('menu-open');
-    document.body.style.removeProperty('top');
-    window.scrollTo(0, lockedScrollY);
-  }
 }
 
 hamburger?.addEventListener('click', () => {

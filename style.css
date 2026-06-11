@@ -3357,3 +3357,211 @@ body.menu-open {
     background: var(--card-solid) !important;
   }
 }
+
+/* ===== v32: stabilny mobilny pasek i menu nad aktualną treścią ===== */
+@media (max-width: 860px) {
+  :root {
+    --mobile-header-height: 68px;
+  }
+
+  html {
+    scroll-padding-top: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px) + 10px);
+    overflow-x: clip;
+  }
+
+  body {
+    padding-top: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px)) !important;
+    overflow-x: clip;
+  }
+
+  /* Pasek zawsze pozostaje w tym samym miejscu ekranu podczas scrollowania. */
+  header {
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    width: 100% !important;
+    min-height: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px)) !important;
+    z-index: 5000 !important;
+    transform: translateZ(0) !important;
+    contain: layout paint;
+    background: var(--card-solid) !important;
+    border-bottom: 1px solid var(--line) !important;
+    box-shadow: 0 8px 24px rgba(44, 24, 91, 0.10) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  header.is-scrolled {
+    box-shadow: 0 10px 28px rgba(44, 24, 91, 0.16) !important;
+  }
+
+  .nav {
+    width: 100%;
+    max-width: none;
+    min-height: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px)) !important;
+    height: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px)) !important;
+    padding: env(safe-area-inset-top, 0px) 12px 0 !important;
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.02rem;
+  }
+
+  .logo::before {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+
+  .toggle-darkmode,
+  .language-toggle,
+  .hamburger {
+    position: relative !important;
+    inset: auto !important;
+    flex: 0 0 42px;
+    width: 42px !important;
+    height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1 !important;
+    background: var(--card-solid) !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .hamburger {
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .hamburger:active,
+  .toggle-darkmode:active,
+  .language-toggle:active {
+    transform: scale(.96) !important;
+  }
+
+  /* Nav nie uczestniczy w układzie paska — panel jest nakładką fixed. */
+  .main-nav {
+    position: static !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .main-nav ul,
+  .main-nav ul.open {
+    position: fixed !important;
+    top: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px) + 8px) !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: auto !important;
+    max-height: calc(100dvh - var(--mobile-header-height) - env(safe-area-inset-top, 0px) - 20px) !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--line) !important;
+    border-radius: 18px !important;
+    background: var(--card-solid) !important;
+    box-shadow: 0 22px 60px rgba(24, 15, 45, 0.26) !important;
+    z-index: 5002 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -12px, 0);
+    transform-origin: top center;
+    transition:
+      opacity .20s ease,
+      transform .24s cubic-bezier(.2,.75,.25,1),
+      visibility 0s linear .24s !important;
+  }
+
+  .main-nav ul.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s !important;
+  }
+
+  .main-nav li {
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .main-nav a {
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start !important;
+    padding: 11px 14px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    font-size: .95rem !important;
+  }
+
+  /* Przyciemnienie tylko treści poniżej paska. */
+  .menu-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: calc(var(--mobile-header-height) + env(safe-area-inset-top, 0px)) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 5001 !important;
+    background: rgba(18, 11, 36, .28) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .20s ease, visibility 0s linear .20s !important;
+  }
+
+  .menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s !important;
+  }
+
+  /* Nie zmieniamy scroll-containera ani pozycji body — brak skoku/znikania paska. */
+  body.menu-open {
+    overflow: visible !important;
+    position: static !important;
+    width: auto !important;
+    touch-action: auto !important;
+  }
+
+  body.menu-open main,
+  body.menu-open footer {
+    pointer-events: auto !important;
+  }
+
+  body.dark header,
+  body.dark .main-nav ul {
+    background: var(--card-solid) !important;
+  }
+}

@@ -2866,14 +2866,8 @@ body {
   overflow-x: clip;
 }
 
-html.menu-open,
 body.menu-open {
-  overflow: hidden;
   overscroll-behavior: none;
-}
-
-body.menu-open {
-  touch-action: none;
 }
 
 .hamburger {
@@ -3103,5 +3097,99 @@ body.menu-open {
   .menu-overlay,
   .scroll-reveal {
     transition-duration: .01ms !important;
+  }
+}
+
+
+/* ===== Stabilny nagłówek i menu na smartfonie ===== */
+@media (max-width: 860px) {
+  header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1300;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  main {
+    padding-top: 72px;
+  }
+
+  .main-nav ul,
+  .main-nav ul.open {
+    top: calc(72px + env(safe-area-inset-top, 0px));
+    z-index: 1302;
+  }
+
+  .menu-overlay {
+    z-index: 1290;
+  }
+
+  .hamburger {
+    z-index: 1303;
+  }
+
+  body.menu-open {
+    overflow-x: clip;
+  }
+
+  body.menu-open .menu-overlay,
+  body.menu-open .main-nav ul {
+    touch-action: none;
+  }
+
+  body.menu-open .main-nav ul {
+    touch-action: pan-y;
+  }
+}
+
+/* ===== v30: hamburger zawsze dostępny podczas przewijania mobilnego ===== */
+@media (max-width: 860px) {
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    inset-inline: 0;
+    transform: none !important;
+    contain: none !important;
+    isolation: isolate;
+  }
+
+  .nav {
+    padding-right: 66px;
+  }
+
+  .hamburger {
+    display: inline-flex !important;
+    position: fixed !important;
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    right: 12px;
+    margin: 0 !important;
+    z-index: 2147483646 !important;
+    width: 44px;
+    height: 44px;
+    color: var(--primary-dark);
+    background: var(--card-solid);
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 28px rgba(44, 24, 91, 0.18);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .hamburger:active {
+    transform: scale(.96);
+  }
+
+  .main-nav ul,
+  .main-nav ul.open {
+    top: calc(70px + env(safe-area-inset-top, 0px));
+    z-index: 2147483645 !important;
+  }
+
+  .menu-overlay {
+    z-index: 2147483640 !important;
   }
 }

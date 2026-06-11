@@ -248,7 +248,9 @@ document.addEventListener('keydown', event => {
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 860) setMobileMenu(false);
+  // Menu hamburgera działa także na desktopie; po zmianie rozmiaru zamykamy je,
+  // aby panel zawsze otwierał się ponownie we właściwej pozycji.
+  setMobileMenu(false);
 }, { passive: true });
 
 // LANGUAGE TOGGLE PL / EN

@@ -3765,3 +3765,104 @@ body.menu-open {
     touch-action: auto !important;
   }
 }
+
+/* ===== v34: finalna naprawa mobilnego nagłówka i klikalnego menu ===== */
+@media (max-width: 860px) {
+  /* Pasek jest stale przyklejony do górnej krawędzi ekranu. */
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 7000 !important;
+    overflow: visible !important;
+    transform: none !important;
+    contain: none !important;
+  }
+
+  .nav {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+  }
+
+  /* Wymuszona kolejność: logo, motyw, PL/EN, hamburger po prawej. */
+  .logo { order: 1 !important; }
+  .toggle-darkmode { order: 2 !important; }
+  .language-toggle { order: 3 !important; }
+  .hamburger {
+    order: 4 !important;
+    margin-left: 0 !important;
+  }
+  .main-nav { order: 5 !important; }
+
+  /* Ten sam wygląd PL/EN co w wersji desktopowej. */
+  .language-toggle {
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 42px !important;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    color: #fff !important;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.18) !important;
+  }
+
+  body.dark .language-toggle {
+    color: #180f2d !important;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+  }
+
+  /* Panel menu pozostaje nad przyciemnieniem i przyjmuje kliknięcia. */
+  .main-nav ul,
+  .main-nav ul.open {
+    z-index: 7100 !important;
+    isolation: isolate;
+  }
+
+  .main-nav ul.open,
+  .main-nav ul.open li,
+  .main-nav ul.open a {
+    pointer-events: auto !important;
+  }
+
+  /* Overlay musi być pod CAŁYM nagłówkiem. Wcześniej przykrywał menu. */
+  .menu-overlay,
+  .menu-overlay.open {
+    z-index: 6900 !important;
+  }
+
+  /* Hamburger pozostaje ostatnim elementem po prawej stronie. */
+  .hamburger {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav { gap: 6px !important; }
+  .logo { font-size: 0.96rem !important; }
+  .language-toggle {
+    flex-basis: 46px !important;
+    width: 46px !important;
+    min-width: 46px !important;
+  }
+}
+
+/* Mobilnie animacja transform na body tworzyła kontener dla position: fixed
+   i powodowała zjeżdżanie nagłówka razem ze stroną. */
+@media (max-width: 860px) {
+  body {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

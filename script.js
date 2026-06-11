@@ -452,3 +452,24 @@ window.addEventListener('orientationchange', () => {
     if (window.innerWidth > 860) setMobileMenu(false);
   }, 120);
 }, { passive: true });
+
+// v32: lekka stabilizacja mobilnego paska podczas przewijania.
+// Pasek pozostaje fixed; zmieniamy jedynie cień po odsunięciu od góry.
+(() => {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  let headerTicking = false;
+  const updateHeaderState = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+    headerTicking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (headerTicking) return;
+    headerTicking = true;
+    requestAnimationFrame(updateHeaderState);
+  }, { passive: true });
+
+  updateHeaderState();
+})();

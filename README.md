@@ -9,7 +9,7 @@ Portfolio zostało stworzone z wykorzystaniem czystego HTML, CSS i JavaScript. N
 ## 🌐 Demo
 
 **Portfolio online:**
-https://wolfgangxxiii.org
+https://wolfgangxxiii.com
 https://portfolio-wolfgangxxiii.netlify.app/
 
 ## ✨ Najważniejsze funkcje
@@ -211,7 +211,7 @@ Kod źródłowy jest publicznie dostępny wyłącznie do wglądu. Kopiowanie, mo
 
 **Szymon Piotr Bławat**
 
-* Portfolio: https://wolfgangxxiii.org
+* Portfolio: https://wolfgangxxiii.com
 * GitHub: https://github.com/wolfgangxxiii
 
 ---
@@ -227,7 +227,7 @@ The portfolio was created using pure HTML, CSS and JavaScript. It does not requi
 ## 🌐 Live website
 
 **Online portfolio:**
-https://wolfgangxxiii.org
+https://wolfgangxxiii.com
 https://portfolio-wolfgangxxiii.netlify.app/
 
 ## ✨ Main features
@@ -431,5 +431,5 @@ written permission.
 
 **Szymon Piotr Bławat**
 
-* Portfolio: https://wolfgangxxiii.org
+* Portfolio: https://wolfgangxxiii.com
 * GitHub: https://github.com/wolfgangxxiii

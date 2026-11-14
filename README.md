@@ -1,435 +1,118 @@
-# Portfolio – Szymon Piotr Bławat
+<div align="center">
 
-[English version](#english-version)
+<img src="img/avatar.jpg" alt="Szymon Piotr Bławat" width="125">
 
-Nowoczesna, responsywna strona portfolio prezentująca moje kompetencje techniczne, wykształcenie, certyfikaty, projekty oraz rozwój w kierunku cyberbezpieczeństwa.
+# Szymon Piotr Bławat · Portfolio
 
-Portfolio zostało stworzone z wykorzystaniem czystego HTML, CSS i JavaScript. Nie wymaga frameworków, procesu budowania ani backendu. Strona działa na komputerach, tabletach i smartfonach oraz posiada obsługę jasnego i ciemnego motywu.
+**Informatyka · systemy informacyjne · cyberbezpieczeństwo**
 
-## 🌐 Demo
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Languages](https://img.shields.io/badge/Języki-PL%20%2F%20EN-2563EB?style=flat-square)
+![License](https://img.shields.io/badge/License-All%20rights%20reserved-64748B?style=flat-square)
 
-**Portfolio online:**
-https://wolfgangxxiii.com
-https://portfolio-wolfgangxxiii.netlify.app/
+### 🌐 [Zobacz portfolio](https://wolfgangxxiii.com)
 
-## ✨ Najważniejsze funkcje
+[🇵🇱 Polski](#polski) · [🇬🇧 English](#english) · [🔗 GitHub](https://github.com/wolfgangxxiii)
 
-* responsywny interfejs dopasowany do komputerów i urządzeń mobilnych,
-* przełącznik języka polskiego i angielskiego,
-* tryb jasny i ciemny,
-* automatyczne wykrywanie motywu systemowego,
-* zapisywanie wybranego motywu w `localStorage`,
-* dynamiczne obliczanie wieku,
-* animacje elementów podczas przewijania strony,
-* stabilne animacje działające przy przewijaniu w górę i w dół,
-* zoptymalizowane animacje mobilne,
-* mobilne menu typu hamburger,
-* interaktywna oś czasu wykształcenia,
-* karty projektów z odnośnikami do kodu i wersji demonstracyjnych,
-* podział umiejętności według obszarów technicznych,
-* prezentacja certyfikatów, zainteresowań i kompetencji miękkich,
-* sekcja kontaktowa z adresem e-mail i profilami społecznościowymi,
-* wsparcie ustawienia `prefers-reduced-motion`,
-* zabezpieczenie przed poziomym przepełnieniem strony.
-
-## 📄 Sekcje strony
-
-* O mnie
-* Profil zawodowy
-* Umiejętności techniczne
-* Wykształcenie
-* Certyfikaty i kwalifikacje
-* Rozwój praktyczny
-* Projekty
-* Kompetencje miękkie i zainteresowania
-* Kontakt
-
-## 🧑‍💻 Technologie
-
-* HTML5
-* CSS3
-* JavaScript ES6+
-* Font Awesome 6
-* Google Fonts – Inter
-* Local Storage API
-* Intersection Observer API
-* Responsive Web Design
-
-## 📱 Responsywność
-
-Strona została przygotowana z myślą o różnych rozmiarach ekranów.
-
-Interfejs automatycznie dostosowuje:
-
-* układ sekcji,
-* menu nawigacyjne,
-* karty projektów,
-* oś czasu,
-* przyciski,
-* tagi umiejętności,
-* animacje,
-* sekcję kontaktową.
-
-Na urządzeniach mobilnych animacje są uproszczone, aby ograniczyć obciążenie przeglądarki i zapewnić płynne przewijanie.
-
-## 🌗 Tryb jasny i ciemny
-
-Portfolio obsługuje:
-
-* ręczne przełączanie motywu,
-* automatyczne wykrywanie preferencji systemowych,
-* zapisywanie wyboru użytkownika w `localStorage`,
-* oddzielne style kart, przycisków, sekcji i ikon dla obu motywów.
-
-## 🌍 Obsługa języków
-
-Strona posiada przełącznik:
-
-* `PL` – język polski,
-* `EN` – język angielski.
-
-Zmiana języka odbywa się bez przeładowywania strony. Wybrana wersja językowa może być przechowywana lokalnie w przeglądarce.
-
-## 🎞️ Animacje
-
-Elementy strony pojawiają się podczas przewijania w dół i w górę.
-
-Mechanizm animacji:
-
-* wykrywa wejście elementu w pole widzenia,
-* nie resetuje elementów, które nadal są widoczne,
-* ponownie uruchamia animację po opuszczeniu i ponownym wejściu elementu,
-* wykorzystuje opóźnienia dla kolejnych kart i tagów,
-* ogranicza kosztowne efekty na smartfonach,
-* respektuje ustawienie systemowe ograniczające animacje.
-
-## 📂 Struktura projektu
-
-```text
-portfolio-wolfgangxxiii/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── img/
-    ├── avatar.jpg
-    └── favicon.ico
-```
-
-## 🚀 Uruchomienie lokalne
-
-1. Sklonuj repozytorium:
-
-```bash
-git clone https://github.com/wolfgangxxiii/portfolio-wolfgangxxiii.git
-```
-
-2. Przejdź do folderu projektu:
-
-```bash
-cd portfolio-wolfgangxxiii
-```
-
-3. Otwórz plik `index.html` w przeglądarce.
-
-Projekt nie wymaga instalowania zależności ani uruchamiania serwera.
-
-Możesz również skorzystać z rozszerzenia Live Server w Visual Studio Code.
-
-## ⚙️ Główne pliki
-
-### `index.html`
-
-Zawiera:
-
-* strukturę strony,
-* treści portfolio,
-* sekcje projektów,
-* dane wykształcenia,
-* certyfikaty,
-* przyciski i odnośniki,
-* teksty dla wersji polskiej i angielskiej.
-
-### `style.css`
-
-Odpowiada za:
-
-* układ strony,
-* wygląd jasnego i ciemnego motywu,
-* responsywność,
-* animacje,
-* karty,
-* oś czasu,
-* menu mobilne,
-* wygląd kontaktu,
-* efekty hover.
-
-### `script.js`
-
-Obsługuje:
-
-* przełączanie motywu,
-* zapisywanie ustawień w `localStorage`,
-* przełączanie języka,
-* dynamiczne obliczanie wieku,
-* menu hamburger,
-* animacje podczas przewijania,
-* optymalizację animacji mobilnych.
-
-## 🧩 Projekty prezentowane w portfolio
-
-Portfolio zawiera między innymi:
-
-* aplikacje React,
-* aplikacje Electron,
-* narzędzia dla systemu Windows,
-* skrypty automatyzujące,
-* mody Windhawk,
-* projekty związane z bazami danych i aplikacjami webowymi.
-
-Więcej projektów znajduje się na profilu:
-
-https://github.com/wolfgangxxiii
-
-## 🔧 Możliwości dalszego rozwoju
-
-* dodanie formularza kontaktowego,
-* wdrożenie automatycznych testów interfejsu,
-* dodanie filtrowania projektów według technologii,
-* dodanie osobnych podstron projektów,
-* wdrożenie Progressive Web App,
-* optymalizacja SEO i danych strukturalnych,
-* automatyczne pobieranie projektów z GitHub API.
-
-## 📝 Licencja
-
-Copyright © 2026 Szymon Piotr Bławat. Wszelkie prawa zastrzeżone.
-
-Kod źródłowy jest publicznie dostępny wyłącznie do wglądu. Kopiowanie, modyfikowanie, redystrybucja oraz wykorzystywanie komercyjne są zabronione bez uprzedniej pisemnej zgody autora.
-
-## 👤 Autor
-
-**Szymon Piotr Bławat**
-
-* Portfolio: https://wolfgangxxiii.com
-* GitHub: https://github.com/wolfgangxxiii
+</div>
 
 ---
 
-# English version
+<a id="polski"></a>
 
-# Portfolio – Szymon Piotr Bławat
+## 🇵🇱 Polski
 
-A modern and responsive personal portfolio presenting my technical skills, education, certifications, projects and professional development in cybersecurity.
+### O projekcie
 
-The portfolio was created using pure HTML, CSS and JavaScript. It does not require a framework, build process or backend. The website works on desktop computers, tablets and smartphones and supports both light and dark themes.
+Dwujęzyczna, responsywna strona prezentująca mój **profil zawodowy, wykształcenie, umiejętności, certyfikaty i projekty programistyczne**. Portfolio skupia się na rozwoju w obszarze informatyki i bezpieczeństwa systemów informacyjno-komunikacyjnych.
 
-## 🌐 Live website
+| 🖥️ Interfejs | 🌗 Personalizacja | ⚡ Technologia |
+| :--- | :--- | :--- |
+| Układ desktop/mobile, menu hamburger, karty i oś czasu | Polski/angielski oraz jasny/ciemny motyw | Czysty HTML, CSS i JavaScript — bez frameworków i backendu |
 
-**Online portfolio:**
-https://wolfgangxxiii.com
-https://portfolio-wolfgangxxiii.netlify.app/
+### ✨ Najważniejsze możliwości
 
-## ✨ Main features
+- **PL / EN** — przełączanie języka bez przeładowania.
+- **Jasny / ciemny motyw** — wybór użytkownika, preferencje systemowe i zapis w `localStorage`.
+- **Responsywny układ** — karty projektów, menu i interaktywna oś czasu.
+- **Animacje przewijania** — `IntersectionObserver` oraz respektowanie `prefers-reduced-motion`.
+- **Prezentacja dorobku** — doświadczenie, umiejętności, wykształcenie, certyfikaty i projekty.
+- **Dynamiczne elementy** — m.in. obliczanie wieku i sekcja kontaktowa.
 
-* responsive layout for desktop and mobile devices,
-* Polish and English language switcher,
-* light and dark themes,
-* automatic system theme detection,
-* theme preference saved in `localStorage`,
-* dynamically calculated age,
-* scroll-based interface animations,
-* animations working while scrolling both down and up,
-* optimized mobile animations,
-* responsive hamburger navigation,
-* interactive education timeline,
-* project cards with source code and demo links,
-* technical skills grouped by category,
-* certifications, interests and soft skills,
-* contact section with email and social profiles,
-* support for `prefers-reduced-motion`,
-* protection against horizontal page overflow.
+### 🚀 Uruchomienie lokalne
 
-## 📄 Website sections
-
-* About me
-* Professional profile
-* Technical skills
-* Education
-* Certifications and qualifications
-* Practical development
-* Projects
-* Soft skills and interests
-* Contact
-
-## 🧑‍💻 Technologies
-
-* HTML5
-* CSS3
-* JavaScript ES6+
-* Font Awesome 6
-* Google Fonts – Inter
-* Local Storage API
-* Intersection Observer API
-* Responsive Web Design
-
-## 📱 Responsive design
-
-The website is designed for different screen sizes.
-
-The interface automatically adjusts:
-
-* section layouts,
-* navigation menu,
-* project cards,
-* education timeline,
-* buttons,
-* skill tags,
-* animations,
-* contact section.
-
-Animations are simplified on mobile devices to reduce browser workload and provide smoother scrolling.
-
-## 🌗 Light and dark themes
-
-The portfolio supports:
-
-* manual theme switching,
-* automatic system preference detection,
-* saving the selected theme in `localStorage`,
-* dedicated card, button, section and icon styles for both themes.
-
-## 🌍 Language support
-
-The website includes a language switcher:
-
-* `PL` – Polish,
-* `EN` – English.
-
-The language can be changed without reloading the page. The selected language may be stored locally in the browser.
-
-## 🎞️ Animations
-
-Website elements appear while scrolling both down and up.
-
-The animation system:
-
-* detects when an element enters the viewport,
-* does not reset elements that are still visible,
-* restarts animations after an element leaves and enters the viewport again,
-* applies staggered delays to cards and tags,
-* reduces expensive effects on smartphones,
-* respects the system reduced-motion preference.
-
-## 📂 Project structure
-
-```text
-portfolio-wolfgangxxiii/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── img/
-    ├── avatar.jpg
-    └── favicon.ico
-```
-
-## 🚀 Running locally
-
-1. Clone the repository:
-
-```bash
+~~~bash
 git clone https://github.com/wolfgangxxiii/portfolio-wolfgangxxiii.git
-```
-
-2. Open the project directory:
-
-```bash
 cd portfolio-wolfgangxxiii
-```
+~~~
 
-3. Open `index.html` in a web browser.
+Otwórz `index.html` w przeglądarce. Nie trzeba instalować pakietów ani uruchamiać procesu budowania. Opcjonalnie możesz użyć rozszerzenia **Live Server** w VS Code.
 
-The project does not require dependency installation or a development server.
+### 🧩 Architektura
 
-You can also use the Live Server extension in Visual Studio Code.
+| Plik/katalog | Przeznaczenie |
+| :--- | :--- |
+| [`index.html`](index.html) | Treść, sekcje, tłumaczenia i odnośniki |
+| [`style.css`](style.css) | Responsywność, motywy, typografia i animacje |
+| [`script.js`](script.js) | Język, motyw, nawigacja i interakcje |
+| [`img/`](img/) | Zdjęcia, favicony i zasoby graficzne |
+| [`sitemap.xml`](sitemap.xml) | Mapa witryny |
 
-## ⚙️ Main files
+**Strony:** [wolfgangxxiii.com](https://wolfgangxxiii.com) · [Netlify](https://portfolio-wolfgangxxiii.netlify.app/)
 
-### `index.html`
+### 🗺️ Możliwe usprawnienia
 
-Contains:
+- [ ] Automatyczne testy interfejsu.
+- [ ] Filtrowanie projektów po technologiach.
+- [ ] Automatyczny import repozytoriów z GitHub API.
+- [ ] Rozbudowa SEO i danych strukturalnych.
 
-* the website structure,
-* portfolio content,
-* project sections,
-* education information,
-* certificates,
-* buttons and links,
-* Polish and English text content.
+---
 
-### `style.css`
+<a id="english"></a>
 
-Controls:
+## 🇬🇧 English
 
-* page layout,
-* light and dark themes,
-* responsive design,
-* animations,
-* cards,
-* timeline,
-* mobile navigation,
-* contact section,
-* hover effects.
+### About this project
 
-### `script.js`
+A **bilingual, responsive portfolio** highlighting my professional profile, technical skills, education, certificates, and software projects, with a particular focus on **information and communication systems security**.
 
-Handles:
+| 🖥️ Experience | 🌗 Preferences | ⚡ Stack |
+| :--- | :--- | :--- |
+| Responsive navigation, projects, timeline | Polish/English, light/dark themes | Vanilla HTML, CSS, JavaScript |
 
-* theme switching,
-* storing settings in `localStorage`,
-* language switching,
-* dynamic age calculation,
-* hamburger menu,
-* scroll animations,
-* mobile animation optimization.
+### ✨ Highlights
 
-## 🧩 Projects presented in the portfolio
+- **Bilingual interface** with instant PL/EN switching.
+- **Light and dark mode** with system preference detection and `localStorage` persistence.
+- **Responsive layouts**, mobile navigation, project cards and education timeline.
+- **Scroll animations** using `IntersectionObserver`, with reduced-motion support.
+- **Profile sections** for skills, projects, education, certifications and contact.
+- **No frameworks or build dependencies** — a lightweight static website.
 
-The portfolio includes:
+### 🚀 Run locally
 
-* React applications,
-* Electron applications,
-* Windows utilities,
-* automation scripts,
-* Windhawk mods,
-* database and web application projects.
+~~~bash
+git clone https://github.com/wolfgangxxiii/portfolio-wolfgangxxiii.git
+cd portfolio-wolfgangxxiii
+~~~
 
-More projects are available on GitHub:
+Open `index.html` in a browser or use VS Code Live Server. The project has no server-side dependencies.
 
-https://github.com/wolfgangxxiii
+**Live:** [wolfgangxxiii.com](https://wolfgangxxiii.com) · [Netlify mirror](https://portfolio-wolfgangxxiii.netlify.app/)
 
-## 🔧 Possible future improvements
+---
 
-* contact form,
-* automated interface tests,
-* project filtering by technology,
-* dedicated project pages,
-* Progressive Web App support,
-* improved SEO and structured data,
-* automatic project loading through the GitHub API.
+## 🔐 Licencja / License
 
-## 📝 License
+**Copyright © 2026 Szymon Piotr Bławat. All rights reserved.**
 
-Copyright © 2026 Szymon Piotr Bławat. All Rights Reserved.
+Kod jest publiczny **do wglądu**, ale nie daje to prawa do kopiowania, modyfikacji lub redystrybucji bez zgody autora.
 
-The source code is publicly available for viewing purposes only. Copying,
-modification, redistribution and commercial use are prohibited without prior
-written permission.
+The code is publicly viewable but **not open-source licensed**. Copying, modification, distribution and commercial use require prior written permission.
 
-## 👤 Author
+Pełne warunki / Full terms: [LICENSE](LICENSE).
 
-**Szymon Piotr Bławat**
-
-* Portfolio: https://wolfgangxxiii.com
-* GitHub: https://github.com/wolfgangxxiii
+<div align="center"><sub>Designed and maintained by <a href="https://github.com/wolfgangxxiii">Szymon Piotr Bławat</a>.</sub></div>

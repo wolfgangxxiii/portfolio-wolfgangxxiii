@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="img/avatar.jpg" alt="Szymon Piotr Bławat" width="125">
+<img src="img/avatar.jpg?v=20261120" alt="Szymon Piotr Bławat — aktualne zdjęcie profilowe" width="125">
 
 # Szymon Piotr Bławat · Portfolio
 

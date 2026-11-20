@@ -41,6 +41,20 @@ Dwujęzyczna, responsywna strona prezentująca mój **profil zawodowy, wykształ
 - **Prezentacja dorobku** — doświadczenie, umiejętności, wykształcenie, certyfikaty i projekty.
 - **Dynamiczne elementy** — m.in. obliczanie wieku i sekcja kontaktowa.
 
+### 🧰 Wybrane projekty prezentowane na stronie
+
+| Repozytorium | Technologie i zakres |
+| :--- | :--- |
+| [Plasma Addon Manager](https://github.com/wolfgangxxiii/plasma-addon-manager) | Qt 6 / KDE Kirigami, Rust, systemd; dodatki Plasma i automatyczne aktualizacje |
+| [GRUB Studio Universal](https://github.com/wolfgangxxiii/GRUB-Studio-Universal) | Rust, GTK4 / libadwaita; motywy i konfiguracja GRUB |
+| [Django Blog](https://github.com/wolfgangxxiii/Python-z-frameworkiem-Django) | Python, Django, Django REST Framework, SQLite |
+| [Block Folder Thumbnail Cache](https://github.com/wolfgangxxiii/windhawk-block-folder-thumbnail-cache) | C++, Windhawk, Windows Explorer |
+| [Quiz dyplomowy](https://github.com/wolfgangxxiii/quiz) | HTML, CSS, JavaScript; nauka i fiszki offline |
+| [TaskMaster](https://github.com/wolfgangxxiii/TaskMaster) | Responsywny prototyp interfejsu — bez działającego backendu |
+
+Opisy umiejętności i projektów w portfolio są oparte na zawartości repozytoriów. Projekty edukacyjne i prototypy są oznaczone zgodnie ze swoim rzeczywistym stanem.
+
+
 ### 🚀 Uruchomienie lokalne
 
 ~~~bash
@@ -54,9 +68,9 @@ Otwórz `index.html` w przeglądarce. Nie trzeba instalować pakietów ani uruch
 
 | Plik/katalog | Przeznaczenie |
 | :--- | :--- |
-| [`index.html`](index.html) | Treść, sekcje, tłumaczenia i odnośniki |
+| [`index.html`](index.html) | Treść, sekcje i odnośniki |
 | [`style.css`](style.css) | Responsywność, motywy, typografia i animacje |
-| [`script.js`](script.js) | Język, motyw, nawigacja i interakcje |
+| [`script.js`](script.js) | Tłumaczenia, język, motyw, nawigacja i interakcje |
 | [`img/`](img/) | Zdjęcia, favicony i zasoby graficzne |
 | [`sitemap.xml`](sitemap.xml) | Mapa witryny |
 
@@ -91,6 +105,20 @@ A **bilingual, responsive portfolio** highlighting my professional profile, tech
 - **Scroll animations** using `IntersectionObserver`, with reduced-motion support.
 - **Profile sections** for skills, projects, education, certifications and contact.
 - **No frameworks or build dependencies** — a lightweight static website.
+
+### 🧰 Featured repositories
+
+| Repository | Stack and scope |
+| :--- | :--- |
+| [Plasma Addon Manager](https://github.com/wolfgangxxiii/plasma-addon-manager) | Qt 6 / KDE Kirigami, Rust, systemd; Plasma add-ons and scheduled updates |
+| [GRUB Studio Universal](https://github.com/wolfgangxxiii/GRUB-Studio-Universal) | Rust, GTK4 / libadwaita; GRUB themes and settings |
+| [Django Blog](https://github.com/wolfgangxxiii/Python-z-frameworkiem-Django) | Python, Django, Django REST Framework, SQLite |
+| [Block Folder Thumbnail Cache](https://github.com/wolfgangxxiii/windhawk-block-folder-thumbnail-cache) | C++, Windhawk, Windows Explorer |
+| [Diploma quiz](https://github.com/wolfgangxxiii/quiz) | HTML, CSS, JavaScript; offline study and flashcards |
+| [TaskMaster](https://github.com/wolfgangxxiii/TaskMaster) | Responsive UI prototype — no working backend yet |
+
+The portfolio's skill and project descriptions are based on the repositories. Educational projects and prototypes are identified according to their current state.
+
 
 ### 🚀 Run locally
 
